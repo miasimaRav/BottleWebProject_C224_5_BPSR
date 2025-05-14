@@ -42,3 +42,30 @@ def contact():
         title='Floyd–Warshall algorithm',
         year=datetime.now().year
     )
+
+@route('/prim_method')
+@view('prim_method')
+def contact():
+    """Renders the Prim method page."""
+    return dict(
+        title='Prim algorithm',
+        year=datetime.now().year
+    )
+
+@route('/crascal_method')
+@view('crascal_method')
+def contact():
+    """Renders the Crascal method page."""
+    return dict(
+        title='Crascal algorithm',
+        year=datetime.now().year
+    )
+
+@route('/dijkstra_method')
+@view('dijkstra_method')
+def contact():
+    """Renders the Dijkstra method page."""
+    return dict(
+        title='Dijkstra algorithm',
+        year=datetime.now().year
+    )

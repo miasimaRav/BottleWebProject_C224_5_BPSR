@@ -67,6 +67,9 @@
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
+    <Content Include="views\crascal_method.tpl">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\dijkstra_method.tpl" />
     <Content Include="views\floid_method.tpl" />
     <Content Include="views\index.tpl" />
