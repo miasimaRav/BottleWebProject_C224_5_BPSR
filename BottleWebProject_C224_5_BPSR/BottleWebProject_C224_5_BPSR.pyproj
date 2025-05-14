@@ -33,9 +33,11 @@
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="resources\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
+    <Folder Include="static\resources\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
   </ItemGroup>
@@ -65,6 +67,10 @@
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
+    <Content Include="views\crascal_method.tpl">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="views\dijkstra_method.tpl" />
     <Content Include="views\floid_method.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
