@@ -65,6 +65,7 @@
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
+    <Content Include="views\dijkstra_method.tpl" />
     <Content Include="views\floid_method.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
