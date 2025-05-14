@@ -39,6 +39,6 @@ def about():
 def contact():
     """Renders the Floid method page."""
     return dict(
-        title='Floyd–Warshall algorithm',
+        title='Floyd-Warshall algorithm',
         year=datetime.now().year
     )
