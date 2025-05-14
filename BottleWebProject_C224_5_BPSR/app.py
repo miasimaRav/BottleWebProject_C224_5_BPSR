@@ -1,6 +1,3 @@
-"""
-This script runs the application using a development server.
-"""
 
 import bottle
 import os
