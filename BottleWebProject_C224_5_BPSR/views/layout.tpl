@@ -7,7 +7,38 @@
     <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
     <script src="/static/scripts/modernizr-2.6.2.js"></script>
+     <style>
 
+        html, body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            background-size: cover;
+        }
+
+        .container.body-content {
+            flex-grow: 1;
+        }
+
+        .navbar, footer {
+            background-color: #2c3e50 !important; 
+            color: white;
+        }
+
+        footer {
+            background-color: #2c3e50 !important;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            font-weight: bold;
+            margin-top: auto; 
+        }
+
+        hr {
+            border-top: 1px solid #2c3e50 !important;
+        }
+    </style>
 </head>
 
 <body>
