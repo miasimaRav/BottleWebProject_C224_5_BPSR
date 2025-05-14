@@ -33,3 +33,12 @@ def about():
         message='Your application description page.',
         year=datetime.now().year
     )
+
+@route('/floid_method')
+@view('floid_method')
+def contact():
+    """Renders the Floid method page."""
+    return dict(
+        title='Floyd–Warshall algorithm',
+        year=datetime.now().year
+    )
