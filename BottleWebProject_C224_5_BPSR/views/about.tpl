@@ -4,7 +4,7 @@
     <!-- Purpose of the Website -->
     <section class="purpose">
         <h2>Purpose of the Website</h2>
-        <p>This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: Kruskal’s, Prim’s, Dijkstra’s, and Floyd-Warshall’s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving.</p>
+        <p>This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: Kruskal’s, Prim’s, Dijkstra’s, and Floyd-Warshall’s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving. The platform aims to bridge the gap between theoretical concepts and practical application by offering hands-on experience with real-time graph visualizations, making complex ideas more accessible and engaging for learners of all levels.</p>
     </section>
 
     <!-- Developers -->

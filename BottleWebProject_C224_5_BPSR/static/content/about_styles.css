@@ -3,6 +3,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    text-align: center; /* Центрирование содержимого */
 }
 
 /* Секция назначения сайта */
@@ -13,6 +14,12 @@
     border-radius: 5px;
 }
 
+    .purpose p {
+        font-size: 1.1em; /* Увеличено на 10% с 1em до 1.1em */
+        line-height: 1.6;
+        color: #333;
+    }
+
 /* Секция разработчиков */
 .developers {
     margin-bottom: 20px;
@@ -22,8 +29,9 @@
 .developer-list {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    gap: 20px;
+    justify-content: center; /* Центрирование разработчиков */
+    gap: 30px; /* Увеличен отступ между карточками */
+    flex-wrap: wrap; /* Разрешить перенос на мобильных устройствах */
 }
 
 /* Карточка разработчика */
@@ -39,7 +47,7 @@
     .developer:not(:last-child)::after {
         content: '';
         position: absolute;
-        right: -10px;
+        right: -15px; /* Сдвигаем разделитель правее из-за увеличенного gap */
         top: 0;
         height: 100%;
         width: 1px;
@@ -48,8 +56,8 @@
 
     /* Стили для изображений */
     .developer img {
-        width: 150px;
-        height: 150px;
+        width: 180px; /* Увеличено с 150px до 180px */
+        height: 180px; /* Увеличено с 150px до 180px */
         object-fit: cover;
         border-radius: 50%;
         cursor: pointer;
@@ -80,13 +88,13 @@
 
 /* Стили для текста */
 .developer h3 {
-    font-size: 1.2em;
+    font-size: 1.44em; /* Увеличено с 1.2em на 20% */
     margin: 10px 0 5px;
     text-align: center;
 }
 
 .developer p {
-    font-size: 0.9em;
+    font-size: 1.08em; /* Увеличено с 0.9em на 20% */
     text-align: center;
     color: #555;
 }
