@@ -1,0 +1,134 @@
+/* —умма весов */
+.mst-weight {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    background: linear-gradient(90deg, #AFD9C3, #B8DFDC, #6CAEBC);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .mst-weight.updated {
+        animation: highlight 0.5s ease;
+    }
+
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/*  нопка генерации */
+.create-graph-btn {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    .create-graph-btn:hover {
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/*  нопка подтверждени€ */
+.confirm-btn {
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+    .confirm-btn:hover {
+        background: linear-gradient(45deg, #00f2fe, #4facfe);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/* —крытый ввод весов */
+#edge-input {
+    margin-top: 10px;
+    display: none;
+}
+
+/* —писок дл€ ввода весов рЄбер */
+.edge-weight-list {
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #e6f3fa; /* явно задаЄм голубой фон */
+    border: 1px solid #b3d4e6;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+    /*  астомный скроллбар */
+    .edge-weight-list::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    .edge-weight-list::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .edge-weight-list::-webkit-scrollbar-thumb {
+        background: linear-gradient(45deg, #4facfe, #00f2fe);
+        border-radius: 5px;
+    }
+
+        .edge-weight-list::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+        }
+
+    .edge-weight-list .weight-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .edge-weight-list label {
+        font-size: 0.9em;
+        color: #333;
+        width: 80px;
+    }
+
+    .edge-weight-list input {
+        width: 60px;
+        padding: 4px;
+        font-size: 0.9em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .edge-weight-list input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
