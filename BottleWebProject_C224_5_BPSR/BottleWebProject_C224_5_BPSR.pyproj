@@ -59,7 +59,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\site.css" />
-    <Content Include="static\content\styles.css">
+    <Content Include="static\content\styles.css" />
     <Content Include="static\content\text_style.css">
       <SubType>Code</SubType>
     </Content>
