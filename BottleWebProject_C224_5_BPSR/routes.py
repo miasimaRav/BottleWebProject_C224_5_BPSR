@@ -1,5 +1,7 @@
-from bottle import route, view
+from bottle import route, post, view, request, response
 from datetime import datetime
+from prim_method import generate_graph, prim_algorithm
+import json
 
 @route('/')
 @route('/home')
@@ -32,7 +34,7 @@ def about():
 
 @route('/floid_method')
 @view('floid_method')
-def contact():
+def floid_method():
     """Renders the Floid method page."""
     return dict(
         title='Floyd Warshall algorithm',
@@ -41,7 +43,7 @@ def contact():
 
 @route('/prim_method')
 @view('prim_method')
-def contact():
+def prim_method():
     """Renders the Prim method page."""
     return dict(
         title='Prim algorithm',
@@ -50,7 +52,7 @@ def contact():
 
 @route('/crascal_method')
 @view('crascal_method')
-def contact():
+def crascal_method():
     """Renders the Crascal method page."""
     return dict(
         title='Crascal algorithm',
@@ -59,9 +61,42 @@ def contact():
 
 @route('/dijkstra_method')
 @view('dijkstra_method')
-def contact():
+def dijkstra_method():
     """Renders the Dijkstra method page."""
     return dict(
         title='Dijkstra algorithm',
         year=datetime.now().year
     )
+
+@post('/generate_graph')
+def handle_generate_graph():
+    """Generates a random graph with specified vertex count."""
+    data = request.json
+    vertex_count = data['vertexCount']
+    result = generate_graph(vertex_count)
+    response.content_type = 'application/json'
+    return json.dumps(result)
+
+@post('/prim')
+def handle_prim():
+    """Computes the Minimum Spanning Tree using Prim's algorithm."""
+    data = request.json
+    vertex_count = data['vertexCount']
+    edges = data['edges']
+    start_vertex = data['startVertex']
+    result = prim_algorithm(vertex_count, edges, start_vertex)
+    response.content_type = 'application/json'
+    return json.dumps(result)
+
+def setup_routes(app):
+    """Sets up routes for the Bottle app."""
+    app.route('/', method='GET', callback=home)
+    app.route('/home', method='GET', callback=home)
+    app.route('/contact', method='GET', callback=contact)
+    app.route('/about', method='GET', callback=about)
+    app.route('/floid_method', method='GET', callback=floid_method)
+    app.route('/prim_method', method='GET', callback=prim_method)
+    app.route('/crascal_method', method='GET', callback=crascal_method)
+    app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
+    app.route('/generate_graph', method='POST', callback=handle_generate_graph)
+    app.route('/prim', method='POST', callback=handle_prim)

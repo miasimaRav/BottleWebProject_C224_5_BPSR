@@ -1,78 +1,53 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - My Bottle Application</title>
-    <link rel="stylesheet" type="text/css" href="/static/content/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="/static/content/site.css" />
-    <script src="/static/scripts/modernizr-2.6.2.js"></script>
-     <style>
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-            background-size: cover;
-        }
-
-        .container.body-content {
-            flex-grow: 1;
-        }
-
-        .navbar, footer {
-            background-color: #2c3e50 !important; 
-            color: white;
-        }
-
-        footer {
-            background-color: #2c3e50 !important;
-            color: white;
-            padding: 10px 0;
-            text-align: center;
-            font-weight: bold;
-            margin-top: auto; 
-        }
-
-        hr {
-            border-top: 1px solid #2c3e50 !important;
-        }
-    </style>
+    <title>{{ title }} - Algorithm</title>
+    <link rel="stylesheet" href="/static/content/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/content/menu_view.css"> 
+    <link rel="stylesheet" href="/static/content/drop.css"> 
 </head>
 
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a href="/" class="navbar-brand">Application name</a>
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                </ul>
-            </div>
+<nav class="navbar navbar-custom navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/home">
+                <img src="/static/images/graph_logo.png" style="height: 40px;">
+            </a>
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/about">About</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Algorithms <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crascal_method">Kruskal's Algorithm</a></li>
+                        <li><a href="/prim_method">Prim's Algorithm</a></li>
+                        <li><a href="/dijkstra_method">Dijkstra's Algorithm</a></li>
+                        <li><a href="/floid_method">Floyd's Algorithm</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </div>
+</nav>
+
 
     <div class="container body-content">
         {{!base}}
         <hr />
         <footer>
-            <p>&copy; {{ year }} - My Bottle Application</p>
+            <p>&copy; {{ year }} - Algorithms</p>
         </footer>
     </div>
-
-    <script src="/static/scripts/jquery-1.10.2.js"></script>
-    <script src="/static/scripts/bootstrap.js"></script>
-    <script src="/static/scripts/respond.js"></script>
-
 </body>
 </html>
