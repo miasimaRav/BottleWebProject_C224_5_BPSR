@@ -1,6 +1,7 @@
 # BottleWebProject_C224_5_BPSR
 ## Используемое ПО
 - Язык программирования: Python 3.9.0
+- Языки разметки и стилей: HTML (.tpl – шаблоны страниц), CSS (.css – стилизация интерфейса)
 - Фреймворк: Bottle
 - Среда разработки: Microsoft Visual Studio Community 2019 (версия 16.8.4 и выше)
 - Браузеры: Google Chrome, Mozilla Firefox
@@ -45,6 +46,8 @@
 `static/content/site.css` - Стили оформления веб-интерфейса
 
 `files/output.txt` - Результаты решения
+
+`.txt`, `.json` – Входные и выходные данные
 
 `test_*.py` - Модульные тесты
 
