@@ -15,6 +15,8 @@
 .env3
 .env4
 
+README.md
+
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
