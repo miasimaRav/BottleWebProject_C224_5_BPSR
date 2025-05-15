@@ -1,0 +1,92 @@
+/* Контейнер для страницы */
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Секция назначения сайта */
+.purpose {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+}
+
+/* Секция разработчиков */
+.developers {
+    margin-bottom: 20px;
+}
+
+/* Список разработчиков */
+.developer-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+/* Карточка разработчика */
+.developer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
+
+    /* Разделитель между разработчиками */
+    .developer:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        right: -10px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background-color: #ccc;
+    }
+
+    /* Стили для изображений */
+    .developer img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    /* Анимация пульсации */
+    .developer.pulse img {
+        animation: pulse 1s ease-out;
+    }
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+/* Стили для текста */
+.developer h3 {
+    font-size: 1.2em;
+    margin: 10px 0 5px;
+    text-align: center;
+}
+
+.developer p {
+    font-size: 0.9em;
+    text-align: center;
+    color: #555;
+}
