@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="prim_method.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +59,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\site.css" />
+    <Content Include="static\content\styles.css">
     <Content Include="static\content\text_style.css">
       <SubType>Code</SubType>
     </Content>
@@ -79,6 +83,9 @@
     <Content Include="static\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="static\scripts\modernizr-2.6.2.js" />
+    <Content Include="static\scripts\prim_method.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\_references.js" />
