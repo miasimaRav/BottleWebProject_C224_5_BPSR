@@ -154,18 +154,19 @@
 
 /* Стили для выпадающего списка выбора режима */
 #weight-mode {
-    padding: 8px 12px;
+    padding: 8px 24px 8px 12px; /* Увеличен правый отступ для стрелки */
     font-size: 1em;
     border: none;
     border-radius: 5px;
     background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: white;
+    color: #2c3e50; /* Тёмный текст для читаемости */
     cursor: pointer;
     transition: background 0.3s ease, transform 0.2s ease;
     appearance: none; /* Убираем стандартную стрелку */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"><path d="M2 4l4 4 4-4H2z"/></svg>');
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%232c3e50"><path d="M2 4l4 4 4-4H2z"/></svg>'); /* Стрелка того же цвета, что текст */
     background-repeat: no-repeat;
     background-position: right 10px center;
+    opacity: 1; /* Убираем прозрачность */
 }
 
     #weight-mode:hover {
@@ -179,4 +180,10 @@
         outline: none;
         transform: translateY(-2px);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Стили для элементов списка в выпадающем меню */
+    #weight-mode option {
+        background-color: #fff; /* Белый фон для элементов списка */
+        color: #2c3e50; /* Тёмный текст */
     }
