@@ -44,7 +44,6 @@
 
     <div class="container body-content">
         {{!base}}
-        <hr />
         <footer>
             <p>&copy; {{ year }} - Algorithms</p>
         </footer>

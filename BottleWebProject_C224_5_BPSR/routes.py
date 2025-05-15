@@ -7,15 +7,11 @@ import json
 @route('/home')
 @view('index')
 def home():
-    """Renders the home page."""
-    return dict(
-        year=datetime.now().year
-    )
+    return dict(year=datetime.now().year)
 
 @route('/contact')
 @view('contact')
 def contact():
-    """Renders the contact page."""
     return dict(
         title='Contact',
         message='Your contact page.',
@@ -25,7 +21,6 @@ def contact():
 @route('/about')
 @view('about')
 def about():
-    """Renders the about page."""
     return dict(
         title='About',
         message='Your application description page.',
@@ -35,7 +30,6 @@ def about():
 @route('/floid_method')
 @view('floid_method')
 def floid_method():
-    """Renders the Floid method page."""
     return dict(
         title='Floyd Warshall algorithm',
         year=datetime.now().year
@@ -44,7 +38,6 @@ def floid_method():
 @route('/prim_method')
 @view('prim_method')
 def prim_method():
-    """Renders the Prim method page."""
     return dict(
         title='Prim algorithm',
         year=datetime.now().year
@@ -53,7 +46,6 @@ def prim_method():
 @route('/crascal_method')
 @view('crascal_method')
 def crascal_method():
-    """Renders the Crascal method page."""
     return dict(
         title='Crascal algorithm',
         year=datetime.now().year
@@ -62,7 +54,6 @@ def crascal_method():
 @route('/dijkstra_method')
 @view('dijkstra_method')
 def dijkstra_method():
-    """Renders the Dijkstra method page."""
     return dict(
         title='Dijkstra algorithm',
         year=datetime.now().year
@@ -70,7 +61,6 @@ def dijkstra_method():
 
 @post('/generate_graph')
 def handle_generate_graph():
-    """Generates a random graph with specified vertex count."""
     data = request.json
     vertex_count = data['vertexCount']
     result = generate_graph(vertex_count)
@@ -79,7 +69,6 @@ def handle_generate_graph():
 
 @post('/prim')
 def handle_prim():
-    """Computes the Minimum Spanning Tree using Prim's algorithm."""
     data = request.json
     vertex_count = data['vertexCount']
     edges = data['edges']
@@ -89,7 +78,6 @@ def handle_prim():
     return json.dumps(result)
 
 def setup_routes(app):
-    """Sets up routes for the Bottle app."""
     app.route('/', method='GET', callback=home)
     app.route('/home', method='GET', callback=home)
     app.route('/contact', method='GET', callback=contact)
