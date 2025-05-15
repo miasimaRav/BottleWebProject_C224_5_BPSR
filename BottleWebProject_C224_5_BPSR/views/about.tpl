@@ -3,11 +3,11 @@
     <!-- Purpose of the Website -->
     <section class="purpose">
         <h2>Purpose of the Website</h2>
-        <p>This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: Kruskal’s, Prim’s, Dijkstra’s, and Floyd-Warshall’s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving.</p>
+        <p>This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: KruskalвЂ™s, PrimвЂ™s, DijkstraвЂ™s, and Floyd-WarshallвЂ™s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving.</p>
         <!-- Russian version (commented for potential localization) -->
         <!--
-        <h2>Цель сайта</h2>
-        <p>Этот сайт создан как образовательный инструмент, чтобы помочь студентам и энтузиастам понять и визуализировать четыре фундаментальных алгоритма на графах: алгоритмы Краскала, Прима, Дейкстры и Флойда-Уоршалла. Каждый алгоритм представлен с интерактивными инструментами, позволяющими вводить данные графа, изучать пошаговое выполнение и визуализировать результаты, способствуя более глубокому пониманию теории графов и алгоритмического решения задач.</p>
+        <h2>Р¦РµР»СЊ СЃР°Р№С‚Р°</h2>
+        <p>Р­С‚РѕС‚ СЃР°Р№С‚ СЃРѕР·РґР°РЅ РєР°Рє РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Р№ РёРЅСЃС‚СЂСѓРјРµРЅС‚, С‡С‚РѕР±С‹ РїРѕРјРѕС‡СЊ СЃС‚СѓРґРµРЅС‚Р°Рј Рё СЌРЅС‚СѓР·РёР°СЃС‚Р°Рј РїРѕРЅСЏС‚СЊ Рё РІРёР·СѓР°Р»РёР·РёСЂРѕРІР°С‚СЊ С‡РµС‚С‹СЂРµ С„СѓРЅРґР°РјРµРЅС‚Р°Р»СЊРЅС‹С… Р°Р»РіРѕСЂРёС‚РјР° РЅР° РіСЂР°С„Р°С…: Р°Р»РіРѕСЂРёС‚РјС‹ РљСЂР°СЃРєР°Р»Р°, РџСЂРёРјР°, Р”РµР№РєСЃС‚СЂС‹ Рё Р¤Р»РѕР№РґР°-РЈРѕСЂС€Р°Р»Р»Р°. РљР°Р¶РґС‹Р№ Р°Р»РіРѕСЂРёС‚Рј РїСЂРµРґСЃС‚Р°РІР»РµРЅ СЃ РёРЅС‚РµСЂР°РєС‚РёРІРЅС‹РјРё РёРЅСЃС‚СЂСѓРјРµРЅС‚Р°РјРё, РїРѕР·РІРѕР»СЏСЋС‰РёРјРё РІРІРѕРґРёС‚СЊ РґР°РЅРЅС‹Рµ РіСЂР°С„Р°, РёР·СѓС‡Р°С‚СЊ РїРѕС€Р°РіРѕРІРѕРµ РІС‹РїРѕР»РЅРµРЅРёРµ Рё РІРёР·СѓР°Р»РёР·РёСЂРѕРІР°С‚СЊ СЂРµР·СѓР»СЊС‚Р°С‚С‹, СЃРїРѕСЃРѕР±СЃС‚РІСѓСЏ Р±РѕР»РµРµ РіР»СѓР±РѕРєРѕРјСѓ РїРѕРЅРёРјР°РЅРёСЋ С‚РµРѕСЂРёРё РіСЂР°С„РѕРІ Рё Р°Р»РіРѕСЂРёС‚РјРёС‡РµСЃРєРѕРіРѕ СЂРµС€РµРЅРёСЏ Р·Р°РґР°С‡.</p>
         -->
     </section>
 
@@ -16,51 +16,76 @@
         <h2>Our Team</h2>
         <div class="developer-grid">
             <div class="developer">
-                <img src="/static/resources/artem.jpg" alt="Artem Portov">
+                <img src="/static/resources/images/artem.jpg" alt="Artem Portov" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">
                 <h3>Artem Portov</h3>
-                <p>Made the about pages and the Prim’s algorithm. Helped develop the background style.</p>
+                <p>Made the about pages and the PrimвЂ™s algorithm. Helped develop the background style.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/vasilisa.jpg" alt="Vasilisa Savinskaya">
+                <img src="/static/resources/images/vasilisa.jpg" alt="Vasilisa Savinskaya" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">
                 <h3>Vasilisa Savinskaya</h3>
-                <p>Developed the main page of the website, made a page for the Kruskal’s algorithm.</p>
+                <p>Developed the main page of the website, made a page for the KruskalвЂ™s algorithm.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/daria.jpg" alt="Daria Ravilova">
+                <img src="/static/resources/images/daria.jpg" alt="Daria Ravilova" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">
                 <h3>Daria Ravilova</h3>
                 <p>Done the Russian localization of the site and developed a page for the Floyd-Warshall algorithm.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/karina.jpg" alt="Karina Balabanova">
+                <img src="/static/resources/images/karina.jpg" alt="Karina Balabanova" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">
                 <h3>Karina Balabanova</h3>
-                <p>Developed a page with frequently asked questions and created a page for the Dijkstra’s algorithm.</p>
+                <p>Developed a page with frequently asked questions and created a page for the DijkstraвЂ™s algorithm.</p>
             </div>
         </div>
         <!-- Russian version (commented for potential localization) -->
         <!--
-        <h2>Наша команда</h2>
+        <h2>РќР°С€Р° РєРѕРјР°РЅРґР°</h2>
         <div class="developer-grid">
             <div class="developer">
-                <img src="/static/resources/artem.jpg" alt="Артём Портов">
-                <h3>Артём Портов</h3>
-                <p>Создал страницы "О нас" и алгоритм Прима. Помог разработать стиль фона.</p>
+                <img src="/static/resources/artem.jpg" alt="РђСЂС‚С‘Рј РџРѕСЂС‚РѕРІ">
+                <h3>РђСЂС‚С‘Рј РџРѕСЂС‚РѕРІ</h3>
+                <p>РЎРѕР·РґР°Р» СЃС‚СЂР°РЅРёС†С‹ "Рћ РЅР°СЃ" Рё Р°Р»РіРѕСЂРёС‚Рј РџСЂРёРјР°. РџРѕРјРѕРі СЂР°Р·СЂР°Р±РѕС‚Р°С‚СЊ СЃС‚РёР»СЊ С„РѕРЅР°.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/vasilisa.jpg" alt="Василиса Савинская">
-                <h3>Василиса Савинская</h3>
-                <p>Разработала главную страницу сайта и страницу для алгоритма Краскала.</p>
+                <img src="/static/resources/vasilisa.jpg" alt="Р’Р°СЃРёР»РёСЃР° РЎР°РІРёРЅСЃРєР°СЏ">
+                <h3>Р’Р°СЃРёР»РёСЃР° РЎР°РІРёРЅСЃРєР°СЏ</h3>
+                <p>Р Р°Р·СЂР°Р±РѕС‚Р°Р»Р° РіР»Р°РІРЅСѓСЋ СЃС‚СЂР°РЅРёС†Сѓ СЃР°Р№С‚Р° Рё СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ Р°Р»РіРѕСЂРёС‚РјР° РљСЂР°СЃРєР°Р»Р°.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/daria.jpg" alt="Дарья Равилова">
-                <h3>Дарья Равилова</h3>
-                <p>Выполнила русскую локализацию сайта и разработала страницу для алгоритма Флойда-Уоршалла.</p>
+                <img src="/static/resources/daria.jpg" alt="Р”Р°СЂСЊСЏ Р Р°РІРёР»РѕРІР°">
+                <h3>Р”Р°СЂСЊСЏ Р Р°РІРёР»РѕРІР°</h3>
+                <p>Р’С‹РїРѕР»РЅРёР»Р° СЂСѓСЃСЃРєСѓСЋ Р»РѕРєР°Р»РёР·Р°С†РёСЋ СЃР°Р№С‚Р° Рё СЂР°Р·СЂР°Р±РѕС‚Р°Р»Р° СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ Р°Р»РіРѕСЂРёС‚РјР° Р¤Р»РѕР№РґР°-РЈРѕСЂС€Р°Р»Р»Р°.</p>
             </div>
             <div class="developer">
-                <img src="/static/resources/karina.jpg" alt="Карина Балабанова">
-                <h3>Карина Балабанова</h3>
-                <p>Разработала страницу с часто задаваемыми вопросами и создала страницу для алгоритма Дейкстры.</p>
+                <img src="/static/resources/karina.jpg" alt="РљР°СЂРёРЅР° Р‘Р°Р»Р°Р±Р°РЅРѕРІР°">
+                <h3>РљР°СЂРёРЅР° Р‘Р°Р»Р°Р±Р°РЅРѕРІР°</h3>
+                <p>Р Р°Р·СЂР°Р±РѕС‚Р°Р»Р° СЃС‚СЂР°РЅРёС†Сѓ СЃ С‡Р°СЃС‚Рѕ Р·Р°РґР°РІР°РµРјС‹РјРё РІРѕРїСЂРѕСЃР°РјРё Рё СЃРѕР·РґР°Р»Р° СЃС‚СЂР°РЅРёС†Сѓ РґР»СЏ Р°Р»РіРѕСЂРёС‚РјР° Р”РµР№РєСЃС‚СЂС‹.</p>
             </div>
         </div>
         -->
     </section>
 </div>
+
+<style>
+.developer {
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+}
+
+.developer img {
+    width: 200px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.developer.pulse img {
+    animation: pulse 1s ease-out;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(0, 0, 0, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+}
+</style>
