@@ -14,7 +14,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/home">
-                <img src="/static/images/graph_logo.png" style="height: 40px;">
+                <img src="/static/resources/images/graph_logo.png" style="height: 40px;">
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavbar">
                 <span class="icon-bar"></span>
