@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|env2|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +30,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="prim_method.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
@@ -38,6 +41,7 @@
     <Folder Include="static\content\" />
     <Folder Include="static\fonts\" />
     <Folder Include="static\resources\" />
+    <Folder Include="static\resources\Images\" />
     <Folder Include="static\scripts\" />
     <Folder Include="views\" />
   </ItemGroup>
@@ -45,11 +49,32 @@
     <Content Include="requirements.txt" />
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
+    <Content Include="static\content\drop.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\content\menu_view.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\content\nav.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\site.css" />
+    <Content Include="static\content\styles.css" />
+    <Content Include="static\content\text_style.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\resources\Images\artem.jpg" />
+    <Content Include="static\resources\Images\daria.jpg" />
+    <Content Include="static\resources\Images\graph_logo.png" />
+    <Content Include="static\resources\Images\karina.jpg" />
+    <Content Include="static\resources\Images\OIP.png" />
+    <Content Include="static\resources\Images\r1.png" />
+    <Content Include="static\resources\Images\rama.png" />
+    <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
@@ -62,8 +87,12 @@
     <Content Include="static\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="static\scripts\modernizr-2.6.2.js" />
+    <Content Include="static\scripts\prim_method.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\respond.js" />
     <Content Include="static\scripts\respond.min.js" />
+    <Content Include="static\scripts\vis.min.js" />
     <Content Include="static\scripts\_references.js" />
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
@@ -71,9 +100,9 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\dijkstra_method.tpl" />
-    <Content Include="views\floid_method.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
+    <Content Include="views\floid_method.tpl" />
     <Content Include="views\prim_method.tpl">
       <SubType>Code</SubType>
     </Content>
@@ -99,8 +128,8 @@
     </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
-      <Version>3.10</Version>
-      <Description>env (Python 3.10 (64-bit))</Description>
+      <Version>3.9</Version>
+      <Description>env (Python 3.9 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>

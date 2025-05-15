@@ -1,19 +1,17 @@
-from bottle import route, view
+from bottle import route, post, view, request, response
 from datetime import datetime
+from prim_method import generate_graph, prim_algorithm
+import json
 
 @route('/')
 @route('/home')
 @view('index')
 def home():
-    """Renders the home page."""
-    return dict(
-        year=datetime.now().year
-    )
+    return dict(year=datetime.now().year)
 
 @route('/contact')
 @view('contact')
 def contact():
-    """Renders the contact page."""
     return dict(
         title='Contact',
         message='Your contact page.',
@@ -23,7 +21,6 @@ def contact():
 @route('/about')
 @view('about')
 def about():
-    """Renders the about page."""
     return dict(
         title='About',
         message='Your application description page.',
@@ -32,8 +29,7 @@ def about():
 
 @route('/floid_method')
 @view('floid_method')
-def contact():
-    """Renders the Floid method page."""
+def floid_method():
     return dict(
         title='Floyd Warshall algorithm',
         year=datetime.now().year
@@ -41,8 +37,7 @@ def contact():
 
 @route('/prim_method')
 @view('prim_method')
-def contact():
-    """Renders the Prim method page."""
+def prim_method():
     return dict(
         title='Prim algorithm',
         year=datetime.now().year
@@ -50,8 +45,7 @@ def contact():
 
 @route('/crascal_method')
 @view('crascal_method')
-def contact():
-    """Renders the Crascal method page."""
+def crascal_method():
     return dict(
         title='Crascal algorithm',
         year=datetime.now().year
@@ -59,9 +53,38 @@ def contact():
 
 @route('/dijkstra_method')
 @view('dijkstra_method')
-def contact():
-    """Renders the Dijkstra method page."""
+def dijkstra_method():
     return dict(
         title='Dijkstra algorithm',
         year=datetime.now().year
     )
+
+@post('/generate_graph')
+def handle_generate_graph():
+    data = request.json
+    vertex_count = data['vertexCount']
+    result = generate_graph(vertex_count)
+    response.content_type = 'application/json'
+    return json.dumps(result)
+
+@post('/prim')
+def handle_prim():
+    data = request.json
+    vertex_count = data['vertexCount']
+    edges = data['edges']
+    start_vertex = data['startVertex']
+    result = prim_algorithm(vertex_count, edges, start_vertex)
+    response.content_type = 'application/json'
+    return json.dumps(result)
+
+def setup_routes(app):
+    app.route('/', method='GET', callback=home)
+    app.route('/home', method='GET', callback=home)
+    app.route('/contact', method='GET', callback=contact)
+    app.route('/about', method='GET', callback=about)
+    app.route('/floid_method', method='GET', callback=floid_method)
+    app.route('/prim_method', method='GET', callback=prim_method)
+    app.route('/crascal_method', method='GET', callback=crascal_method)
+    app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
+    app.route('/generate_graph', method='POST', callback=handle_generate_graph)
+    app.route('/prim', method='POST', callback=handle_prim)
