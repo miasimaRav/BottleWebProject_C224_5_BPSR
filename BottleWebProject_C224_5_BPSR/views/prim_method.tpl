@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title='Prim\'s Algorithm')
+% rebase('layout.tpl', title="Prim's Algorithm")
 <div class="prim-container">
     <!-- Theory -->
     <section class="theory">
@@ -33,15 +33,38 @@
         </div>
         <div class="graph-section">
             <h3>Graph</h3>
-            <div id="graph" style="height: 400px; border: 1px solid #ccc;"></div>
+            <div id="graph" style="height: 400px; width: 100%; border: 1px solid #ccc;"></div>
             <p>Click a vertex to select the starting point.</p>
         </div>
         <div class="mst-section">
             <h3>Minimum Spanning Tree</h3>
-            <div id="mst" style="height: 400px; border: 1px solid #ccc;"></div>
-            <p id="mst-weight">Total Weight: </p>
+            <div id="mst" style="height: 400px; width: 100%; border: 1px solid #ccc;"></div>
+            <p id="mst-weight" class="mst-weight">Total Weight: </p>
         </div>
     </div>
 </div>
+<style>
+.mst-weight {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    background: linear-gradient(90deg, #AFD9C3, #B8DFDC, #6CAEBC);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mst-weight.updated {
+    animation: highlight 0.5s ease;
+}
+
+@keyframes highlight {
+    0% { transform: scale(1); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+    50% { transform: scale(1.05); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
+    100% { transform: scale(1); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
+}
+</style>
 <script src="/static/scripts/vis.min.js"></script>
-<script src="/static/scripts/prim.js"></script>
+<script src="/static/scripts/prim_method.js"></script>
