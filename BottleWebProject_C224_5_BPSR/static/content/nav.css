@@ -1,0 +1,47 @@
+.navbar-custom {
+    background-color: #a8d5ba; /* тёмно-мятный */
+    border: none;
+    border-radius: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+    /* Основной текст */
+    .navbar-custom .navbar-brand,
+    .navbar-custom .nav > li > a {
+        color: #1b5e20;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+        /* При наведении */
+        .navbar-custom .nav > li > a:hover,
+        .navbar-custom .nav > li > a:focus {
+            background-color: #cdeedd; /* светлая мята */
+            color: #145a32;
+        }
+
+    /* Dropdown меню */
+    .navbar-custom .dropdown-menu {
+        background-color: #b2dfca;
+        border: none;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+        .navbar-custom .dropdown-menu > li > a {
+            color: #1b5e20;
+        }
+
+            .navbar-custom .dropdown-menu > li > a:hover,
+            .navbar-custom .dropdown-menu > li > a:focus {
+                background-color: #a5d6a7;
+                color: #0d4728;
+            }
+
+    /* Кнопка-гамбургер (иконки меню на мобилках) */
+    .navbar-custom .navbar-toggle {
+        border-color: #2e7d32;
+    }
+
+    .navbar-custom .icon-bar {
+        background-color: #2e7d32;
+    }

@@ -1,0 +1,47 @@
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    display: inline-block;
+    position: relative;
+}
+
+.navbar a {
+    display: block;
+    padding: 15px 20px;
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+.navbar li:hover > ul {
+    display: block;
+}
+
+.navbar li ul {
+    display: none;
+    position: absolute;
+    background-color: #c8f7dc; 
+    padding: 0;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+    .navbar li ul li {
+        display: block;
+    }
+
+        .navbar li ul li a {
+            white-space: nowrap;
+            padding: 10px 20px;
+            color: #2e7d32;
+            font-size: 1.1em;
+        }
+
+            .navbar li ul li a:hover {
+                background-color: #b2e6c2;
+                color: #1b5e20;
+            }
