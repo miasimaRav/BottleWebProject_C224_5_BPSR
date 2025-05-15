@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const graphContainer = document.getElementById('graph');
     const mstContainer = document.getElementById('mst');
     const mstWeight = document.getElementById('mst-weight');
+    const edgeWeightList = document.querySelector('.edge-weight-list');
 
     let graphNetwork = null;
     let mstNetwork = null;
@@ -24,15 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const vertexCount = parseInt(vertexCountInput.value);
         const weightMode = weightModeSelect.value;
 
-        if (vertexCount < 1 || vertexCount > 20) {
-            alert('Number of vertices must be between 1 and 20');
+        if (vertexCount < 1 || vertexCount > 12) {
+            alert('Number of vertices must be between 1 and 12');
             return;
         }
 
         // Очистка предыдущих данных
         edgeInputDiv.style.display = 'none';
-        edgeForm.innerHTML = '';
+        edgeWeightList.innerHTML = '';
         mstWeight.textContent = 'Total Weight: ';
+        mstWeight.classList.remove('updated');
         if (graphNetwork) graphNetwork.destroy();
         if (mstNetwork) mstNetwork.destroy();
 
@@ -40,13 +42,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (weightMode === 'manual') {
             for (let i = 0; i < vertexCount; i++) {
                 for (let j = i + 1; j < vertexCount; j++) {
-                    edgeForm.innerHTML += `
-                        <label>Edge Weight ${i + 1}-${j + 1}:</label>
-                        <input type="number" id="edge-${i}-${j}" min="1" required>
+                    edgeWeightList.innerHTML += `
+                        <div class="weight-row">
+                            <label>Edge ${i + 1}-${j + 1}:</label>
+                            <input type="number" id="edge-${i}-${j}" min="1" required>
+                        </div>
                     `;
                 }
             }
-            edgeForm.innerHTML += '<button type="submit">Confirm</button>';
             edgeInputDiv.style.display = 'block';
 
             edgeForm.onsubmit = async (e) => {
@@ -65,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 await renderGraph(vertexCount, edges);
             };
         } else {
-            // Автоматический режим: запрос на сервер
             try {
                 const response = await fetch('/generate_graph', {
                     method: 'POST',
@@ -88,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const nodes = Array.from({ length: vertexCount }, (_, i) => ({ id: i, label: `${i + 1}` }));
         const visEdges = edges.map(e => ({ from: e.from, to: e.to, label: `${e.weight}` }));
 
-        // Очистка и настройка контейнера
         graphContainer.innerHTML = '';
         graphContainer.style.height = '400px';
         graphContainer.style.width = '100%';
@@ -114,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     const { mstEdges, totalWeight } = await response.json();
 
-                    // Очистка и настройка контейнера MST
                     mstContainer.innerHTML = '';
                     mstContainer.style.height = '400px';
                     mstContainer.style.width = '100%';
@@ -125,6 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     };
                     mstNetwork = new vis.Network(mstContainer, mstData, options);
                     mstWeight.textContent = `Total Weight: ${totalWeight}`;
+                    mstWeight.classList.add('updated');
                 } catch (error) {
                     console.error('Ошибка при построении MST:', error);
                     alert('Не удалось построить MST. Проверьте консоль для деталей.');

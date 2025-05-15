@@ -28,7 +28,7 @@
             <div class="developer">
                 <img src="/static/resources/images/daria.jpg" alt="Daria Ravilova" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">
                 <h3>Daria Ravilova</h3>
-                <p>Done the Russian localization of the site and developed a page for the Floyd-Warshall algorithm.</p>
+                <p>Developed a page for the Floyd-Warshall algorithm.</p>
             </div>
             <div class="developer">
                 <img src="/static/resources/images/karina.jpg" alt="Karina Balabanova" onclick="this.parentElement.classList.add('pulse'); setTimeout(() => this.parentElement.classList.remove('pulse'), 1000);">

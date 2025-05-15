@@ -1,4 +1,5 @@
 % rebase('layout.tpl', title="Prim's Algorithm")
+<link rel="stylesheet" href="/static/content/prim_method_styles.css">
 <div class="prim-container">
     <!-- Theory -->
     <section class="theory">
@@ -17,18 +18,21 @@
         <div class="input-section">
             <h3>Input Data</h3>
             <form id="vertex-form">
-                <label>Number of Vertices (1-20):</label>
-                <input type="number" id="vertex-count" min="1" max="20" required>
+                <label>Number of Vertices (1-12):</label>
+                <input type="number" id="vertex-count" min="1" max="12" required>
                 <label>Edge Weight Mode:</label>
                 <select id="weight-mode">
                     <option value="manual">Manual</option>
                     <option value="auto">Automatic</option>
                 </select>
-                <button type="submit">Create Graph</button>
+                <button type="submit" class="create-graph-btn">Create Graph</button>
             </form>
-            <div id="edge-input" style="display: none;">
+            <div id="edge-input">
                 <h4>Enter Edge Weights</h4>
-                <form id="edge-form"></form>
+                <form id="edge-form">
+                    <div class="edge-weight-list"></div>
+                    <button type="submit" class="confirm-btn">Confirm</button>
+                </form>
             </div>
         </div>
         <div class="graph-section">
@@ -43,28 +47,5 @@
         </div>
     </div>
 </div>
-<style>
-.mst-weight {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #2c3e50;
-    background: linear-gradient(90deg, #AFD9C3, #B8DFDC, #6CAEBC);
-    padding: 10px 20px;
-    border-radius: 8px;
-    display: inline-block;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mst-weight.updated {
-    animation: highlight 0.5s ease;
-}
-
-@keyframes highlight {
-    0% { transform: scale(1); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
-    50% { transform: scale(1.05); box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); }
-    100% { transform: scale(1); box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); }
-}
-</style>
 <script src="/static/scripts/vis.min.js"></script>
 <script src="/static/scripts/prim_method.js"></script>
