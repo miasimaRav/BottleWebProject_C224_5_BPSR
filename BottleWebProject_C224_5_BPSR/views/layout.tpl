@@ -24,20 +24,30 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                
-                <li><a href="/about?lang={{request.lang}}">{{request.translations['layout']['about']}}</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        {{request.translations['layout']['algorithms']}} <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a href="/crascal_method?lang={{request.lang}}">{{request.translations['layout']['kruskal']}}</a></li>
-                        <li><a href="/prim_method?lang={{request.lang}}">{{request.translations['layout']['prim']}}</a></li>
-                        <li><a href="/dijkstra_method?lang={{request.lang}}">{{request.translations['layout']['dijkstra']}}</a></li>
-                        <li><a href="/floid_method?lang={{request.lang}}">{{request.translations['layout']['floyd']}}</a></li>
-                    </ul>
-                </li>
-            </ul>
+    <li><a href="/about?lang={{request.lang}}">{{request.translations['layout']['about']}}</a></li>
+
+   
+   
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            {{request.translations['layout']['algorithms']}} <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+            <li><a href="/crascal_method?lang={{request.lang}}">{{request.translations['layout']['kruskal']}}</a></li>
+            <li><a href="/prim_method?lang={{request.lang}}">{{request.translations['layout']['prim']}}</a></li>
+            <li><a href="/dijkstra_method?lang={{request.lang}}">{{request.translations['layout']['dijkstra']}}</a></li>
+            <li><a href="/floid_method?lang={{request.lang}}">{{request.translations['layout']['floyd']}}</a></li>
+        </ul>
+         <li>
+   <a href="/FAQ?lang={{request.lang}}">
+    Questions
+</a>
+
+</li>
+
+    </li>
+</ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
