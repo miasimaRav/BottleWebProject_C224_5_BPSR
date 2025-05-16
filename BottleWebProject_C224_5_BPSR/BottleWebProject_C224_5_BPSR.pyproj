@@ -58,7 +58,7 @@
     <Content Include="static\content\drop.css">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="static\content\floid_method_style.css" />
+    <Content Include="static\content\methods_pages_styles.css" />
     <Content Include="static\content\menu_view.css">
       <SubType>Code</SubType>
     </Content>

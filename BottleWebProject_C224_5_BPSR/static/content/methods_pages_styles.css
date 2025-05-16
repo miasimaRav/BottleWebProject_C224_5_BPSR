@@ -1,5 +1,6 @@
+/* Header Styles */
 .floyd-header {
-    background: linear-gradient(135deg, #e8fcef 0%, #c8e6c9 50%, #a5d6a7 100%);
+    background: #ffffff;
     border-radius: 14px;
     padding: 40px 30px;
     margin-bottom: 40px;
@@ -24,6 +25,7 @@
         line-height: 1.5;
     }
 
+/* Matrix Styles */
 .matrix-container {
     display: flex;
     justify-content: center;
@@ -64,35 +66,33 @@
         background-color: #e8f5e9;
     }
 
-.btn-generate {
-    background-color: #81c784;
-    color: white;
-    border: none;
-    margin-left: 10px;
-}
-
-    .btn-generate:hover {
-        background-color: #66bb6a;
-    }
-
+/* Button Styles */
 .btn-calculate {
     background-color: #81c784;
+    margin: 15px 5px;
     color: white;
     border: none;
     padding: 10px 20px;
-    margin: 15px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
     .btn-calculate:hover {
         background-color: #1b5e20;
+        transform: translateY(-2px);
+        color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 
+/* Result Section */
 .result-section {
     margin-top: 30px;
     display: none;
 }
 
-
+/* Control Panel */
 .control-panel {
     display: flex;
     justify-content: center;
@@ -107,7 +107,7 @@
     margin: 15px 5px;
 }
 
-/* Theory Section Styles */
+/* Theory Section */
 .theory-section {
     background-color: #f8fdf9;
     padding: 25px;
@@ -120,6 +120,8 @@
     color: #2e7d32;
     border-bottom: 2px solid #d5f5dc;
     padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .theory-subtitle {
@@ -169,7 +171,7 @@
         color: #1b5e20;
     }
 
-/* Example Section Styles */
+/* Example Section */
 .example-section {
     background-color: #e8f5e9;
     padding: 20px;
@@ -233,3 +235,22 @@
     padding-left: 25px;
     color: #333;
 }
+
+/* Custom Scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 6px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #2e7d32;
+    border-radius: 6px;
+}
+
+    body::-webkit-scrollbar-thumb:hover {
+        background: #2e7d32;
+    }
