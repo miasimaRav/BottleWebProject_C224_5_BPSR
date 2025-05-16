@@ -3,73 +3,44 @@
     background: #ffffff; /* Белый фон для заголовка */
     border-radius: 14px; /* Скругление углов с радиусом 14px */
     padding: 40px 30px; /* Внутренние отступы: 40px сверху/снизу, 30px слева/справа */
-    margin-bottom: 40px; /* Отступ снизу 40px для разделения с содержимым */
+    margin-bottom: 20px; /* Уменьшен отступ снизу до 20px */
     box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Лёгкая тень для эффекта подъёма */
-    text-align: center; /* Центрирование текста и элементов внутри */
     border: 1px solid rgba(255,255,255,0.3); /* Тонкая граница с прозрачностью 30% */
+    position: relative; /* Для позиционирования кнопки */
+    display: flex; /* Используем flex для центрирования контента */
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center; /* Центрирование по горизонтали */
 }
 
-    .floyd-header h1 {
-        font-weight: 600; /* Средняя жирность шрифта для заголовка */
-        color: #2e7d32; /* Зелёный цвет текста */
-        font-size: 3rem; /* Большой размер шрифта (48px при базовом 16px) */
-        margin-bottom: 15px; /* Отступ снизу 15px */
-        text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Лёгкая тень текста для глубины */
-    }
-
-    .floyd-header .lead {
-        font-size: 1.8rem; /* Большой размер шрифта для ведущего текста (28.8px) */
-        color: #1b5e20; /* Более тёмный зелёный цвет */
-        max-width: 700px; /* Максимальная ширина для ограничения текста */
-        margin: 0 auto; /* Центрирование текста по горизонтали */
-        line-height: 1.5; /* Высота строки в 1.5 раза больше размера шрифта */
-    }
-
-/* Стили для матрицы */
-.matrix-container {
-    display: flex; /* Использование Flexbox для горизонтального расположения */
-    justify-content: center; /* Центрирование содержимого по горизонтали */
-    margin: 20px 0; /* Отступы сверху и снизу 20px */
-    overflow-x: auto; /* Горизонтальная прокрутка при переполнении */
+.header-content {
+    max-width: 700px; /* Ограничение ширины текста */
+    text-align: center; /* Центрирование содержимого внутри */
 }
 
-.matrix-table {
-    border-collapse: separate; /* Разделение ячеек таблицы */
-    border-spacing: 5px; /* Расстояние между ячейками 5px */
-    margin: 0 10px; /* Отступы слева и справа 10px */
+.floyd-header h1 {
+    font-weight: 600; /* Средняя жирность шрифта для заголовка */
+    color: #2e7d32; /* Зелёный цвет текста */
+    font-size: 3rem; /* Большой размер шрифта (48px при базовом 16px) */
+    margin-bottom: 15px; /* Отступ снизу 15px */
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Лёгкая тень текста для глубины */
 }
 
-    .matrix-table th, .matrix-table td {
-        padding: 8px; /* Внутренние отступы 8px */
-        text-align: center; /* Центрирование текста внутри ячеек */
-        background-color: #f8fdf9; /* Светло-зелёный фон */
-        border: 1px solid #d5f5dc; /* Тонкая зелёная граница */
-        border-radius: 4px; /* Скругление углов 4px */
-        min-width: 50px; /* Минимальная ширина ячейки 50px */
-    }
+.floyd-header .lead {
+    font-size: 1.8rem; /* Большой размер шрифта для ведущего текста (28.8px) */
+    color: #1b5e20; /* Более тёмный зелёный цвет */
+    line-height: 1.5; /* Высота строки в 1.5 раза больше размера шрифта */
+    text-align: left; /* Выравнивание текста по левому краю */
+}
 
-    .matrix-table th {
-        background-color: #d5f5dc; /* Более тёмный фон для заголовков */
-        color: #2e7d32; /* Зелёный цвет текста */
-        font-weight: 600; /* Средняя жирность шрифта */
-    }
-
-    .matrix-table input {
-        width: 60px; /* Ширина поля ввода 60px */
-        padding: 5px; /* Внутренние отступы 5px */
-        text-align: center; /* Центрирование текста внутри поля */
-        border: 1px solid #c8e6c9; /* Тонкая зелёная граница */
-        border-radius: 3px; /* Скругление углов 3px */
-    }
-
-    .matrix-table .diagonal {
-        background-color: #e8f5e9; /* Отличный фон для диагональных элементов */
-    }
+.header-button {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+}
 
 /* Стили для кнопок */
 .btn-calculate {
     background-color: #81c784; /* Зелёный фон кнопки */
-    margin: 15px 5px; /* Отступы: 15px сверху/снизу, 5px слева/справа */
     color: white; /* Белый цвет текста */
     border: none; /* Удаление стандартной границы */
     padding: 10px 20px; /* Внутренние отступы: 10px сверху/снизу, 20px слева/справа */
@@ -79,32 +50,11 @@
     transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные переходы для фона и трансформации */
 }
 
-    .btn-calculate:hover {
-        background-color: #1b5e20; /* Тёмно-зелёный фон при наведении */
-        transform: translateY(-2px); /* Подъём кнопки вверх на 2px */
-        color: white; /* Сохранение белого цвета текста */
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для эффекта подъёма */
-    }
-
-/* Секция результатов */
-.result-section {
-    margin-top: 30px; /* Отступ сверху 30px */
-    display: none; /* Скрытие секции по умолчанию (показывается динамически) */
-}
-
-/* Панель управления */
-.control-panel {
-    display: flex; /* Использование Flexbox */
-    justify-content: center; /* Центрирование элементов по горизонтали */
-    margin-bottom: 20px; /* Отступ снизу 20px */
-    flex-wrap: wrap; /* Разрешение переноса элементов на следующую строку */
-}
-
-.input-group {
-    margin: 0 10px; /* Отступы слева и справа 10px */
-    border: none; /* Удаление границы */
-    padding: 10px 20px; /* Внутренние отступы */
-    margin: 15px 5px; /* Переопределение отступов: 15px сверху/снизу, 5px слева/справа */
+.btn-calculate:hover {
+    background-color: #1b5e20; /* Тёмно-зелёный фон при наведении */
+    transform: translateY(-2px); /* Подъём кнопки вверх на 2px */
+    color: white; /* Сохранение белого цвета текста */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Тень для эффекта подъёма */
 }
 
 /* Секция теории */
@@ -113,144 +63,5 @@
     padding: 25px; /* Внутренние отступы 25px */
     border-radius: 12px; /* Скругление углов 12px */
     border-left: 5px solid #81c784; /* Зелёная полоса слева */
-    margin-top: 40px; /* Отступ сверху 40px */
+    margin-top: 0; /* Убрали отступ сверху */
 }
-
-.theory-title {
-    color: #2e7d32; /* Зелёный цвет текста */
-    border-bottom: 2px solid #d5f5dc; /* Зелёная линия под заголовком */
-    padding-bottom: 10px; /* Отступ снизу 10px */
-    text-align: center; /* Центрирование текста */
-    font-weight: bold; /* Жирный шрифт */
-}
-
-.theory-subtitle {
-    color: #1b5e20; /* Тёмно-зелёный цвет */
-    font-weight: 600; /* Средняя жирность */
-    margin-top: 20px; /* Отступ сверху 20px */
-}
-
-.theory-steps {
-    padding-left: 20px; /* Отступ слева 20px для списка шагов */
-}
-
-.step-title {
-    color: #1b5e20; /* Тёмно-зелёный цвет */
-    font-weight: 600; /* Средняя жирность */
-    display: block; /* Отображение как блочный элемент */
-    margin: 15px 0 5px; /* Отступы: 15px сверху, 0 слева/справа, 5px снизу */
-}
-
-.step-details {
-    padding-left: 20px; /* Отступ слева 20px для деталей */
-    color: #333; /* Тёмно-серый цвет текста */
-}
-
-.code-block {
-    background-color: #e8f5e9; /* Светло-зелёный фон для кода */
-    padding: 10px; /* Внутренние отступы 10px */
-    border-radius: 5px; /* Скругление углов 5px */
-    border-left: 3px solid #2e7d32; /* Зелёная полоса слева */
-}
-
-.complexity-table {
-    width: 100%; /* Полная ширина таблицы */
-    border-collapse: collapse; /* Удаление двойных границ между ячейками */
-    margin: 15px 0; /* Отступы сверху и снизу 15px */
-}
-
-    .complexity-table th,
-    .complexity-table td {
-        padding: 8px; /* Внутренние отступы 8px */
-        text-align: left; /* Выравнивание текста по левому краю */
-        border-bottom: 1px solid #d5f5dc; /* Нижняя граница ячеек */
-    }
-
-    .complexity-table th {
-        background-color: #e8f5e9; /* Светло-зелёный фон для заголовков */
-        color: #1b5e20; /* Тёмно-зелёный цвет текста */
-    }
-
-/* Секция примера */
-.example-section {
-    background-color: #e8f5e9; /* Светло-зелёный фон */
-    padding: 20px; /* Внутренние отступы 20px */
-    border-radius: 12px; /* Скругление углов 12px */
-    margin-top: 30px; /* Отступ сверху 30px */
-    margin-bottom: 30px; /* Отступ снизу 30px */
-}
-
-.example-title {
-    color: #2e7d32; /* Зелёный цвет текста */
-    border-bottom: 2px solid #c8e6c9; /* Зелёная линия под заголовком */
-    padding-bottom: 10px; /* Отступ снизу 10px */
-}
-
-.example-subtitle {
-    color: #1b5e20; /* Тёмно-зелёный цвет */
-    font-weight: 600; /* Средняя жирность */
-    margin: 20px 0 10px; /* Отступы: 20px сверху, 0 слева/справа, 10px снизу */
-}
-
-.graph-representation {
-    display: flex; /* Использование Flexbox */
-    gap: 20px; /* Промежуток между элементами 20px */
-    margin: 15px 0; /* Отступы сверху и снизу 15px */
-}
-
-.adjacency-matrix,
-.graph-visual {
-    flex: 1; /* Равное распределение пространства */
-    background: white; /* Белый фон */
-    padding: 15px; /* Внутренние отступы 15px */
-    border-radius: 8px; /* Скругление углов 8px */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Лёгкая тень */
-}
-
-.graph-image {
-    max-width: 100%; /* Максимальная ширина 100% контейнера */
-    height: auto; /* Автоматическая высота с сохранением пропорций */
-    border: 1px solid #c8e6c9; /* Тонкая зелёная граница */
-    border-radius: 8px; /* Скругление углов 8px */
-    padding: 5px; /* Внутренние отступы 5px */
-    background: white; /* Белый фон */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Тень */
-    margin-top: 10px; /* Отступ сверху 10px */
-}
-
-    .graph-image:hover {
-        box-shadow: 0 4px 8px rgba(0,0,0,0.15); /* Усиленная тень при наведении */
-        transition: box-shadow 0.3s ease; /* Плавный переход тени */
-    }
-
-.iteration {
-    background: white; /* Белый фон */
-    padding: 15px; /* Внутренние отступы 15px */
-    border-radius: 8px; /* Скругление углов 8px */
-    margin: 15px 0; /* Отступы сверху и снизу 15px */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Лёгкая тень */
-}
-
-.path-steps {
-    padding-left: 25px; /* Отступ слева 25px для шагов пути */
-    color: #333; /* Тёмно-серый цвет текста */
-}
-
-/* Кастомный скроллбар */
-body::-webkit-scrollbar {
-    width: 12px; /* Ширина скроллбара 12px */
-}
-
-body::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Светло-серый фон трека */
-    border-radius: 6px; /* Скругление углов трека 6px */
-}
-
-body::-webkit-scrollbar-thumb {
-    background: #2e7d32; /* Зелёный цвет ползунка */
-    border-radius: 6px; /* Скругление углов ползунка 6px */
-}
-
-    body::-webkit-scrollbar-thumb:hover {
-        background: #2e7d32; /* Сохранение цвета при наведении (без изменений) */
-    }
