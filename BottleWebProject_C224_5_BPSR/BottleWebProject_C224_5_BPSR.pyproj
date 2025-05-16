@@ -38,6 +38,7 @@
     <Compile Include="routes.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="translations\" />
     <Folder Include="resources\" />
     <Folder Include="static\" />
     <Folder Include="static\content\" />
@@ -49,12 +50,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="static\content\about_styles.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
     <Content Include="static\content\faq_styles.css" />
     <Content Include="static\content\drop.css">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="static\content\floid_method_style.css" />
     <Content Include="static\content\menu_view.css">
       <SubType>Code</SubType>
     </Content>
@@ -75,6 +80,7 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\resources\Images\artem.jpg" />
     <Content Include="static\resources\Images\daria.jpg" />
+    <Content Include="static\resources\Images\floid_graph.png" />
     <Content Include="static\resources\Images\graph_logo.png" />
     <Content Include="static\resources\Images\karina.jpg" />
     <Content Include="static\resources\Images\OIP.png" />
@@ -83,6 +89,7 @@
     <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
+    <Content Include="static\scripts\floid_method_logic.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="static\scripts\jquery-1.10.2.js" />
     <Content Include="static\scripts\jquery-1.10.2.min.js" />
@@ -100,7 +107,12 @@
     <Content Include="static\scripts\respond.min.js" />
     <Content Include="static\scripts\vis.min.js" />
     <Content Include="static\scripts\_references.js" />
-    <Content Include="views\FAQ.tpl" />
+    <Content Include="translations\en.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="translations\ru.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="views\about.tpl" />
     <Content Include="views\contact.tpl" />
     <Content Include="views\crascal_method.tpl">
