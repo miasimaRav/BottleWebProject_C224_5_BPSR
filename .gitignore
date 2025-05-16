@@ -9,11 +9,15 @@
 *.user
 *.userosscache
 *.sln.docstates
+
+# dotenv files
 .env
-.env1
-.env2
-.env3
-.env4
+env/
+env1/
+env2/
+BottleWebProject_C224_5_BPSR/env
+BottleWebProject_C224_5_BPSR/env1
+BottleWebProject_C224_5_BPSR/env2
 
 README.md
 

@@ -73,7 +73,8 @@ def dijkstra_method():
 def FAQ():
     return dict(
         title='Frequently Asked Questions',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @post('/generate_graph')
