@@ -45,6 +45,7 @@
   "prim": {
     "title": "Prim's Algorithm",
     "theory_title": "Prim's Algorithm: A Deep Dive",
+    "theory_description": "Prim's algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) in a connected weighted undirected graph. The MST is a subset of edges that connects all vertices with the minimum total edge weight, without forming any cycles.",
     "theory_how_it_works": "How It Works",
     "theory_steps": [
       "Start with an arbitrary vertex: Choose any vertex in the graph to begin. This vertex becomes the root of the MST.",
@@ -52,6 +53,31 @@
       "Repeat until all vertices are included: Continue adding edges with the smallest weights until all vertices in the graph are part of the MST."
     ],
     "theory_result": "The result is a tree that spans all vertices with the minimum possible total edge weight.",
+    "theory_example_title": "Example: Building an MST",
+    "theory_example_text": "Consider a graph with 4 vertices (A, B, C, D) and the following weighted edges:",
+    "theory_example_edges": [
+      "A-B: weight 1",
+      "A-C: weight 3",
+      "B-C: weight 3",
+      "B-D: weight 6",
+      "C-D: weight 4"
+    ],
+    "theory_example_start": "Starting from vertex A:",
+    "theory_example_steps": [
+      "Add edge A-B (weight 1), MST = {A-B}",
+      "From A or B, add edge A-C (weight 3), MST = {A-B, A-C}",
+      "From A, B, or C, add edge C-D (weight 4), MST = {A-B, A-C, C-D}"
+    ],
+    "theory_example_result": "The final MST has edges A-B, A-C, and C-D with a total weight of 8.",
+    "theory_visual_title": "Visual Example",
+    "theory_visual_text": "The above graph illustrates the example. The MST (A-B, A-C, C-D) can be traced with weights 1, 3, and 4, respectively, totaling 8.",
+    "theory_applications_title": "Applications",
+    "theory_applications_text": "Prim's algorithm has practical applications in various fields:",
+    "theory_applications_list": [
+      "Network Design: Designing efficient networks (e.g., electrical grids, telecommunications) with minimal cost.",
+      "Clustering: Grouping data points in machine learning by minimizing connection costs.",
+      "Route Optimization: Planning roads or pipelines with the least total length or cost."
+    ],
     "calculator_input_title": "Input Data",
     "calculator_input_vertices": "Number of Vertices (1-12):",
     "calculator_input_mode": "Edge Weight Mode:",

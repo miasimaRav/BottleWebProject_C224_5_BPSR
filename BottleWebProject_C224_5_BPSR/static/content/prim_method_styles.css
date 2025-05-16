@@ -291,3 +291,30 @@
     color: #555;
     margin-top: 10px;
 }
+
+/* Новые стили для скроллбара */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #e0f7f9;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #4facfe;
+    border-radius: 5px;
+    border: 2px solid #e0f7f9;
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #3e9dde;
+    }
+
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #AFD9C3 #e0f7f9;
+}
