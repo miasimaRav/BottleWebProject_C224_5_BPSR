@@ -1,30 +1,31 @@
 % rebase('layout.tpl', title=request.translations['prim']['title'], lang=request.lang, translations=request.translations, year=2025)
+<link rel="stylesheet" href="/static/content/methods_pages_styles.css">
 <link rel="stylesheet" href="/static/content/prim_method_styles.css">
-<div class="prim-container">
-    <div class="prim-header">
+<div class="method-container">
+    <div class="floyd-header">
         <h1>{{request.translations['prim']['theory_title']}}</h1>
         <p class="lead">{{request.translations['prim']['theory_description']}}</p>
     </div>
 
     <!-- Кнопка для перехода к калькулятору -->
     <div style="text-align: center; margin-bottom: 20px;">
-        <a href="#calculator" class="create-graph-btn">{{request.translations['prim']['calculator_skip_to']}}</a>
+        <a href="#calculator" class="btn-calculate">{{request.translations['prim']['calculator_skip_to']}}</a>
     </div>
 
     <!-- Theory -->
-    <section class="theory">
-        <h2>{{request.translations['prim']['theory_title']}}</h2>
+    <section class="theory-section">
+        <h2 class="theory-title">{{request.translations['prim']['theory_title']}}</h2>
         <p>{{request.translations['prim']['theory_description']}}</p>
 
-        <h3>{{request.translations['prim']['theory_how_it_works']}}</h3>
+        <h3 class="theory-subtitle">{{request.translations['prim']['theory_how_it_works']}}</h3>
         <p>{{request.translations['prim']['theory_result']}}</p>
-        <ol>
+        <ol class="theory-steps">
             % for step in request.translations['prim']['theory_steps']:
             <li>{{step}}</li>
             % end
         </ol>
 
-        <h3>{{request.translations['prim']['theory_example_title']}}</h3>
+        <h3 class="theory-subtitle">{{request.translations['prim']['theory_example_title']}}</h3>
         <p>{{request.translations['prim']['theory_example_text']}}</p>
         <ul>
             % for edge in request.translations['prim']['theory_example_edges']:
@@ -32,15 +33,15 @@
             % end
         </ul>
         <p>{{request.translations['prim']['theory_example_start']}}</p>
-        <ol>
+        <ol class="theory-steps">
             % for step in request.translations['prim']['theory_example_steps']:
             <li>{{step}}</li>
             % end
         </ol>
         <p>{{request.translations['prim']['theory_example_result']}}</p>
 
-        <h3>{{request.translations['prim']['theory_visual_title']}}</h3>
-        <div class="graph-example">
+        <h3 class="theory-subtitle">{{request.translations['prim']['theory_visual_title']}}</h3>
+        <div class="example-section">
             <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
                 <!-- Vertices -->
                 <circle cx="50" cy="50" r="20" fill="#4facfe" stroke="#2c3e50" stroke-width="2"/>
@@ -67,7 +68,7 @@
         </div>
         <p>{{request.translations['prim']['theory_visual_text']}}</p>
 
-        <h3>{{request.translations['prim']['theory_applications_title']}}</h3>
+        <h3 class="theory-subtitle">{{request.translations['prim']['theory_applications_title']}}</h3>
         <p>{{request.translations['prim']['theory_applications_text']}}</p>
         <ul>
             % for app in request.translations['prim']['theory_applications_list']:
