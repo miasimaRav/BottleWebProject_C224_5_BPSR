@@ -6,6 +6,11 @@
         <p class="lead">{{request.translations['prim']['theory_description']}}</p>
     </div>
 
+    <!-- Кнопка для перехода к калькулятору -->
+    <div style="text-align: center; margin-bottom: 20px;">
+        <a href="#calculator" class="create-graph-btn">{{request.translations['prim']['calculator_skip_to']}}</a>
+    </div>
+
     <!-- Theory -->
     <section class="theory">
         <h2>{{request.translations['prim']['theory_title']}}</h2>
@@ -72,7 +77,7 @@
     </section>
 
     <!-- Interactive Section -->
-    <div class="calculator">
+    <div class="calculator" id="calculator">
         <div class="input-section">
             <h3>{{request.translations['prim']['calculator_input_title']}}</h3>
             <form id="vertex-form">
