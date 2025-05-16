@@ -34,6 +34,7 @@
                         <li><a href="/prim_method">Prim's Algorithm</a></li>
                         <li><a href="/dijkstra_method">Dijkstra's Algorithm</a></li>
                         <li><a href="/floid_method">Floyd's Algorithm</a></li>
+                        <li><a href="/FAQ">FAQ</a></li>
                     </ul>
                 </li>
             </ul>

@@ -59,6 +59,14 @@ def dijkstra_method():
         year=datetime.now().year
     )
 
+@route('/FAQ')
+@view('FAQ')
+def FAQ():
+    return dict(
+        title='Frequently Asked Questions',
+        year=datetime.now().year
+    )
+
 @post('/generate_graph')
 def handle_generate_graph():
     data = request.json
@@ -88,3 +96,5 @@ def setup_routes(app):
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
     app.route('/generate_graph', method='POST', callback=handle_generate_graph)
     app.route('/prim', method='POST', callback=handle_prim)
+    app.route('/FAQ', method='GET', callback=FAQ)
+    
