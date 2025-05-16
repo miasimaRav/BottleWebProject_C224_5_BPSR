@@ -1,9 +1,9 @@
-﻿% rebase('layout.tpl', title="Dijkstra Method", year=2025)
+﻿% rebase('layout.tpl', title='Dijkstra algorithm', year=year)
 
 <link rel="stylesheet" href="/static/content/dijkstra_method_styles.css">
 
 
-<div class="prim-container">
+<div class="dijkstra-container">
     <!-- Theory Section -->
     <section class="theory">
         <h2>Theory</h2>
@@ -113,11 +113,12 @@
 
 
         <div class="dijkstra-result">
-            <h3>Shortest Path Result</h3>
-            <div style="height: 400px; width: 100%; border: 1px solid #ccc;">
-                <!-- Here goes visualization -->
-            </div>
-            <p class="dijkstra-result">Length: <span id="path-length">--</span></p>
+    <h3>Shortest Path Result</h3>
+    <!-- Убрали блок визуализации -->
+
+    <p class="dijkstra-result">Length: <span id="path-length">--</span></p>
+</div>
+
 
         </div>
     </div>
