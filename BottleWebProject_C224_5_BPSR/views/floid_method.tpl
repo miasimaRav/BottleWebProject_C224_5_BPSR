@@ -83,8 +83,7 @@
             <div class="graph-representation">
                 <div class="adjacency-matrix">
                     <h5>Adjacency Matrix</h5>
-                    <pre>   
-A  B   C  D
+                    <pre>   A  B   C  D
 A [0, 3, INF, 7]
 B [8, 0, 2, INF]
 C [5, INF, 0, 1]
