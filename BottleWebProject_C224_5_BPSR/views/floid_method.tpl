@@ -83,7 +83,8 @@
             <div class="graph-representation">
                 <div class="adjacency-matrix">
                     <h5>Adjacency Matrix</h5>
-                    <pre>   A  B   C  D
+                    <pre>   
+A  B   C  D
 A [0, 3, INF, 7]
 B [8, 0, 2, INF]
 C [5, INF, 0, 1]
@@ -102,7 +103,7 @@ D [2, INF, INF, 0]</pre>
     <div class="iteration-container">  <!-- контейнер для горизонтального расположения -->
         <div class="iteration">
             <h5>After k=A (Intermediate vertex A)</h5>
-            <pre>   A  B   C  D
+            <pre>   A  B   C   D
 A [0, 3, INF, 7]
 B [8, 0, 2, 15]  <-  B-D updated through A (8+7)
 C [5, 8, 0, 1]   <-  C-B updated through A (5+3)
@@ -111,11 +112,11 @@ D [2, 5, INF, 0] <-  D-B updated through A (2+3)</pre>
         
         <div class="iteration">
             <h5>Final Result (k=D)</h5>
-            <pre>   A  B  C  D
-        A [0, 3, 5,6]  <-  A-D through C (5+1)
-        B [5, 0, 2,3]  <-  B-A through D (8+2)
-        C [3, 6, 0,1]  <-  C-A through D (5+2)
-        D [2, 5, 7,0]  <-  D-C through B (INF -> 5+2)</pre>
+            <pre>   A  B  C D
+A [0, 3, 5,6]  <-  A-D through C (5+1)
+B [5, 0, 2,3]  <-  B-A through D (8+2)
+C [3, 6, 0,1]  <-  C-A through D (5+2)
+D [2, 5, 7,0]  <-  D-C through B (INF -> 5+2)</pre>
         </div>
     </div>
 </div>
