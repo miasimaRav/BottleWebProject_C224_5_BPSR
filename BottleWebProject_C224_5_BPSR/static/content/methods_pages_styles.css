@@ -223,7 +223,20 @@
         transition: box-shadow 0.3s ease; /* Плавный переход тени */
     }
 
+.iteration-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 15px 0;
+}
+
 .iteration {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    min-width: 0; /* Для правильного сжатия содержимого */
     background: white; /* Белый фон */
     padding: 15px; /* Внутренние отступы 15px */
     border-radius: 8px; /* Скругление углов 8px */
