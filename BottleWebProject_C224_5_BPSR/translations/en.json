@@ -8,7 +8,8 @@
     "floyd": "Floyd's Algorithm",
     "footer": "© {{ year }} - Algorithms",
     "edge": "Edge",
-    "algorithms_and_methods": "Algorithms and Methods"
+    "algorithms_and_methods": "Algorithms and Methods",
+    "questions": "Questions"
   },
   "about": {
     "title": "About",
@@ -92,5 +93,166 @@
     "calculator_mst_title": "Minimum Spanning Tree",
     "calculator_mst_weight": "Total Weight: ",
     "calculator_skip_to": "Go to Calculator"
+  },
+  "dijkstra": {
+    "title": "Dijkstra Algorithm",
+    "header": {
+      "title": "Dijkstra's Algorithm",
+      "description": "Find the shortest path from a single source to a specific target vertex in a weighted graph"
+    },
+    "panel": {
+      "title": "Matrix Configuration",
+      "vertices_label": "Vertices:",
+      "start_vertex_label": "Start Vertex:",
+      "end_vertex_label": "End Vertex:",
+      "generate_button": "Generate Random",
+      "calculate_button": "Find Shortest Path",
+      "adjacency_matrix_title": "Adjacency Matrix",
+      "result_title": "Shortest Path Result"
+    },
+    "theory": {
+      "title": "Algorithm Theory",
+      "concept": {
+        "title": "Concept",
+        "description": "Dijkstra's algorithm finds the shortest path from a starting node to all other nodes in a weighted graph with non-negative edge weights. It maintains a set of visited nodes and updates shortest distances using a priority queue or greedy approach."
+      },
+      "steps": {
+        "title": "Steps",
+        "initialization": {
+          "title": "Initialization",
+          "steps": [
+            "Set distance to source = 0",
+            "Set distances to all other vertices = ∞",
+            "Mark all vertices as unvisited"
+          ]
+        },
+        "relaxation": {
+          "title": "Relaxation",
+          "description": "Repeat:",
+          "steps": [
+            "Choose unvisited vertex with smallest distance",
+            "Update distances to its neighbors if a shorter path is found",
+            "Mark current vertex as visited"
+          ]
+        },
+        "termination": {
+          "title": "Termination",
+          "description": "When all vertices are visited, algorithm ends. Distances represent the shortest paths from source to all other nodes."
+        }
+      }
+    },
+    "example": {
+      "title": "Example",
+      "initial_graph": {
+        "title": "Initial Graph",
+        "adjacency_matrix_title": "Adjacency Matrix",
+        "adjacency_matrix": "    A   B   C   D   E\nA [ 0,  50, INF, INF, 90]\nB [INF,  0,  90, INF, INF]\nC [INF, INF,  0,  80,  60]\nD [INF, INF, INF,  0,  70]\nE [INF, INF, INF, INF,  0]",
+        "graph_visualization_title": "Graph Visualization"
+      },
+      "execution": {
+        "title": "Step-by-Step Execution from A (source)",
+        "iterations": [
+          {
+            "title": "Iteration 1 (Start at A)",
+            "content": "Visited: A\nDistances: A=0, B=50, C=∞, D=∞, E=90"
+          },
+          {
+            "title": "Iteration 2 (Choose B)",
+            "content": "Visited: A, B\nDistances: A=0, B=50, C=140 (via B), D=∞, E=90"
+          },
+          {
+            "title": "Iteration 3 (Choose E)",
+            "content": "Visited: A, B, E\nDistances: A=0, B=50, C=140, D=160 (via E), E=90"
+          },
+          {
+            "title": "Iteration 4 (Choose C)",
+            "content": "Visited: A, B, E, C\nDistances: A=0, B=50, C=140, D=160, E=90"
+          },
+          {
+            "title": "Iteration 5 (Choose D)",
+            "content": "Visited: A, B, E, C, D\nDistances: A=0, B=50, C=140, D=160, E=90"
+          }
+        ]
+      },
+      "final_result": {
+        "title": "Final Shortest Distances from A",
+        "content": "\n A → B → C → D (50 + 90 + 80 = 220)\n A → E → D (90 + 70 = 160)\n A → B → C → E → D (50 + 90 + 60 + 70 = 270)\n\n**Shortest Path from A to D:** A → E → D with total weight = 160"
+      }
+    }
+  },
+  "floyd": {
+    "title": "Floyd Algorithm",
+    "header": {
+      "title": "Floyd-Warshall Algorithm",
+      "description": "Find shortest paths between all pairs of vertices in a weighted graph"
+    },
+    "panel": {
+      "title": "Matrix Configuration",
+      "vertices_label": "Vertices:",
+      "generate_button": "Generate Random",
+      "calculate_button": "Calculate Paths",
+      "input_matrix_title": "Input Matrix",
+      "result_title": "Result Matrix (Shortest Paths)"
+    },
+    "theory": {
+      "title": "Algorithm Theory",
+      "core_principle": {
+        "title": "Core Principle",
+        "description": "The Floyd-Warshall algorithm solves the all-pairs shortest path problem through dynamic programming. It builds a solution by gradually improving shortest path estimates between all vertex pairs."
+      },
+      "steps": {
+        "title": "Algorithm Steps",
+        "initialization": {
+          "title": "Initialization Phase",
+          "description": "Create distance matrix D where:",
+          "steps": [
+            "D[i][j] = weight of edge from i to j (if exists)",
+            "D[i][j] = INF if no direct connection",
+            "D[i][i] = 0 for all vertices"
+          ]
+        },
+        "relaxation": {
+          "title": "Relaxation Phase",
+          "description": "For each intermediate vertex k (from 1 to n):",
+          "code": "D[i][j] = min(D[i][j], D[i][k] + D[k][j])",
+          "text": "This checks if path through k is shorter than current estimate."
+        },
+        "termination": {
+          "title": "Result Interpretation",
+          "description": "Final matrix contains shortest paths between all pairs. Negative values on diagonal indicate negative cycles."
+        }
+      }
+    },
+    "example": {
+      "title": "Detailed Example",
+      "initial_graph": {
+        "title": "Initial Graph",
+        "adjacency_matrix_title": "Adjacency Matrix",
+        "adjacency_matrix": "   A  B   C  D\nA [0, 3, INF, 7]\nB [8, 0, 2, INF]\nC [5, INF, 0, 1]\nD [2, INF, INF, 0]",
+        "graph_visualization_title": "Graph Visualization"
+      },
+      "execution": {
+        "title": "Iteration Process",
+        "iterations": [
+          {
+            "title": "After k=A (Intermediate vertex A)",
+            "content": "   A  B   C   D\nA [0, 3, INF, 7]\nB [8, 0, 2, 15]  <-  B-D updated through A (8+7)\nC [5, 8, 0, 1]   <-  C-B updated through A (5+3)\nD [2, 5, INF, 0] <-  D-B updated through A (2+3)"
+          },
+          {
+            "title": "Final Result (k=D)",
+            "content": "   A  B  C D\nA [0, 3, 5,6]  <-  A-D through C (5+1)\nB [5, 0, 2,3]  <-  B-A through D (8+2)\nC [3, 6, 0,1]  <-  C-A through D (5+2)\nD [2, 5, 7,0]  <-  D-C through B (INF -> 5+2)"
+          }
+        ]
+      },
+      "path_reconstruction": {
+        "title": "Path Reconstruction",
+        "description": "To find path from B to D (cost=3):",
+        "steps": [
+          "Check intermediate vertices in reverse order",
+          "B -> A -> D (cost 8+7=15) -> not optimal",
+          "B -> C -> D (cost 2+1=3) <- optimal path"
+        ]
+      }
+    }
   }
 }

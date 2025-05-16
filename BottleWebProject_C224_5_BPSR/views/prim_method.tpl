@@ -9,6 +9,7 @@
             <h1>{{request.translations['prim']['theory_title']}}</h1>
             <p class="lead">{{request.translations['prim']['theory_description']}}</p>
         </div>
+        <!-- Кнопка "Перейти к калькулятору" в правом нижнем углу заголовка -->
         <div class="header-button">
             <a href="#calculator" class="btn-calculate">{{request.translations['prim']['calculator_skip_to']}}</a>
         </div>
@@ -97,7 +98,7 @@
             </form>
             <div id="edge-input">
                 <h4>{{request.translations['prim']['calculator_input_weights_title']}}</h4>
-                <form id="edge-form">
+            <form id="edge-form">
                     <div class="edge-weight-list"></div>
                     <button type="submit" class="confirm-btn">{{request.translations['prim']['calculator_input_confirm']}}</button>
                 </form>
