@@ -1,5 +1,7 @@
 % rebase('layout.tpl', title='Algorithms and Graphs', year=year)
 
+ <link rel="stylesheet" href="/static/content/site.css"> 
+
 <div class="jumbotron">
     <h1>Algorithms and Methods</h1>
     <p class="lead">Need help solving graph problems with visual clarity? Choose the algorithm you need and calculate with ease!</p>
@@ -36,17 +38,11 @@
         </div>
     </div>
 
-    <div class="panel panel-default">
+    <div class="panel panel-default mt-4">
         <div class="panel-heading">
             <h4 class="panel-title">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#about">About the Authors</button>
+                <a class="btn btn-link" href="/FAQ">Frequently Asked Questions</a>
             </h4>
-        </div>
-        <div id="about" class="panel-collapse collapse">
-            <div class="panel-body">
-                Learn more about the developers behind this project and their goals in creating accessible graph algorithm tools.
-                <p><a class="btn btn-default" href="/about">Learn more &raquo;</a></p>
-            </div>
         </div>
     </div>
 </div>
