@@ -119,6 +119,7 @@
       <SubType>Code</SubType>
     </Content>
     <Content Include="views\dijkstra_method.tpl" />
+    <Content Include="views\FAQ.tpl" />
     <Content Include="views\index.tpl" />
     <Content Include="views\layout.tpl" />
     <Content Include="views\floid_method.tpl" />
