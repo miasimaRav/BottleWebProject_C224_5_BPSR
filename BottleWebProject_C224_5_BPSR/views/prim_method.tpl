@@ -1,10 +1,10 @@
-% rebase('layout.tpl', title=request.translations['prim']['title'], year=2025)
+% rebase('layout.tpl', title=request.translations['prim']['title'], lang=request.lang, translations=request.translations, year=2025)
 <link rel="stylesheet" href="/static/content/prim_method_styles.css">
 <div class="prim-container">
     <!-- Theory -->
     <section class="theory">
         <h2>{{request.translations['prim']['theory_title']}}</h2>
-        <p>Prim's algorithm is a <strong>greedy algorithm</strong> used to find the Minimum Spanning Tree (MST) in a connected weighted undirected graph. The MST is a subset of edges that connects all vertices with the minimum total edge weight, without forming any cycles.</p>
+        <p>{{request.translations['prim']['theory_description']}}</p>
 
         <h3>{{request.translations['prim']['theory_how_it_works']}}</h3>
         <p>{{request.translations['prim']['theory_result']}}</p>
@@ -13,6 +13,57 @@
             <li>{{step}}</li>
             % end
         </ol>
+
+        <h3>{{request.translations['prim']['theory_example_title']}}</h3>
+        <p>{{request.translations['prim']['theory_example_text']}}</p>
+        <ul>
+            % for edge in request.translations['prim']['theory_example_edges']:
+            <li>{{edge}}</li>
+            % end
+        </ul>
+        <p>{{request.translations['prim']['theory_example_start']}}</p>
+        <ol>
+            % for step in request.translations['prim']['theory_example_steps']:
+            <li>{{step}}</li>
+            % end
+        </ol>
+        <p>{{request.translations['prim']['theory_example_result']}}</p>
+
+        <h3>{{request.translations['prim']['theory_visual_title']}}</h3>
+        <div class="graph-example">
+            <svg width="300" height="200" xmlns="http://www.w3.org/2000/svg">
+                <!-- Vertices -->
+                <circle cx="50" cy="50" r="20" fill="#4facfe" stroke="#2c3e50" stroke-width="2"/>
+                <text x="50" y="55" text-anchor="middle" fill="white" font-size="16">A</text>
+                <circle cx="150" cy="50" r="20" fill="#4facfe" stroke="#2c3e50" stroke-width="2"/>
+                <text x="150" y="55" text-anchor="middle" fill="white" font-size="16">B</text>
+                <circle cx="150" cy="150" r="20" fill="#4facfe" stroke="#2c3e50" stroke-width="2"/>
+                <text x="150" y="155" text-anchor="middle" fill="white" font-size="16">C</text>
+                <circle cx="250" cy="150" r="20" fill="#4facfe" stroke="#2c3e50" stroke-width="2"/>
+                <text x="250" y="155" text-anchor="middle" fill="white" font-size="16">D</text>
+
+                <!-- Edges with weights -->
+                <line x1="50" y1="50" x2="150" y2="50" stroke="#2c3e50" stroke-width="2"/>
+                <text x="100" y="40" text-anchor="middle" fill="#2c3e50" font-size="14">1</text>
+                <line x1="50" y1="50" x2="150" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                <text x="90" y="110" text-anchor="middle" fill="#2c3e50" font-size="14">3</text>
+                <line x1="150" y1="50" x2="150" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                <text x="160" y="100" text-anchor="middle" fill="#2c3e50" font-size="14">3</text>
+                <line x1="150" y1="50" x2="250" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                <text x="200" y="90" text-anchor="middle" fill="#2c3e50" font-size="14">6</text>
+                <line x1="150" y1="150" x2="250" y2="150" stroke="#2c3e50" stroke-width="2"/>
+                <text x="200" y="140" text-anchor="middle" fill="#2c3e50" font-size="14">4</text>
+            </svg>
+        </div>
+        <p>{{request.translations['prim']['theory_visual_text']}}</p>
+
+        <h3>{{request.translations['prim']['theory_applications_title']}}</h3>
+        <p>{{request.translations['prim']['theory_applications_text']}}</p>
+        <ul>
+            % for app in request.translations['prim']['theory_applications_list']:
+            <li>{{app}}</li>
+            % end
+        </ul>
     </section>
 
     <!-- Interactive Section -->
