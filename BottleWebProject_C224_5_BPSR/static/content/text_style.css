@@ -1,8 +1,13 @@
+﻿/* Стили текста для body */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #333;
+}
+
+/* Стили текста для заголовков */
 h1, h2, h3, h4 {
     text-align: center;
     font-family: 'Open Sans', Arial, sans-serif;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
     font-weight: 700;
     color: #2e7d32;
 }
@@ -23,28 +28,127 @@ h4 {
     font-size: 20px;
 }
 
+/* Стили текста для параграфов */
 p {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     text-indent: 1.25em;
-    margin-bottom: 1em;
     color: #333;
 }
 
+/* Стили текста для панелей */
+.panel-body {
+    font-size: 18px;
+    line-height: 1.5;
+    text-indent: 1.25em;
+    color: #333;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+    .panel-heading h4 {
+        text-align: center;
+        font-size: 20px;
+        color: #2e7d32;
+    }
+
+/* Стили текста для кнопок .btn-default */
+.btn-default {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    text-indent: 1.25em;
+}
+
+    .btn-default:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для навигации */
+.navbar-custom .navbar-brand {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.navbar-custom .nav > li > a {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+    .navbar-custom .nav > li > a:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для выпадающего меню */
+.dropdown-menu > li > a {
+    color: #2e7d32;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+    .dropdown-menu > li > a:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для футера */
+footer {
+    font-size: 16px;
+    color: #2e7d32;
+    text-align: center;
+}
+
+/* Стили текста для .square-btn */
+.square-btn {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+}
+
+    .square-btn:hover {
+        color: #1b5e20;
+    }
+
+    .square-btn h4 {
+        font-weight: 700;
+        font-size: 22px;
+        color: inherit;
+        text-align: center;
+    }
+
+    .square-btn p {
+        font-size: 18px;
+        font-weight: normal;
+        color: inherit;
+        line-height: 1.5;
+        text-indent: 1.25em;
+    }
+
+    .square-btn span {
+        font-weight: 600;
+        color: inherit;
+    }
+
+/* Стили текста для .well, .card, .panel-body */
 .well, .card, .panel-body {
-    border-radius: 12px;
-    background-color: #e8fcef;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-size: 16px;
     color: #333;
 }
 
-.panel-heading h4 {
+#about .panel-body {
+    color: #2e7d32; /* тёмно-зелёный */
+    padding: 10px; /* внутренние отступы */
+    font-size: 18px;
+    line-height: 1.5;
     text-align: center;
-    font-size: 20px;
-    color: #2e7d32;
-    margin: 0;
+    text-indent: 1.25em; /* отступ первой строки */
 }
+
+

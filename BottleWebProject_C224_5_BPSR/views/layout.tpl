@@ -4,9 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Algorithm</title>
-    <link rel="stylesheet" href="/static/content/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/content/menu_view.css"> 
     <link rel="stylesheet" href="/static/content/drop.css"> 
+    <link rel="stylesheet" href="/static/content/text_style.css"> 
+    <link rel="stylesheet" href="/static/content/cont.css"> 
 </head>
 
 <body>
@@ -14,7 +18,7 @@
     <div class="container">
         <div class="navbar-header">
             <a class="navbar-brand" href="/home">
-                <img src="/static/images/graph_logo.png" style="height: 40px;">
+                <img src="/static/resources/Images/log.png">
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavbar">
                 <span class="icon-bar"></span>
@@ -42,11 +46,14 @@
 </nav>
 
 
-    <div class="container body-content">
-        {{!base}}
-        <footer>
-            <p>&copy; {{ year }} - Algorithms</p>
-        </footer>
+<body>
+    <div class="wrapper">
+        <div class="container body-content">
+            {{!base}}
+        </div>
     </div>
+
+    <footer>
+        <p>&copy; {{ year }} - Algorithms</p>
+    </footer>
 </body>
-</html>
