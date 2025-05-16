@@ -1,4 +1,273 @@
-/* Сумма весов */
+/* Основной контейнер для страницы */
+.prim-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовок страницы */
+.prim-header {
+    background: linear-gradient(135deg, #e8fcef 0%, #c8e6c9 50%, #a5d6a7 100%);
+    border-radius: 14px;
+    padding: 40px 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+    .prim-header h1 {
+        font-weight: 600;
+        color: #2e7d32;
+        font-size: 3rem;
+        margin-bottom: 15px;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    }
+
+    .prim-header .lead {
+        font-size: 1.8rem;
+        color: #1b5e20;
+        max-width: 700px;
+        margin: 0 auto;
+        line-height: 1.5;
+    }
+
+/* Секция теории */
+.theory {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    background-color: #f8fdf9;
+    border-radius: 12px;
+    border-left: 5px solid #81c784;
+    margin-top: 40px;
+}
+
+    .theory h2 {
+        color: #2e7d32;
+        font-size: 2em;
+        margin-bottom: 20px;
+        text-align: center;
+        border-bottom: 2px solid #d5f5dc;
+        padding-bottom: 10px;
+    }
+
+    .theory h3 {
+        color: #1b5e20;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+
+    .theory p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .theory ol, .theory ul {
+        margin: 10px 0;
+        padding-left: 30px;
+    }
+
+    .theory li {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #333;
+        margin-bottom: 8px;
+    }
+
+/* Стили для SVG-графика */
+.graph-example {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    border: 1px solid #c8e6c9;
+}
+
+    .graph-example svg {
+        max-width: 100%;
+        height: auto;
+    }
+
+/* Секция калькулятора */
+.calculator {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-section, .graph-section, .mst-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    border: 1px solid #b3d4e6;
+}
+
+    .input-section h3, .graph-section h3, .mst-section h3 {
+        color: #2e7d32;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .input-section form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .input-section label {
+        font-size: 1em;
+        color: #333;
+        margin-right: 5px;
+    }
+
+/* Поле ввода количества вершин */
+#vertex-count {
+    padding: 8px 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #81c784;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    #vertex-count:focus {
+        background-color: #66bb6a;
+        outline: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/* Выпадающий список режима весов */
+#weight-mode {
+    padding: 8px 24px 8px 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #81c784;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"><path d="M2 4l4 4 4-4H2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+    #weight-mode:hover {
+        background-color: #66bb6a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #weight-mode:focus {
+        background-color: #66bb6a;
+        outline: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #weight-mode option {
+        background-color: #fff;
+        color: #2c3e50;
+    }
+
+/* Кнопки */
+.create-graph-btn, .confirm-btn {
+    background-color: #81c784;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .create-graph-btn:hover, .confirm-btn:hover {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/* Скрытый ввод весов */
+#edge-input {
+    margin-top: 10px;
+    display: none;
+}
+
+/* Список для ввода весов рёбер */
+.edge-weight-list {
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+    .edge-weight-list .weight-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .edge-weight-list label {
+        font-size: 0.9em;
+        color: #333;
+        width: 80px;
+    }
+
+    .edge-weight-list input {
+        width: 60px;
+        padding: 4px;
+        font-size: 0.9em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .edge-weight-list input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
+
+/* Граф и MST */
+#graph, #mst {
+    background-color: #e6f3fa;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+    border: 1px solid #b3d4e6;
+}
+
+.graph-section p, .mst-section p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Сумма весов MST */
 .mst-weight {
     font-size: 1.2em;
     font-weight: bold;
@@ -32,267 +301,7 @@
     }
 }
 
-/* Кнопка генерации */
-.create-graph-btn {
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-    .create-graph-btn:hover {
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-/* Кнопка подтверждения */
-.confirm-btn {
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background 0.3s ease, transform 0.2s ease;
-}
-
-    .confirm-btn:hover {
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-/* Скрытый ввод весов */
-#edge-input {
-    margin-top: 10px;
-    display: none;
-}
-
-/* Список для ввода весов рёбер */
-.edge-weight-list {
-    width: 300px;
-    max-height: 200px;
-    overflow-y: auto;
-    padding: 10px;
-    background-color: #e6f3fa; /* Явно задаём голубой фон */
-    border: 1px solid #b3d4e6;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-    /* Кастомный скроллбар */
-    .edge-weight-list::-webkit-scrollbar {
-        width: 10px;
-    }
-
-    .edge-weight-list::-webkit-scrollbar-track {
-        background: #f1f1f1;
-        border-radius: 5px;
-    }
-
-    .edge-weight-list::-webkit-scrollbar-thumb {
-        background: linear-gradient(45deg, #4facfe, #00f2fe);
-        border-radius: 5px;
-    }
-
-        .edge-weight-list::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(45deg, #00f2fe, #4facfe);
-        }
-
-    .edge-weight-list .weight-row {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        margin-bottom: 8px;
-    }
-
-    .edge-weight-list label {
-        font-size: 0.9em;
-        color: #333;
-        width: 80px;
-    }
-
-    .edge-weight-list input {
-        width: 60px;
-        padding: 4px;
-        font-size: 0.9em;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-        transition: border-color 0.3s ease;
-    }
-
-        .edge-weight-list input:focus {
-            border-color: #4facfe;
-            outline: none;
-        }
-
-/* Стили для поля ввода количества вершин */
-#vertex-count {
-    padding: 8px 12px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    margin: 0 10px;
-}
-
-    #vertex-count:focus {
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        outline: none;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-/* Стили для выпадающего списка выбора режима */
-#weight-mode {
-    padding: 8px 24px 8px 12px; /* Увеличен правый отступ для стрелки */
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: #2c3e50; /* Тёмный текст для читаемости */
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
-    appearance: none; /* Убираем стандартную стрелку */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="%232c3e50"><path d="M2 4l4 4 4-4H2z"/></svg>'); /* Стрелка того же цвета, что текст */
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    opacity: 1; /* Убираем прозрачность */
-}
-
-    #weight-mode:hover {
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    #weight-mode:focus {
-        background: linear-gradient(45deg, #00f2fe, #4facfe);
-        outline: none;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Стили для элементов списка в выпадающем меню */
-    #weight-mode option {
-        background-color: #fff; /* Белый фон для элементов списка */
-        color: #2c3e50; /* Тёмный текст */
-    }
-
-/* Стили для секции теории */
-.theory {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-    .theory h2 {
-        color: #2c3e50;
-        font-size: 2em;
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .theory h3 {
-        color: #4facfe;
-        font-size: 1.5em;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    .theory p {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 15px;
-    }
-
-    .theory ol, .theory ul {
-        margin: 10px 0;
-        padding-left: 30px;
-    }
-
-    .theory li {
-        font-size: 1.1em;
-        line-height: 1.6;
-        color: #333;
-        margin-bottom: 8px;
-    }
-
-/* Стили для SVG-графика */
-.graph-example {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #e6f3fa;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Стили для калькулятора */
-.calculator {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.input-section, .graph-section, .mst-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #f0f8ff;
-    border-radius: 8px;
-    border: 1px solid #b3d4e6;
-}
-
-    .input-section h3, .graph-section h3, .mst-section h3 {
-        color: #2c3e50;
-        font-size: 1.5em;
-        margin-bottom: 15px;
-    }
-
-    .input-section form {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        flex-wrap: wrap;
-    }
-
-    .input-section label {
-        font-size: 1em;
-        color: #333;
-        margin-right: 5px;
-    }
-
-#graph, #mst {
-    background-color: #e6f3fa;
-    border-radius: 5px;
-    overflow: hidden;
-}
-
-.graph-section p, .mst-section p {
-    font-size: 1em;
-    color: #555;
-    margin-top: 10px;
-}
-
-/* Новые стили для скроллбара */
+/* Стили для скроллбара  */
 ::-webkit-scrollbar {
     width: 10px;
     height: 10px;
@@ -316,5 +325,5 @@
 /* Firefox */
 * {
     scrollbar-width: auto;
-    scrollbar-color: #AFD9C3 #e0f7f9;
+    scrollbar-color: #4facfe #e0f7f9;
 }
