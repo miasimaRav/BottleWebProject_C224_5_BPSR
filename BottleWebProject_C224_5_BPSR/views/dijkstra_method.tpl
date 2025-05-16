@@ -1,128 +1,172 @@
-% rebase('layout.tpl', title='Dijkstra algorithm', year=year)
+% rebase('layout.tpl', title='Dijkstra Algorithm', year=year)
 
-<link rel="stylesheet" href="/static/content/dijkstra_method_styles.css">
+<link rel="stylesheet" href="/static/content/methods_pages_styles.css">
+<script src="/static/scripts/dijkstra_method_logic.js"></script>
 
-
-<div class="dijkstra-container">
-    <!-- Theory Section -->
-    <section class="theory">
-        <h2>Theory</h2>
-        <p>Dijkstra's algorithm is used to find the shortest path (with the smallest total edge weights) from one vertex to another in a graph. It works only when all edge weights are positive.</p>
-        <p>A graph consists of:</p>
-        <ul>
-            <li><strong>Vertices</strong> (points), e.g., cities A, B, C...</li>
-            <li><strong>Edges</strong> (lines connecting them), e.g., a road from A to B with length 5.</li>
-        </ul>
-        <p>Edges can have weights — a number showing how much it costs/how long/how much time is needed to move between vertices.</p>
-        <h4>How it works:</h4>
-        <p>The algorithm remembers:</p>
-        <ul>
-            <li>Distance to each vertex from the start (initially infinity).</li>
-            <li>The path used to reach each vertex (for route recovery).</li>
-            <li>A queue from which we take the vertex with the smallest distance.</li>
-        </ul>
-        <h4>Step 1: Initialization</h4>
-        <ul>
-            <li>Set distance to the start (e.g., A) as 0.</li>
-            <li>Set all others to infinity (∞).</li>
-            <li>Put the start vertex into the queue.</li>
-        </ul>
-        <h4>Step 2: Main loop</h4>
-        <p>While the queue is not empty:</p>
-        <ul>
-            <li>Take the vertex with the smallest distance (e.g., A).</li>
-            <li>Look at all its neighbors.</li>
-            <li>Check: is it shorter to go through this vertex?</li>
-        </ul>
-        <p><strong>Formula:</strong><br>
-            New distance = current vertex distance + edge weight to neighbor</p>
-        <p>If this is smaller than the current neighbor's distance — update it.</p>
-
-        <h4>Step 3: Repeat</h4>
-        <p>Move to the next vertex in the queue with the smallest distance.</p>
-
-        <h4>Step 4: Stop</h4>
-        <p>Once the target vertex (e.g., C) is reached, restore the path and output the result.</p>
-
-        <p>Dijkstra’s algorithm is fundamental for GPS navigation, network routing, and many optimization problems.</p>
-    </section>
-
-    <!-- Calculator Section -->
-    <div class="calculator">
-        <div class="input-section">
-            <h3>Graph Input</h3>
-            <form method="post" action="/calculate">
-                <label for="nodes">Number of nodes (1–100):</label>
-                <input type="number" name="nodes" min="1" max="100" value="3" required>
-
-                <label>Edge weight mode:</label>
-                <select name="mode">
-                    <option value="manual">Manual</option>
-                    <option value="auto">Automatic</option>
-                </select>
-
-                <button type="submit">Generate</button>
-            </form>
-        </div>
-
-        <div class="graph-section">
-            <h3>Adjacency Matrix</h3>
-            <form method="post" action="/calculate">
-                <input type="hidden" name="nodes" value="3">
-                <table border="1">
-                    <tr>
-                        <th>Node</th>
-                        <th>A</th>
-                        <th>B</th>
-                        <th>C</th>
-                    </tr>
-                    % for i, label in enumerate(['A', 'B', 'C']):
-                        <tr>
-                            <th>{{label}}</th>
-                            % for j in range(3):
-                                <td>
-                                    <input name="cell_{{i}}_{{j}}" type="number" min="0" placeholder="-" value="">
-                                </td>
-                            % end
-                        </tr>
-                    % end
-                </table>
-
-                <label>From:
-                    <select name="start">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                    </select>
-                </label>
-
-                <label>To:
-                    <select name="end">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                    </select>
-                </label>
-
-                <button type="submit" class="run-dijkstra-btn">Find path</button>
-                <button type="button" onclick="fillRandom(3)" class="generate-graph-btn">Fill randomly</button>
-            </form>
-        </div>
-
-        
-
-
-        <div class="dijkstra-result">
-    <h3>Shortest Path Result</h3>
-    <!-- Убрали блок визуализации -->
-
-    <p class="dijkstra-result">Length: <span id="path-length">--</span></p>
+<div class="floyd-header">
+    <h1>Dijkstra's Algorithm</h1>
+    <p class="lead">Find the shortest path from a single source to a specific target vertex in a weighted graph</p>
 </div>
 
-
+<div class="container">
+    <div class="panel panel-default shadow-sm">
+        <div class="panel-heading">
+            <h3 class="panel-title">Matrix Configuration</h3>
         </div>
+        <div class="panel-body text-center">
+            <div class="control-panel">
+                <div class="input-group">
+                    <span class="input-group-addon">Vertices:</span>
+                    <input type="number" class="form-control" id="matrixSize" min="2" max="10" value="2">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">Start Vertex:</span>
+                    <select class="form-control" id="startNode"></select>
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon">End Vertex:</span>
+                    <select class="form-control" id="endNode"></select>
+                </div>
+                <button class="btn btn-calculate" id="generateMatrix">Generate Random</button>
+                <button class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
+            </div>
+
+            <h4>Adjacency Matrix</h4>
+            <div class="matrix-container">
+                <table class="matrix-table" id="adjacencyMatrix">
+                    <!-- Matrix will be generated dynamically -->
+                </table>
+            </div>
+
+            <div class="result-section" id="resultSection" style="display: none;">
+                <h4>Shortest Path Result</h4>
+                <div class="matrix-container">
+                    <p id="resultPath" class="result-path"></p>
+                    <p id="resultLength" class="result-length"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theory Section -->
+    <div class="theory-section">
+        <h3 class="theory-title">Algorithm Theory</h3>
+
+        <div class="theory-block">
+            <h4 class="theory-subtitle">Concept</h4>
+            <p>Dijkstra's algorithm finds the shortest path from a starting node to all other nodes in a weighted graph with non-negative edge weights. It maintains a set of visited nodes and updates shortest distances using a priority queue or greedy approach.</p>
+        </div>
+
+        <div class="theory-block">
+            <h4 class="theory-subtitle">Steps</h4>
+            <ol class="theory-steps">
+                <li>
+                    <span class="step-title">Initialization</span>
+                    <ul class="step-details">
+                        <li>Set distance to source = 0</li>
+                        <li>Set distances to all other vertices = ∞</li>
+                        <li>Mark all vertices as unvisited</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="step-title">Relaxation</span>
+                    <p>Repeat:</p>
+                    <ul class="step-details">
+                        <li>Choose unvisited vertex with smallest distance</li>
+                        <li>Update distances to its neighbors if a shorter path is found</li>
+                        <li>Mark current vertex as visited</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="step-title">Termination</span>
+                    <p>When all vertices are visited, algorithm ends. Distances represent the shortest paths from source to all other nodes.</p>
+                </li>
+            </ol>
+        </div>
+    </div>
+
+   <!-- Example Section -->
+<div class="example-section">
+    <h3 class="example-title"><i class="glyphicon glyphicon-blackboard"></i> Example</h3>
+
+    <div class="example-block">
+        <h4 class="example-subtitle">Initial Graph</h4>
+        <div class="graph-representation">
+            <div class="adjacency-matrix">
+                <h5>Adjacency Matrix</h5>
+                <pre>
+    A   B   C   D   E
+A [ 0,  50, INF, INF, 90]
+B [INF,  0,  90, INF, INF]
+C [INF, INF,  0,  80,  60]
+D [INF, INF, INF,  0,  70]
+E [INF, INF, INF, INF,  0]
+                </pre>
+            </div>
+            <div class="graph-visual">
+                <h5>Graph Visualization</h5>
+                <img src="/static/resources/Images/DijkstraTheory.jpg" class="graph-image">
+                <!-- Замени путь на актуальный, если нужно -->
+            </div>
+        </div>
+    </div>
+
+    <div class="example-block">
+        <h4 class="example-subtitle">Step-by-Step Execution from A (source)</h4>
+        <div class="iteration">
+            <h5>Iteration 1 (Start at A)</h5>
+            <pre>
+Visited: A
+Distances: A=0, B=50, C=∞, D=∞, E=90
+            </pre>
+        </div>
+
+        <div class="iteration">
+            <h5>Iteration 2 (Choose B)</h5>
+            <pre>
+Visited: A, B
+Distances: A=0, B=50, C=140 (via B), D=∞, E=90
+            </pre>
+        </div>
+
+        <div class="iteration">
+            <h5>Iteration 3 (Choose E)</h5>
+            <pre>
+Visited: A, B, E
+Distances: A=0, B=50, C=140, D=160 (via E), E=90
+            </pre>
+        </div>
+
+        <div class="iteration">
+            <h5>Iteration 4 (Choose C)</h5>
+            <pre>
+Visited: A, B, E, C
+Distances: A=0, B=50, C=140, D=160, E=90
+            </pre>
+        </div>
+
+        <div class="iteration">
+            <h5>Iteration 5 (Choose D)</h5>
+            <pre>
+Visited: A, B, E, C, D
+Distances: A=0, B=50, C=140, D=160, E=90
+            </pre>
+        </div>
+    </div>
+
+    <div class="example-block">
+        <h4 class="example-subtitle">Final Shortest Distances from A</h4>
+        <pre>
+
+ A → B → C → D (50 + 90 + 80 = 220)</li>
+ A → E → D (90 + 70 = 160)</li>
+ A → B → C → E → D (50 + 90 + 60 + 70 = 270)</li>
+        
+        <p><strong>Shortest Path from A to D:</strong> A → E → D with total weight = 160</p>
+        </pre>
     </div>
 </div>
 
-<script src="/static/scripts/vis.min.js"></script>
-<script src="/static/scripts/dijkstra_method.js"></script>
+
+
+
