@@ -13,7 +13,7 @@
 <nav class="navbar navbar-custom navbar-fixed-top">
     <div class="container">
         <div class="navbar-header">
-            <a class="navbar-brand" href="/home">
+            <a class="navbar-brand" href="/home?lang={{request.lang}}">
                 <img src="/static/resources/images/graph_logo.png" style="height: 40px;">
             </a>
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavbar">
@@ -24,10 +24,23 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="/about">About</a></li>
+                <li><a href="/about?lang={{request.lang}}">{{request.translations['layout']['about']}}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                        Algorithms <span class="caret"></span>
+                        {{request.translations['layout']['algorithms']}} <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/crascal_method?lang={{request.lang}}">{{request.translations['layout']['kruskal']}}</a></li>
+                        <li><a href="/prim_method?lang={{request.lang}}">{{request.translations['layout']['prim']}}</a></li>
+                        <li><a href="/dijkstra_method?lang={{request.lang}}">{{request.translations['layout']['dijkstra']}}</a></li>
+                        <li><a href="/floid_method?lang={{request.lang}}">{{request.translations['layout']['floyd']}}</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        {{request.lang.upper()}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
                         <li><a href="/crascal_method">Kruskal's Algorithm</a></li>
@@ -41,12 +54,13 @@
     </div>
 </nav>
 
-
     <div class="container body-content">
         {{!base}}
         <footer>
-            <p>&copy; {{ year }} - Algorithms</p>
-        </footer>
+            <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>        </footer>
     </div>
+
+    <script src="/static/content/jquery.min.js"></script>
+    <script src="/static/content/bootstrap.min.js"></script>
 </body>
 </html>

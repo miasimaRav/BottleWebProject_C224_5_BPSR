@@ -1,0 +1,219 @@
+﻿.faq-box {
+    background-color: #ffffff;
+    padding: 30px 25px;
+    margin: 0 auto 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    max-width: 900px;
+    transition: all 0.3s ease;
+}
+
+.faq-item {
+    padding: 25px 0;
+    border-bottom: 1px solid #ccc;
+    animation: fadeSlideIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    background-color: transparent;
+    border-radius: 0;
+}
+
+    .faq-item:hover {
+        transform: scale(1.015);
+        background-color: #f3fff3;
+        border-left: 4px solid #2e7d32;
+        padding-left: 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(46, 125, 50, 0.15);
+    }
+
+.faq-container h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 50px; 
+    color: #1a4d2e; 
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+
+    /* Заголовок страницы */
+.faq-container h1 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 35px;
+    color: #1a4d2e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+}
+
+        .faq-container h1::after {
+            content: '?';
+            color: #2e7d32;
+            font-size: 2.5rem;
+            position: absolute;
+            right: -30px;
+            top: -10px;
+            animation: bounce 2s infinite;
+        }
+
+.faq-intro p {
+    font-size: 1.25rem;
+    line-height: 1.7;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #3d5c3d;
+}
+
+/* Список вопросов */
+.faq-list {
+    border-top: 2px solid #2e7d32;
+}
+
+/* Один вопрос */
+.faq-item {
+    padding: 25px 0;
+    border-bottom: 1px solid #ccc;
+    animation: fadeSlideIn 0.6s ease forwards;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+    .faq-item:nth-child(1) {
+        animation-delay: 0.1s;
+    }
+
+    .faq-item:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+
+    .faq-item:nth-child(3) {
+        animation-delay: 0.3s;
+    }
+
+    .faq-item:nth-child(4) {
+        animation-delay: 0.4s;
+    }
+
+    .faq-item:nth-child(5) {
+        animation-delay: 0.5s;
+    }
+
+    .faq-item:hover {
+        transform: scale(1.015);
+        background-color: #f3fff3;
+        border-left: 4px solid #2e7d32;
+        padding-left: 16px;
+    }
+
+    /* Вопрос */
+    .faq-item h2 {
+        font-size: 1.6rem;
+        color: #1a4d2e;
+        margin-bottom: 14px;
+        position: relative;
+        padding-left: 30px;
+    }
+
+        .faq-item h2::before {
+            content: '❔';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #1a4d2e;
+            font-size: 1.6rem;
+            animation: wiggle 2.5s infinite;
+        }
+
+    .faq-item p {
+        font-size: 1.1rem;
+        line-height: 1.65;
+        color: #2c2c2c;
+        margin-bottom: 12px;
+    }
+
+    .faq-item ul {
+        margin-left: 25px;
+        list-style-type: disc;
+        font-size: 1.05rem;
+        color: #333;
+    }
+
+    .faq-item a {
+        color: #1a4d2e;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+        .faq-item a:hover,
+        .faq-item a:focus {
+            color: #0d3c23;
+            text-decoration: underline;
+        }
+
+/* Анимация появления */
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Анимация bounce для знака вопроса в заголовке */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+/* Анимация "wiggle" для ❓ */
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(8deg);
+    }
+
+    50% {
+        transform: rotate(-8deg);
+    }
+
+    75% {
+        transform: rotate(4deg);
+    }
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .faq-container {
+        padding: 0 15px 40px;
+    }
+
+        .faq-container h1 {
+            font-size: 2.2rem;
+        }
+
+    .faq-item h2 {
+        font-size: 1.3rem;
+        padding-left: 25px;
+    }
+
+        .faq-item h2::before {
+            font-size: 1.3rem;
+        }
+}

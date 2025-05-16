@@ -7,7 +7,10 @@ import json
 @route('/home')
 @view('index')
 def home():
-    return dict(year=datetime.now().year)
+    return dict(
+        year=datetime.now().year,
+        request=request
+    )
 
 @route('/contact')
 @view('contact')
@@ -15,7 +18,8 @@ def contact():
     return dict(
         title='Contact',
         message='Your contact page.',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @route('/about')
@@ -24,7 +28,8 @@ def about():
     return dict(
         title='About',
         message='Your application description page.',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @route('/floid_method')
@@ -32,7 +37,8 @@ def about():
 def floid_method():
     return dict(
         title='Floyd Warshall algorithm',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @route('/prim_method')
@@ -40,7 +46,8 @@ def floid_method():
 def prim_method():
     return dict(
         title='Prim algorithm',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @route('/crascal_method')
@@ -48,7 +55,8 @@ def prim_method():
 def crascal_method():
     return dict(
         title='Crascal algorithm',
-        year=datetime.now().year
+        year=datetime.now().year,
+        request=request
     )
 
 @route('/dijkstra_method')
@@ -56,6 +64,15 @@ def crascal_method():
 def dijkstra_method():
     return dict(
         title='Dijkstra algorithm',
+        year=datetime.now().year,
+        request=request
+    )
+
+@route('/FAQ')
+@view('FAQ')
+def FAQ():
+    return dict(
+        title='Frequently Asked Questions',
         year=datetime.now().year
     )
 
@@ -88,4 +105,5 @@ def setup_routes(app):
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
     app.route('/generate_graph', method='POST', callback=handle_generate_graph)
     app.route('/prim', method='POST', callback=handle_prim)
-
+    app.route('/FAQ', method='GET', callback=FAQ)
+    
