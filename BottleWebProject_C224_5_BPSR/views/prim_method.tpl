@@ -1,6 +1,11 @@
 % rebase('layout.tpl', title=request.translations['prim']['title'], lang=request.lang, translations=request.translations, year=2025)
 <link rel="stylesheet" href="/static/content/prim_method_styles.css">
 <div class="prim-container">
+    <div class="prim-header">
+        <h1>{{request.translations['prim']['theory_title']}}</h1>
+        <p class="lead">{{request.translations['prim']['theory_description']}}</p>
+    </div>
+
     <!-- Theory -->
     <section class="theory">
         <h2>{{request.translations['prim']['theory_title']}}</h2>
