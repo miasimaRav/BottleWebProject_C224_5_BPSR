@@ -44,10 +44,8 @@
                         {{request.lang.upper()}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/crascal_method">Kruskal's Algorithm</a></li>
-                        <li><a href="/prim_method">Prim's Algorithm</a></li>
-                        <li><a href="/dijkstra_method">Dijkstra's Algorithm</a></li>
-                        <li><a href="/floid_method">Floyd's Algorithm</a></li>
+                        <li><a href="?lang=en">EN</a></li>
+                        <li><a href="?lang=ru">RU</a></li>
                     </ul>
                 </li>
             </ul>
