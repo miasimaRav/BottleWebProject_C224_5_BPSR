@@ -1,4 +1,4 @@
-﻿% rebase('layout.tpl', title='Dijkstra algorithm', year=year)
+% rebase('layout.tpl', title='Dijkstra algorithm', year=year)
 
 <link rel="stylesheet" href="/static/content/dijkstra_method_styles.css">
 
