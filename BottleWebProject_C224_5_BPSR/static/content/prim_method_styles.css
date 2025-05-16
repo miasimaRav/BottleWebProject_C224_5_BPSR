@@ -200,3 +200,39 @@
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 }
+
+/* Стили для контейнера примера */
+.example-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+/* Стили для графика */
+.example-graph {
+    flex: 0 0 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e6f3fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .example-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .example-graph {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+}
