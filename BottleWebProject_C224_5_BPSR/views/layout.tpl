@@ -24,6 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
+                
                 <li><a href="/about?lang={{request.lang}}">{{request.translations['layout']['about']}}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
