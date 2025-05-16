@@ -43,8 +43,10 @@
                         {{request.lang.upper()}} <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="?lang=en">English</a></li>
-                        <li><a href="?lang=ru">Русский</a></li>
+                        <li><a href="/crascal_method">Kruskal's Algorithm</a></li>
+                        <li><a href="/prim_method">Prim's Algorithm</a></li>
+                        <li><a href="/dijkstra_method">Dijkstra's Algorithm</a></li>
+                        <li><a href="/floid_method">Floyd's Algorithm</a></li>
                     </ul>
                 </li>
             </ul>
