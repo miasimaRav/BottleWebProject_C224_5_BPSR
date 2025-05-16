@@ -1,37 +1,37 @@
-% rebase('layout.tpl', title='Dijkstra Algorithm', year=year)
+% rebase('layout.tpl', title=request.translations['dijkstra']['title'], year=year, lang=request.lang, translations=request.translations)
 
 <link rel="stylesheet" href="/static/content/methods_pages_styles.css">
 <script src="/static/scripts/dijkstra_method_logic.js"></script>
 
 <div class="floyd-header">
-    <h1>Dijkstra's Algorithm</h1>
-    <p class="lead">Find the shortest path from a single source to a specific target vertex in a weighted graph</p>
+    <h1>{{request.translations['dijkstra']['header']['title']}}</h1>
+    <p class="lead">{{request.translations['dijkstra']['header']['description']}}</p>
 </div>
 
 <div class="container">
     <div class="panel panel-default shadow-sm">
         <div class="panel-heading">
-            <h3 class="panel-title">Matrix Configuration</h3>
+            <h3 class="panel-title">{{request.translations['dijkstra']['panel']['title']}}</h3>
         </div>
         <div class="panel-body text-center">
             <div class="control-panel">
                 <div class="input-group">
-                    <span class="input-group-addon">Vertices:</span>
+                    <span class="input-group-addon">{{request.translations['dijkstra']['panel']['vertices_label']}}</span>
                     <input type="number" class="form-control" id="matrixSize" min="2" max="10" value="2">
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon">Start Vertex:</span>
+                    <span class="input-group-addon">{{request.translations['dijkstra']['panel']['start_vertex_label']}}</span>
                     <select class="form-control" id="startNode"></select>
                 </div>
                 <div class="input-group">
-                    <span class="input-group-addon">End Vertex:</span>
+                    <span class="input-group-addon">{{request.translations['dijkstra']['panel']['end_vertex_label']}}</span>
                     <select class="form-control" id="endNode"></select>
                 </div>
-                <button class="btn btn-calculate" id="generateMatrix">Generate Random</button>
-                <button class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
+                <button class="btn btn-calculate" id="generateMatrix">{{request.translations['dijkstra']['panel']['generate_button']}}</button>
+                <button class="btn btn-calculate" id="calculateDijkstra">{{request.translations['dijkstra']['panel']['calculate_button']}}</button>
             </div>
 
-            <h4>Adjacency Matrix</h4>
+            <h4>{{request.translations['dijkstra']['panel']['adjacency_matrix_title']}}</h4>
             <div class="matrix-container">
                 <table class="matrix-table" id="adjacencyMatrix">
                     <!-- Matrix will be generated dynamically -->
@@ -39,7 +39,7 @@
             </div>
 
             <div class="result-section" id="resultSection" style="display: none;">
-                <h4>Shortest Path Result</h4>
+                <h4>{{request.translations['dijkstra']['panel']['result_title']}}</h4>
                 <div class="matrix-container">
                     <p id="resultPath" class="result-path"></p>
                     <p id="resultLength" class="result-length"></p>
@@ -50,123 +50,73 @@
 
     <!-- Theory Section -->
     <div class="theory-section">
-        <h3 class="theory-title">Algorithm Theory</h3>
+        <h3 class="theory-title">{{request.translations['dijkstra']['theory']['title']}}</h3>
 
         <div class="theory-block">
-            <h4 class="theory-subtitle">Concept</h4>
-            <p>Dijkstra's algorithm finds the shortest path from a starting node to all other nodes in a weighted graph with non-negative edge weights. It maintains a set of visited nodes and updates shortest distances using a priority queue or greedy approach.</p>
+            <h4 class="theory-subtitle">{{request.translations['dijkstra']['theory']['concept']['title']}}</h4>
+            <p>{{request.translations['dijkstra']['theory']['concept']['description']}}</p>
         </div>
 
         <div class="theory-block">
-            <h4 class="theory-subtitle">Steps</h4>
+            <h4 class="theory-subtitle">{{request.translations['dijkstra']['theory']['steps']['title']}}</h4>
             <ol class="theory-steps">
                 <li>
-                    <span class="step-title">Initialization</span>
+                    <span class="step-title">{{request.translations['dijkstra']['theory']['steps']['initialization']['title']}}</span>
                     <ul class="step-details">
-                        <li>Set distance to source = 0</li>
-                        <li>Set distances to all other vertices = ∞</li>
-                        <li>Mark all vertices as unvisited</li>
+                        % for step in request.translations['dijkstra']['theory']['steps']['initialization']['steps']:
+                        <li>{{step}}</li>
+                        % end
                     </ul>
                 </li>
                 <li>
-                    <span class="step-title">Relaxation</span>
-                    <p>Repeat:</p>
+                    <span class="step-title">{{request.translations['dijkstra']['theory']['steps']['relaxation']['title']}}</span>
+                    <p>{{request.translations['dijkstra']['theory']['steps']['relaxation']['description']}}</p>
                     <ul class="step-details">
-                        <li>Choose unvisited vertex with smallest distance</li>
-                        <li>Update distances to its neighbors if a shorter path is found</li>
-                        <li>Mark current vertex as visited</li>
+                        % for step in request.translations['dijkstra']['theory']['steps']['relaxation']['steps']:
+                        <li>{{step}}</li>
+                        % end
                     </ul>
                 </li>
                 <li>
-                    <span class="step-title">Termination</span>
-                    <p>When all vertices are visited, algorithm ends. Distances represent the shortest paths from source to all other nodes.</p>
+                    <span class="step-title">{{request.translations['dijkstra']['theory']['steps']['termination']['title']}}</span>
+                    <p>{{request.translations['dijkstra']['theory']['steps']['termination']['description']}}</p>
                 </li>
             </ol>
         </div>
     </div>
 
-   <!-- Example Section -->
-<div class="example-section">
-    <h3 class="example-title"><i class="glyphicon glyphicon-blackboard"></i> Example</h3>
+    <!-- Example Section -->
+    <div class="example-section">
+        <h3 class="example-title"><i class="glyphicon glyphicon-blackboard"></i> {{request.translations['dijkstra']['example']['title']}}</h3>
 
-    <div class="example-block">
-        <h4 class="example-subtitle">Initial Graph</h4>
-        <div class="graph-representation">
-            <div class="adjacency-matrix">
-                <h5>Adjacency Matrix</h5>
-                <pre>
-    A   B   C   D   E
-A [ 0,  50, INF, INF, 90]
-B [INF,  0,  90, INF, INF]
-C [INF, INF,  0,  80,  60]
-D [INF, INF, INF,  0,  70]
-E [INF, INF, INF, INF,  0]
-                </pre>
-            </div>
-            <div class="graph-visual">
-                <h5>Graph Visualization</h5>
-                <img src="/static/resources/Images/DijkstraTheory.jpg" class="graph-image">
-                <!-- Замени путь на актуальный, если нужно -->
+        <div class="example-block">
+            <h4 class="example-subtitle">{{request.translations['dijkstra']['example']['initial_graph']['title']}}</h4>
+            <div class="graph-representation">
+                <div class="adjacency-matrix">
+                    <h5>{{request.translations['dijkstra']['example']['initial_graph']['adjacency_matrix_title']}}</h5>
+                    <pre>{{request.translations['dijkstra']['example']['initial_graph']['adjacency_matrix']}}</pre>
+                </div>
+                <div class="graph-visual">
+                    <h5>{{request.translations['dijkstra']['example']['initial_graph']['graph_visualization_title']}}</h5>
+                    <img src="/static/resources/Images/DijkstraTheory.jpg" class="graph-image">
+                    <!-- Замени путь на актуальный, если нужно -->
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="example-block">
-        <h4 class="example-subtitle">Step-by-Step Execution from A (source)</h4>
-        <div class="iteration">
-            <h5>Iteration 1 (Start at A)</h5>
-            <pre>
-Visited: A
-Distances: A=0, B=50, C=∞, D=∞, E=90
-            </pre>
+        <div class="example-block">
+            <h4 class="example-subtitle">{{request.translations['dijkstra']['example']['execution']['title']}}</h4>
+            % for iteration in request.translations['dijkstra']['example']['execution']['iterations']:
+            <div class="iteration">
+                <h5>{{iteration['title']}}</h5>
+                <pre>{{iteration['content']}}</pre>
+            </div>
+            % end
         </div>
 
-        <div class="iteration">
-            <h5>Iteration 2 (Choose B)</h5>
-            <pre>
-Visited: A, B
-Distances: A=0, B=50, C=140 (via B), D=∞, E=90
-            </pre>
+        <div class="example-block">
+            <h4 class="example-subtitle">{{request.translations['dijkstra']['example']['final_result']['title']}}</h4>
+            <pre>{{request.translations['dijkstra']['example']['final_result']['content']}}</pre>
         </div>
-
-        <div class="iteration">
-            <h5>Iteration 3 (Choose E)</h5>
-            <pre>
-Visited: A, B, E
-Distances: A=0, B=50, C=140, D=160 (via E), E=90
-            </pre>
-        </div>
-
-        <div class="iteration">
-            <h5>Iteration 4 (Choose C)</h5>
-            <pre>
-Visited: A, B, E, C
-Distances: A=0, B=50, C=140, D=160, E=90
-            </pre>
-        </div>
-
-        <div class="iteration">
-            <h5>Iteration 5 (Choose D)</h5>
-            <pre>
-Visited: A, B, E, C, D
-Distances: A=0, B=50, C=140, D=160, E=90
-            </pre>
-        </div>
-    </div>
-
-    <div class="example-block">
-        <h4 class="example-subtitle">Final Shortest Distances from A</h4>
-        <pre>
-
- A → B → C → D (50 + 90 + 80 = 220)</li>
- A → E → D (90 + 70 = 160)</li>
- A → B → C → E → D (50 + 90 + 60 + 70 = 270)</li>
-        
-        <p><strong>Shortest Path from A to D:</strong> A → E → D with total weight = 160</p>
-        </pre>
     </div>
 </div>
-
-
-
-
