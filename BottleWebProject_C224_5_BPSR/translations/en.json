@@ -1,0 +1,68 @@
+{
+  "layout": {
+    "about": "About",
+    "algorithms": "Algorithms",
+    "kruskal": "Kruskal's Algorithm",
+    "prim": "Prim's Algorithm",
+    "dijkstra": "Dijkstra's Algorithm",
+    "floyd": "Floyd's Algorithm",
+    "footer": "© {{ year }} - Algorithms",
+    "edge": "Edge",
+    "algorithms_and_methods": "Algorithms and Methods"
+  },
+  "about": {
+    "title": "About",
+    "purpose_title": "Purpose of the Website",
+    "purpose_text": "This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: Kruskal’s, Prim’s, Dijkstra’s, and Floyd-Warshall’s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving. The platform aims to bridge the gap between theoretical concepts and practical application by offering hands-on experience with real-time graph visualizations, making complex ideas more accessible and engaging for learners of all levels.",
+    "team_title": "Our Team",
+    "developers": [
+      {
+        "name": "Artem Portov",
+        "role": "Made the about pages and the Prim’s algorithm. Helped develop the background style."
+      },
+      {
+        "name": "Vasilisa Savinskaya",
+        "role": "Developed the main page of the website, made a page for the Kruskal’s algorithm."
+      },
+      {
+        "name": "Daria Ravilova",
+        "role": "Developed a page for the Floyd-Warshall algorithm."
+      },
+      {
+        "name": "Karina Balabanova",
+        "role": "Developed a page with frequently asked questions and created a page for the Dijkstra’s algorithm."
+      }
+    ]
+  },
+  "index": {
+    "title": "Algorithms and Methods",
+    "call_to_action": "Need help solving graph problems with visual clarity? Choose the algorithm you need and calculate with ease!",
+    "kruskal_description": "Kruskal's Algorithm: A greedy algorithm for finding the Minimum Spanning Tree (MST) in a graph by adding the smallest edge that doesn't form a cycle.",
+    "prim_description": "Prim's Algorithm: Another greedy approach to find the MST by growing the tree one vertex at a time from an initial node.",
+    "dijkstra_description": "Dijkstra's Algorithm: A shortest-path algorithm that finds the minimum distance from a source node to all other nodes in a graph with non-negative weights.",
+    "floyd_description": "Floyd's Algorithm: A dynamic programming algorithm that computes the shortest paths between all pairs of vertices in a weighted graph."
+  },
+  "prim": {
+    "title": "Prim's Algorithm",
+    "theory_title": "Prim's Algorithm: A Deep Dive",
+    "theory_how_it_works": "How It Works",
+    "theory_steps": [
+      "Start with an arbitrary vertex: Choose any vertex in the graph to begin. This vertex becomes the root of the MST.",
+      "Grow the tree by adding the smallest edge: From the set of edges that connect the current MST to an unvisited vertex, select the edge with the smallest weight and add it to the MST.",
+      "Repeat until all vertices are included: Continue adding edges with the smallest weights until all vertices in the graph are part of the MST."
+    ],
+    "theory_result": "The result is a tree that spans all vertices with the minimum possible total edge weight.",
+    "calculator_input_title": "Input Data",
+    "calculator_input_vertices": "Number of Vertices (1-12):",
+    "calculator_input_mode": "Edge Weight Mode:",
+    "calculator_input_mode_manual": "Manual",
+    "calculator_input_mode_auto": "Automatic",
+    "calculator_input_create": "Create Graph",
+    "calculator_input_weights_title": "Enter Edge Weights",
+    "calculator_input_confirm": "Confirm",
+    "calculator_graph_title": "Graph",
+    "calculator_graph_instruction": "Click a vertex to select the starting point.",
+    "calculator_mst_title": "Minimum Spanning Tree",
+    "calculator_mst_weight": "Total Weight: "
+  }
+}
