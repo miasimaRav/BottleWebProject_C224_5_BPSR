@@ -24,7 +24,6 @@
         </div>
         <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav">
-                
                 <li><a href="/about?lang={{request.lang}}">{{request.translations['layout']['about']}}</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -37,7 +36,11 @@
                         <li><a href="/floid_method?lang={{request.lang}}">{{request.translations['layout']['floyd']}}</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="/FAQ?lang={{request.lang}}">{{request.translations['layout']['questions']}}</a>
+                </li>
             </ul>
+
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -53,13 +56,14 @@
     </div>
 </nav>
 
-    <div class="container body-content">
-        {{!base}}
-        <footer>
-            <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>        </footer>
-    </div>
+<div class="container body-content">
+    {{!base}}
+    <footer>
+        <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>
+    </footer>
+</div>
 
-    <script src="/static/content/jquery.min.js"></script>
-    <script src="/static/content/bootstrap.min.js"></script>
+<script src="/static/content/jquery.min.js"></script>
+<script src="/static/content/bootstrap.min.js"></script>
 </body>
 </html>
