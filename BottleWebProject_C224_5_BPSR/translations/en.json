@@ -1,0 +1,258 @@
+{
+  "layout": {
+    "about": "About",
+    "algorithms": "Algorithms",
+    "kruskal": "Kruskal's Algorithm",
+    "prim": "Prim's Algorithm",
+    "dijkstra": "Dijkstra's Algorithm",
+    "floyd": "Floyd's Algorithm",
+    "footer": "© {{ year }} - Algorithms",
+    "edge": "Edge",
+    "algorithms_and_methods": "Algorithms and Methods",
+    "questions": "Questions"
+  },
+  "about": {
+    "title": "About",
+    "purpose_title": "Purpose of the Website",
+    "purpose_text": "This website is designed as an educational tool to help students and enthusiasts understand and visualize four fundamental graph algorithms: Kruskal’s, Prim’s, Dijkstra’s, and Floyd-Warshall’s algorithms. Each algorithm is presented with interactive tools, allowing users to input graph data, explore step-by-step executions, and visualize results, fostering a deeper understanding of graph theory and algorithmic problem-solving. The platform aims to bridge the gap between theoretical concepts and practical application by offering hands-on experience with real-time graph visualizations, making complex ideas more accessible and engaging for learners of all levels.",
+    "team_title": "Our Team",
+    "developers": [
+      {
+        "name": "Artem Portov",
+        "role": "Made the about pages and the Prim’s algorithm. Helped develop the background style."
+      },
+      {
+        "name": "Vasilisa Savinskaya",
+        "role": "Developed the main page of the website, made a page for the Kruskal’s algorithm."
+      },
+      {
+        "name": "Daria Ravilova",
+        "role": "Developed a page for the Floyd-Warshall algorithm."
+      },
+      {
+        "name": "Karina Balabanova",
+        "role": "Developed a page with frequently asked questions and created a page for the Dijkstra’s algorithm."
+      }
+    ]
+  },
+  "index": {
+    "title": "Algorithms and Methods",
+    "call_to_action": "Need help solving graph problems with visual clarity? Choose the algorithm you need and calculate with ease!",
+    "kruskal_description": "Kruskal's Algorithm: A greedy algorithm for finding the Minimum Spanning Tree (MST) in a graph by adding the smallest edge that doesn't form a cycle.",
+    "prim_description": "Prim's Algorithm: Another greedy approach to find the MST by growing the tree one vertex at a time from an initial node.",
+    "dijkstra_description": "Dijkstra's Algorithm: A shortest-path algorithm that finds the minimum distance from a source node to all other nodes in a graph with non-negative weights.",
+    "floyd_description": "Floyd's Algorithm: A dynamic programming algorithm that computes the shortest paths between all pairs of vertices in a weighted graph."
+  },
+  "prim": {
+    "title": "Prim's Algorithm",
+    "theory_title": "Prim's Algorithm: A Deep Dive",
+    "theory_description": "Prim's algorithm is a greedy algorithm used to find the Minimum Spanning Tree (MST) in a connected weighted undirected graph. The MST is a subset of edges that connects all vertices with the minimum total edge weight, without forming any cycles.",
+    "theory_how_it_works": "How It Works",
+    "theory_steps": [
+      "Start with an arbitrary vertex: Choose any vertex in the graph to begin. This vertex becomes the root of the MST.",
+      "Grow the tree by adding the smallest edge: From the set of edges that connect the current MST to an unvisited vertex, select the edge with the smallest weight and add it to the MST.",
+      "Repeat until all vertices are included: Continue adding edges with the smallest weights until all vertices in the graph are part of the MST."
+    ],
+    "theory_result": "The result is a tree that spans all vertices with the minimum possible total edge weight.",
+    "theory_example_title": "Example of Prim's Algorithm",
+    "theory_example_text": "Consider a graph with 4 vertices (A, B, C, D) and the following weighted edges:",
+    "theory_example_edges": [
+      "A-B with weight 1",
+      "A-C with weight 3",
+      "B-C with weight 3",
+      "B-D with weight 6",
+      "C-D with weight 4"
+    ],
+    "theory_example_start": "Starting from vertex A, the algorithm proceeds as follows:",
+    "theory_example_steps": [
+      "Select vertex A as the starting point. The MST is initially empty.",
+      "Add the smallest edge from A: A-B (weight 1). MST = {A-B}.",
+      "From vertices A and B, the smallest edge to an unvisited vertex is A-C (weight 3). Add A-C. MST = {A-B, A-C}.",
+      "From vertices A, B, C, the smallest edge to an unvisited vertex is C-D (weight 4). Add C-D. MST = {A-B, A-C, C-D}."
+    ],
+    "theory_example_result": "The final MST has edges A-B (1), A-C (3), and C-D (4), with a total weight of 8.",
+    "theory_visual_title": "Visual Representation",
+    "theory_visual_text": "The graph below shows the initial graph with vertices A, B, C, D and weighted edges. Prim's algorithm starts at vertex A and builds the MST by selecting the smallest edges at each step.",
+    "theory_applications_title": "Applications of Prim's Algorithm",
+    "theory_applications_text": "Prim's algorithm is widely used in various domains where a minimal spanning structure is needed. Some practical applications include:",
+    "theory_applications_list": [
+      "Network design: Building cost-efficient networks, such as electrical grids or telecommunication networks.",
+      "Cluster analysis: Grouping data points in machine learning by connecting them with minimal distances.",
+      "Path planning: Finding efficient routes in robotics or logistics by minimizing total distance or cost."
+    ],
+    "calculator_input_title": "Input Data",
+    "calculator_input_vertices": "Number of Vertices (1-12):",
+    "calculator_input_mode": "Edge Weight Mode:",
+    "calculator_input_mode_manual": "Manual",
+    "calculator_input_mode_auto": "Automatic",
+    "calculator_input_create": "Create Graph",
+    "calculator_input_weights_title": "Enter Edge Weights",
+    "calculator_input_confirm": "Confirm",
+    "calculator_graph_title": "Graph",
+    "calculator_graph_instruction": "Click a vertex to select the starting point.",
+    "calculator_mst_title": "Minimum Spanning Tree",
+    "calculator_mst_weight": "Total Weight: ",
+    "calculator_skip_to": "Go to Calculator"
+  },
+  "dijkstra": {
+    "title": "Dijkstra Algorithm",
+    "header": {
+      "title": "Dijkstra's Algorithm",
+      "description": "Find the shortest path from a single source to a specific target vertex in a weighted graph"
+    },
+    "panel": {
+      "title": "Matrix Configuration",
+      "vertices_label": "Vertices:",
+      "start_vertex_label": "Start Vertex:",
+      "end_vertex_label": "End Vertex:",
+      "generate_button": "Generate Random",
+      "calculate_button": "Find Shortest Path",
+      "adjacency_matrix_title": "Adjacency Matrix",
+      "result_title": "Shortest Path Result"
+    },
+    "theory": {
+      "title": "Algorithm Theory",
+      "concept": {
+        "title": "Concept",
+        "description": "Dijkstra's algorithm finds the shortest path from a starting node to all other nodes in a weighted graph with non-negative edge weights. It maintains a set of visited nodes and updates shortest distances using a priority queue or greedy approach."
+      },
+      "steps": {
+        "title": "Steps",
+        "initialization": {
+          "title": "Initialization",
+          "steps": [
+            "Set distance to source = 0",
+            "Set distances to all other vertices = ∞",
+            "Mark all vertices as unvisited"
+          ]
+        },
+        "relaxation": {
+          "title": "Relaxation",
+          "description": "Repeat:",
+          "steps": [
+            "Choose unvisited vertex with smallest distance",
+            "Update distances to its neighbors if a shorter path is found",
+            "Mark current vertex as visited"
+          ]
+        },
+        "termination": {
+          "title": "Termination",
+          "description": "When all vertices are visited, algorithm ends. Distances represent the shortest paths from source to all other nodes."
+        }
+      }
+    },
+    "example": {
+      "title": "Example",
+      "initial_graph": {
+        "title": "Initial Graph",
+        "adjacency_matrix_title": "Adjacency Matrix",
+        "adjacency_matrix": "    A   B   C   D   E\nA [ 0,  50, INF, INF, 90]\nB [INF,  0,  90, INF, INF]\nC [INF, INF,  0,  80,  60]\nD [INF, INF, INF,  0,  70]\nE [INF, INF, INF, INF,  0]",
+        "graph_visualization_title": "Graph Visualization"
+      },
+      "execution": {
+        "title": "Step-by-Step Execution from A (source)",
+        "iterations": [
+          {
+            "title": "Iteration 1 (Start at A)",
+            "content": "Visited: A\nDistances: A=0, B=50, C=∞, D=∞, E=90"
+          },
+          {
+            "title": "Iteration 2 (Choose B)",
+            "content": "Visited: A, B\nDistances: A=0, B=50, C=140 (via B), D=∞, E=90"
+          },
+          {
+            "title": "Iteration 3 (Choose E)",
+            "content": "Visited: A, B, E\nDistances: A=0, B=50, C=140, D=160 (via E), E=90"
+          },
+          {
+            "title": "Iteration 4 (Choose C)",
+            "content": "Visited: A, B, E, C\nDistances: A=0, B=50, C=140, D=160, E=90"
+          },
+          {
+            "title": "Iteration 5 (Choose D)",
+            "content": "Visited: A, B, E, C, D\nDistances: A=0, B=50, C=140, D=160, E=90"
+          }
+        ]
+      },
+      "final_result": {
+        "title": "Final Shortest Distances from A",
+        "content": "\n A → B → C → D (50 + 90 + 80 = 220)\n A → E → D (90 + 70 = 160)\n A → B → C → E → D (50 + 90 + 60 + 70 = 270)\n\n**Shortest Path from A to D:** A → E → D with total weight = 160"
+      }
+    }
+  },
+  "floyd": {
+    "title": "Floyd Algorithm",
+    "header": {
+      "title": "Floyd-Warshall Algorithm",
+      "description": "Find shortest paths between all pairs of vertices in a weighted graph"
+    },
+    "panel": {
+      "title": "Matrix Configuration",
+      "vertices_label": "Vertices:",
+      "generate_button": "Generate Random",
+      "calculate_button": "Calculate Paths",
+      "input_matrix_title": "Input Matrix",
+      "result_title": "Result Matrix (Shortest Paths)"
+    },
+    "theory": {
+      "title": "Algorithm Theory",
+      "core_principle": {
+        "title": "Core Principle",
+        "description": "The Floyd-Warshall algorithm solves the all-pairs shortest path problem through dynamic programming. It builds a solution by gradually improving shortest path estimates between all vertex pairs."
+      },
+      "steps": {
+        "title": "Algorithm Steps",
+        "initialization": {
+          "title": "Initialization Phase",
+          "description": "Create distance matrix D where:",
+          "steps": [
+            "D[i][j] = weight of edge from i to j (if exists)",
+            "D[i][j] = INF if no direct connection",
+            "D[i][i] = 0 for all vertices"
+          ]
+        },
+        "relaxation": {
+          "title": "Relaxation Phase",
+          "description": "For each intermediate vertex k (from 1 to n):",
+          "code": "D[i][j] = min(D[i][j], D[i][k] + D[k][j])",
+          "text": "This checks if path through k is shorter than current estimate."
+        },
+        "termination": {
+          "title": "Result Interpretation",
+          "description": "Final matrix contains shortest paths between all pairs. Negative values on diagonal indicate negative cycles."
+        }
+      }
+    },
+    "example": {
+      "title": "Detailed Example",
+      "initial_graph": {
+        "title": "Initial Graph",
+        "adjacency_matrix_title": "Adjacency Matrix",
+        "adjacency_matrix": "   A  B   C  D\nA [0, 3, INF, 7]\nB [8, 0, 2, INF]\nC [5, INF, 0, 1]\nD [2, INF, INF, 0]",
+        "graph_visualization_title": "Graph Visualization"
+      },
+      "execution": {
+        "title": "Iteration Process",
+        "iterations": [
+          {
+            "title": "After k=A (Intermediate vertex A)",
+            "content": "   A  B   C   D\nA [0, 3, INF, 7]\nB [8, 0, 2, 15]  <-  B-D updated through A (8+7)\nC [5, 8, 0, 1]   <-  C-B updated through A (5+3)\nD [2, 5, INF, 0] <-  D-B updated through A (2+3)"
+          },
+          {
+            "title": "Final Result (k=D)",
+            "content": "   A  B  C D\nA [0, 3, 5,6]  <-  A-D through C (5+1)\nB [5, 0, 2,3]  <-  B-A through D (8+2)\nC [3, 6, 0,1]  <-  C-A through D (5+2)\nD [2, 5, 7,0]  <-  D-C through B (INF -> 5+2)"
+          }
+        ]
+      },
+      "path_reconstruction": {
+        "title": "Path Reconstruction",
+        "description": "To find path from B to D (cost=3):",
+        "steps": [
+          "Check intermediate vertices in reverse order",
+          "B -> A -> D (cost 8+7=15) -> not optimal",
+          "B -> C -> D (cost 2+1=3) <- optimal path"
+        ]
+      }
+    }
+  }
+}

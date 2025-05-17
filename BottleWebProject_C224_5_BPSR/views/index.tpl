@@ -1,5 +1,12 @@
 % rebase('layout.tpl', title='Algorithms and Graphs', year=year)
 
+ <link rel="stylesheet" href="/static/content/site.css"> 
+
+<div class="jumbotron">
+    <h1>Algorithms and Methods</h1>
+    <p class="lead">Need help solving graph problems with visual clarity? Choose the algorithm you need and calculate with ease!</p>
+</div>
+
 <div class="container">
     <div class="algorithms-wrapper">
         <div class="section-heading">
@@ -35,6 +42,11 @@
                     <p>A dynamic programming algorithm that computes the shortest paths between all pairs of vertices in a weighted graph.</p>
                 </a>
             </div>
+    <div class="panel panel-default mt-4">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a class="btn btn-link" href="/FAQ">Frequently Asked Questions</a>
+            </h4>
         </div>
     </div>
         <div class="about-authors-panel">

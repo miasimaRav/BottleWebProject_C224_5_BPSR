@@ -1,0 +1,275 @@
+/* Стили для заголовка */
+.floyd-header {
+    background: #ffffff; /* Белый фон для заголовка */
+    border-radius: 14px; /* Скругление углов с радиусом 14px */
+    padding: 40px 30px; /* Внутренние отступы: 40px сверху/снизу, 30px слева/справа */
+    margin-bottom: 20px; /* Отступ снизу 20px для разделения с содержимым */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* Лёгкая тень для эффекта подъёма */
+    text-align: center; /* Центрирование текста и элементов внутри */
+    border: 1px solid rgba(255,255,255,0.3); /* Тонкая граница с прозрачностью 30% */
+    position: relative; /* Для абсолютного позиционирования кнопки */
+}
+
+    .floyd-header h1 {
+        font-weight: 700; /* Более жирный шрифт для уникальности */
+        color: #2e7d32; /* Зелёный цвет текста */
+        font-size: 3.5rem; /* Увеличенный размер шрифта (56px при базовом 16px) */
+        margin-bottom: 20px; /* Увеличенный отступ снизу */
+        text-shadow: 0 2px 4px rgba(0,0,0,0.15); /* Усиленная тень для глубины */
+        line-height: 1.2; /* Оптимизация высоты строки */
+    }
+
+    .floyd-header .lead {
+        font-size: 1.8rem; /* Большой размер шрифта для ведущего текста (28.8px) */
+        color: #1b5e20; /* Более тёмный зелёный цвет */
+        max-width: 700px; /* Максимальная ширина для ограничения текста */
+        margin: 0 auto; /* Центрирование блока по горизонтали */
+        text-align: left; /* Выравнивание текста по левому краю внутри блока */
+        line-height: 1.6; /* Увеличенная высота строки для читаемости */
+    }
+
+/* Позиционирование кнопки в правом нижнем углу */
+.header-button {
+    position: absolute;
+    bottom: 20px; /* Отступ снизу 20px */
+    right: 30px; /* Отступ справа 30px */
+}
+
+/* Секция калькулятора */
+.calculator {
+    max-width: 1200px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.input-section, .graph-section, .mst-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    border: 1px solid #b3d4e6;
+}
+
+    .input-section h3, .graph-section h3, .mst-section h3 {
+        color: #2e7d32;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+    }
+
+    .input-section form {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .input-section label {
+        font-size: 1em;
+        color: #333;
+        margin-right: 5px;
+    }
+
+/* Поле ввода количества вершин */
+#vertex-count {
+    padding: 8px 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #81c784;
+    color: white;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    #vertex-count:focus {
+        background-color: #66bb6a;
+        outline: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/* Выпадающий список режима весов */
+#weight-mode {
+    padding: 8px 24px 8px 12px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    background-color: #81c784;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="white"><path d="M2 4l4 4 4-4H2z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+}
+
+    #weight-mode:hover {
+        background-color: #66bb6a;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #weight-mode:focus {
+        background-color: #66bb6a;
+        outline: none;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #weight-mode option {
+        background-color: #fff;
+        color: #2c3e50;
+    }
+
+/* Кнопки */
+.create-graph-btn, .confirm-btn {
+    background-color: #81c784;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+    .create-graph-btn:hover, .confirm-btn:hover {
+        background-color: #1b5e20;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+/* Скрытый ввод весов */
+#edge-input {
+    margin-top: 10px;
+    display: none;
+}
+
+/* Список для ввода весов рёбер */
+.edge-weight-list {
+    width: 300px;
+    max-height: 200px;
+    overflow-y: auto;
+    padding: 10px;
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+    .edge-weight-list .weight-row {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    .edge-weight-list label {
+        font-size: 0.9em;
+        color: #333;
+        width: 80px;
+    }
+
+    .edge-weight-list input {
+        width: 60px;
+        padding: 4px;
+        font-size: 0.9em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+        .edge-weight-list input:focus {
+            border-color: #4facfe;
+            outline: none;
+        }
+
+/* Граф и MST */
+#graph, #mst {
+    background-color: #e6f3fa;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 400px;
+    width: 100%;
+    border: 1px solid #b3d4e6;
+}
+
+.graph-section p, .mst-section p {
+    font-size: 1em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Сумма весов MST */
+.mst-weight {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #2c3e50;
+    background: linear-gradient(90deg, #AFD9C3, #B8DFDC, #6CAEBC);
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .mst-weight.updated {
+        animation: highlight 0.5s ease;
+    }
+
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Стили для контейнера примера */
+.example-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0;
+}
+
+/* Стили для графика */
+.example-graph {
+    flex: 0 0 300px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #e6f3fa;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .example-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .example-graph {
+        width: 100%;
+        max-width: 300px;
+        margin-top: 20px;
+    }
+}

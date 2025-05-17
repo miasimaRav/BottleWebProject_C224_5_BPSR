@@ -40,3 +40,10 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+.btn-link:hover {
+    color: #28a745 !important;
+    background-color: rgba(40, 167, 69, 0.1); /* лёгкий зелёный фон */
+    text-decoration: none;
+    border-radius: 4px;
+}
