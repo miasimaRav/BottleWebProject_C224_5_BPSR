@@ -2,7 +2,6 @@
 
 <div class="container">
     <div class="kruskal-wrapper">
-        <!-- Theory Section -->
         <div class="algorithms-wrapper">
             <div class="section-heading">
                 <h1>Kruskal's Algorithm</h1>
@@ -50,7 +49,6 @@
                 </div>
             </div>
 
-            <!-- Illustration Section -->
             <div class="panel">
                 <div class="panel-heading">
                     <h4 class="panel-title">Example Illustration</h4>
