@@ -1,11 +1,6 @@
 % rebase('layout.tpl', title='Algorithms and Graphs', year=year)
 
- <link rel="stylesheet" href="/static/content/site.css"> 
-
-<div class="jumbotron">
-    <h1>Algorithms and Methods</h1>
-    <p class="lead">Need help solving graph problems with visual clarity? Choose the algorithm you need and calculate with ease!</p>
-</div>
+<link rel="stylesheet" href="/static/content/site.css">
 
 <div class="container">
     <div class="algorithms-wrapper">
@@ -42,25 +37,13 @@
                     <p>A dynamic programming algorithm that computes the shortest paths between all pairs of vertices in a weighted graph.</p>
                 </a>
             </div>
-    <div class="panel panel-default mt-4">
-        <div class="panel-heading">
-            <h4 class="panel-title">
-                <a class="btn btn-link" href="/FAQ">Frequently Asked Questions</a>
-            </h4>
         </div>
+
+      <div class="panel panel-default mt-4">
+    <div class="panel-heading">
+        <h4 class="panel-title">
+            <a class="btn btn-link" href="/FAQ">Frequently Asked Questions</a>
+        </h4>
     </div>
-        <div class="about-authors-panel">
-            <div class="panel panel-default">
-                <a class="panel-heading clickable-area" data-toggle="collapse" href="#about" role="button" aria-expanded="false" aria-controls="about">
-                    <h4 class="panel-title">About the Authors</h4>
-                </a>
-                <div id="about" class="panel-collapse collapse">
-                    <div class="panel-body about-text">
-                        Learn more about the developers behind this project and their goals in creating accessible graph algorithm tools.
-                            <a class="btn btn-default" href="/about">See more</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+</div>
 </div>

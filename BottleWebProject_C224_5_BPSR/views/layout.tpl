@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/static/content/drop.css"> 
     <link rel="stylesheet" href="/static/content/text_style.css"> 
     <link rel="stylesheet" href="/static/content/cont.css"> 
+    <link rel="stylesheet" href="/static/content/kruskal.css">
 </head>
 
 <body>
@@ -59,14 +60,6 @@
         </div>
     </div>
 </nav>
-
-<div class="container body-content">
-    {{!base}}
-    <footer>
-        <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>
-    </footer>
-</div>
-
 <body>
     <div class="wrapper">
         <div class="container body-content">
@@ -75,7 +68,7 @@
     </div>
 
     <footer>
-        <p>&copy; {{ year }} - Algorithms</p>
+        <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>
     </footer>
 </body>
 <script src="/static/content/jquery.min.js"></script>

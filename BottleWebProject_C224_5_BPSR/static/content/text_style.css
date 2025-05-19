@@ -151,4 +151,97 @@ footer {
     text-indent: 1.25em; /* отступ первой строки */
 }
 
+/* Стилизация раздела алгоритма Краскала */
+.kruskal-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 
+    /* Стили для списков (steps) */
+    .kruskal-wrapper ol {
+        margin-left: 2em;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .kruskal-wrapper li {
+        padding: 5px 0;
+    }
+
+/* Формы и метки */
+#vertex-form label,
+#edge-input label {
+    font-weight: 600;
+    color: #2e7d32;
+    display: block;
+    margin-top: 10px;
+}
+
+#vertex-form input,
+#vertex-form select {
+    padding: 6px;
+    margin-top: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Стили для кнопки формы */
+#vertex-form button {
+    margin-top: 15px;
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    #vertex-form button:hover {
+        background-color: #1b5e20;
+    }
+
+/* MST output */
+#mst-weight {
+    font-weight: 700;
+    color: #2e7d32;
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+/* Стилизация теоретического текста алгоритма Краскала */
+.kruskal-wrapper .panel-body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #2e7d32; /* тёмно-зелёный, как в кнопках меню */
+    line-height: 1.6;
+    text-indent: 1.25em;
+}
+
+    /* Дополнительные стили для списков внутри теории */
+    .kruskal-wrapper .panel-body ol,
+    .kruskal-wrapper .panel-body ul {
+        font-size: 18px;
+        color: #2e7d32;
+        margin-left: 2em;
+    }
+
+    .kruskal-wrapper .panel-body li {
+        padding: 4px 0;
+    }
+
+    /* Стилизация подчёркнутых и выделенных фрагментов */
+    .kruskal-wrapper .panel-body strong {
+        font-weight: 600;
+        color: #1b5e20;
+    }
+
+    .kruskal-wrapper .panel-body em {
+        font-style: italic;
+        color: #1b5e20;
+    }
