@@ -9,8 +9,10 @@ def generate_graph(vertex_count):
     edges = []
     for i in range(vertex_count):
         for j in range(i + 1, vertex_count):
-            weight = random.randint(1, 100)  # Случайные веса
-            edges.append({'from': i, 'to': j, 'weight': weight})
+            # Случайная вероятность создания ребра (70% шанс)
+            if random.random() > 0.3:  # 30% шанса, что ребра не будет
+                weight = random.randint(1, 100)  # Случайный вес
+                edges.append({'from': i, 'to': j, 'weight': weight})
     return {'edges': edges}
 
 def prim_algorithm(vertex_count, edges, start_vertex):
@@ -42,6 +44,8 @@ def prim_algorithm(vertex_count, edges, start_vertex):
             mst_edges.append({'from': u, 'to': v, 'weight': min_weight})
             total_weight += min_weight
             visited[v] = True
+        else:
+            break  # Прерываем, если больше нет соединений
 
     return {'mstEdges': mst_edges, 'totalWeight': total_weight}
 
