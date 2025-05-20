@@ -1,5 +1,6 @@
 import sys
 import random
+from kruscal import handle_graph_data
 import json
 from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
@@ -31,75 +32,42 @@ except (FileNotFoundError, json.JSONDecodeError) as e:
 @route('/home')
 @view('index')
 def home():
-    return dict(
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(year=datetime.now().year, request=request)
 
 @route('/contact')
 @view('contact')
 def contact():
-    return dict(
-        title='Contact',
-        message='Your contact page.',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Contact', message='Your contact page.', year=datetime.now().year, request=request)
 
 @route('/about')
 @view('about')
 def about():
-    return dict(
-        title='About',
-        message='Your application description page.',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='About', message='Your application description page.', year=datetime.now().year, request=request)
 
 @route('/floid_method')
 @view('floid_method')
 def floid_method():
-    return dict(
-        title='Floyd Warshall algorithm',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Floyd Warshall algorithm', year=datetime.now().year, request=request)
 
 @route('/prim_method')
 @view('prim_method')
 def prim_method():
-    return dict(
-        title='Prim algorithm',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Prim algorithm', year=datetime.now().year, request=request)
 
 @route('/crascal_method')
 @view('crascal_method')
 def crascal_method():
-    return dict(
-        title='Crascal algorithm',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Crascal algorithm', year=datetime.now().year, request=request)
 
 @route('/dijkstra_method')
 @view('dijkstra_method')
 def dijkstra_method():
-    return dict(
-        title='Dijkstra algorithm',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Dijkstra algorithm', year=datetime.now().year, request=request)
 
 @route('/FAQ')
 @view('FAQ')
 def FAQ():
-    return dict(
-        title='Frequently Asked Questions',
-        year=datetime.now().year,
-        request=request
-    )
+    return dict(title='Frequently Asked Questions', year=datetime.now().year, request=request)
 
 # Логика генерации графа
 def generate_graph(vertex_count):

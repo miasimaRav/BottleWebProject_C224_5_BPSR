@@ -1,8 +1,13 @@
+﻿/* Стили текста для body */
+body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    color: #333;
+}
+
+/* Стили текста для заголовков */
 h1, h2, h3, h4 {
     text-align: center;
     font-family: 'Open Sans', Arial, sans-serif;
-    margin-top: 1.5em;
-    margin-bottom: 1em;
     font-weight: 700;
     color: #2e7d32;
 }
@@ -23,28 +28,256 @@ h4 {
     font-size: 20px;
 }
 
+/* Стили текста для параграфов */
 p {
     font-family: 'Open Sans', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
     text-indent: 1.25em;
-    margin-bottom: 1em;
     color: #333;
 }
 
+/* Стили текста для панелей */
+.panel-body {
+    font-size: 18px;
+    line-height: 1.5;
+    text-indent: 1.25em;
+    color: #333;
+}
+
+.panel-heading {
+    text-align: center;
+}
+
+    .panel-heading h4 {
+        text-align: center;
+        font-size: 20px;
+        color: #2e7d32;
+    }
+
+/* Стили текста для кнопок .btn-default */
+.btn-default {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    text-indent: 1.25em;
+}
+
+    .btn-default:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для навигации */
+.navbar-custom .navbar-brand {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.navbar-custom .nav > li > a {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+    .navbar-custom .nav > li > a:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для выпадающего меню */
+.dropdown-menu > li > a {
+    color: #2e7d32;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+    .dropdown-menu > li > a:hover {
+        color: #1b5e20;
+    }
+
+/* Стили текста для футера */
+footer {
+    font-size: 16px;
+    color: #2e7d32;
+    text-align: center;
+}
+
+/* Стили текста для .square-btn */
+.square-btn {
+    color: #2e7d32;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: left;
+}
+
+    .square-btn:hover {
+        color: #1b5e20;
+    }
+
+    .square-btn h4 {
+        font-weight: 700;
+        font-size: 22px;
+        color: inherit;
+        text-align: center;
+    }
+
+    .square-btn p {
+        font-size: 18px;
+        font-weight: normal;
+        color: inherit;
+        line-height: 1.5;
+        text-indent: 1.25em;
+    }
+
+    .square-btn span {
+        font-weight: 600;
+        color: inherit;
+    }
+
+/* Стили текста для .well, .card, .panel-body */
 .well, .card, .panel-body {
-    border-radius: 12px;
-    background-color: #e8fcef;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     font-size: 16px;
     color: #333;
 }
 
-.panel-heading h4 {
+#about .panel-body {
+    color: #2e7d32; /* тёмно-зелёный */
+    padding: 10px; /* внутренние отступы */
+    font-size: 18px;
+    line-height: 1.5;
     text-align: center;
-    font-size: 20px;
+    text-indent: 1.25em; /* отступ первой строки */
+}
+
+/* Стилизация раздела алгоритма Краскала */
+.kruskal-wrapper {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+    /* Стили для списков (steps) */
+    .kruskal-wrapper ol {
+        margin-left: 2em;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .kruskal-wrapper li {
+        padding: 5px 0;
+    }
+
+/* Формы и метки */
+#vertex-form label,
+#edge-input label {
+    font-weight: 600;
     color: #2e7d32;
-    margin: 0;
+    display: block;
+    margin-top: 10px;
+}
+
+#vertex-form input,
+#vertex-form select {
+    padding: 6px;
+    margin-top: 5px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Стили для кнопки формы */
+#vertex-form button {
+    margin-top: 15px;
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+    #vertex-form button:hover {
+        background-color: #1b5e20;
+    }
+
+/* MST output */
+#mst-weight {
+    font-weight: 700;
+    color: #2e7d32;
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+/* Стилизация теоретического текста алгоритма Краскала */
+.kruskal-wrapper .panel-body {
+    font-family: 'Open Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: #2e7d32; /* тёмно-зелёный, как в кнопках меню */
+    line-height: 1.6;
+    text-indent: 1.25em;
+}
+
+    /* Дополнительные стили для списков внутри теории */
+    .kruskal-wrapper .panel-body ol,
+    .kruskal-wrapper .panel-body ul {
+        font-size: 18px;
+        color: #2e7d32;
+        margin-left: 2em;
+    }
+
+    .kruskal-wrapper .panel-body li {
+        padding: 4px 0;
+    }
+
+    /* Стилизация подчёркнутых и выделенных фрагментов */
+    .kruskal-wrapper .panel-body strong {
+        font-weight: 600;
+        color: #1b5e20;
+    }
+
+    .kruskal-wrapper .panel-body em {
+        font-style: italic;
+        color: #1b5e20;
+    }
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+
+    .section-heading h1 {
+        font-size: 28px;
+    }
+
+    .input-section form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #edge-input form {
+        grid-template-columns: 1fr;
+    }
+
+    .graph-box {
+        height: 300px;
+    }
 }

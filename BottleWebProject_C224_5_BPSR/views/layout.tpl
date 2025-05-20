@@ -4,9 +4,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ title }} - Algorithm</title>
-    <link rel="stylesheet" href="/static/content/bootstrap.min.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/static/content/menu_view.css"> 
     <link rel="stylesheet" href="/static/content/drop.css"> 
+    <link rel="stylesheet" href="/static/content/text_style.css"> 
+    <link rel="stylesheet" href="/static/content/cont.css"> 
+    <link rel="stylesheet" href="/static/content/kruskal.css">
 </head>
 
 <body>
@@ -55,14 +60,17 @@
         </div>
     </div>
 </nav>
+<body>
+    <div class="wrapper">
+        <div class="container body-content">
+            {{!base}}
+        </div>
+    </div>
 
-<div class="container body-content">
-    {{!base}}
     <footer>
         <p>{{request.translations['layout']['footer'].replace('{{ year }}', str(year))}}</p>
     </footer>
-</div>
-
+</body>
 <script src="/static/content/jquery.min.js"></script>
 <script src="/static/content/bootstrap.min.js"></script>
 </body>

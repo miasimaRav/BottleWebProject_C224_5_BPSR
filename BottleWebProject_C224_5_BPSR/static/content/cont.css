@@ -1,0 +1,27 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* высота окна */
+}
+
+.wrapper { /* новый контейнер вокруг основного контента */
+    flex: 1; /* занимает доступное пространство */
+    padding-top: 70px; /* отступ сверху */
+}
+
+.container.body-content {
+    /* можно оставить без flex, чтобы не ломать bootstrap стили */
+}
+
+footer {
+    background-color: #d5f5dc;
+    padding: 15px;
+    text-align: center;
+    flex-shrink: 0; /* не сжимается, всегда виден */
+}
