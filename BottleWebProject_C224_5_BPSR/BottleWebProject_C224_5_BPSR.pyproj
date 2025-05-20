@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|env5|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
@@ -31,6 +31,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="kruscal.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="dijkstra.py" />
     <Compile Include="prim_method.py">
       <SubType>Code</SubType>
     </Compile>
@@ -49,13 +53,22 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="resources\log.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\about_styles.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\bootstrap.css" />
     <Content Include="static\content\bootstrap.min.css" />
+    <Content Include="static\content\cont.css">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\faq_styles.css" />
     <Content Include="static\content\drop.css">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="static\content\kruscal.css">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\methods_pages_styles.css" />
@@ -77,6 +90,13 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\resources\Images\back.png" />
+    <Content Include="static\resources\Images\graph1.png" />
+    <Content Include="static\resources\Images\graph2.png" />
+    <Content Include="static\resources\Images\graph3.png" />
+    <Content Include="static\resources\Images\graph4.png" />
+    <Content Include="static\resources\Images\im.png" />
+    <Content Include="static\resources\Images\log.png" />
     <Content Include="static\resources\Images\artem.jpg" />
     <Content Include="static\resources\Images\daria.jpg" />
     <Content Include="static\resources\Images\DijkstraTheory.jpg" />
@@ -89,7 +109,7 @@
     <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
-    <Content Include="static\scripts\dijkstra_method_logic.js" />
+    <Content Include="static\scripts\dijkstra_client.js" />
     <Content Include="static\scripts\floid_method_logic.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="static\scripts\jquery-1.10.2.js" />
@@ -100,6 +120,9 @@
     <Content Include="static\scripts\jquery.validate.min.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.js" />
     <Content Include="static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="static\scripts\kruskal.js">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\scripts\modernizr-2.6.2.js" />
     <Content Include="static\scripts\prim_method.js">
       <SubType>Code</SubType>
@@ -129,19 +152,19 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env3\">
-      <Id>env3</Id>
+    <Interpreter Include="env\">
+      <Id>env</Id>
       <Version>3.9</Version>
-      <Description>env3 (Python 3.9 (64-bit))</Description>
+      <Description>env (Python 3.9 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
       <Architecture>X64</Architecture>
     </Interpreter>
-    <Interpreter Include="env5\">
-      <Id>env5</Id>
+    <Interpreter Include="env6\">
+      <Id>env6</Id>
       <Version>3.9</Version>
-      <Description>env5 (Python 3.9 (64-bit))</Description>
+      <Description>env6 (Python 3.9 (64-bit))</Description>
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
