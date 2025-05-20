@@ -1,7 +1,6 @@
 % rebase('layout.tpl', title=request.translations['floyd']['title'], year=year, lang=request.lang, translations=request.translations)
 
 <link rel="stylesheet" href="/static/content/methods_pages_styles.css">
-<script src="/static/scripts/floid_method_logic.js"></script>
 
 <div class="floyd-header">
     <h1>{{request.translations['floyd']['header']['title']}}</h1>
@@ -14,34 +13,31 @@
             <h3 class="panel-title">{{request.translations['floyd']['panel']['title']}}</h3>
         </div>
         <div class="panel-body text-center">
-            <form action="/floyd_result" method="POST" id="matrix_form">
+            <form id="matrixForm">
                 <div class="control-panel">
                     <div class="input-group">
                         <span class="input-group-addon">{{request.translations['floyd']['panel']['vertices_label']}}</span>
-                        <input type="number" class="form-control" id="matrixSize" name="matrix_size" min="3" max="10" value="3" required>
+                        <input type="number" class="form-control" id="matrixSize" name="matrixSize" min="2" max="10" value="4" required>
                     </div>
-                    <button type="button" class="btn btn-calculate" id="generateMatrix">
-                        {{request.translations['floyd']['panel']['generate_button']}}
-                    </button>
-                    <button type="submit" class="btn btn-calculate" id="calculatePaths">
-                        {{request.translations['floyd']['panel']['calculate_button']}}
-                    </button>
+                    <button type="button" class="btn btn-calculate" id="generateMatrix">{{request.translations['floyd']['panel']['generate_button']}}</button>
+                    <button type="submit" class="btn btn-calculate" id="calculatePaths">{{request.translations['floyd']['panel']['calculate_button']}}</button>
                 </div>
 
                 <h4>{{request.translations['floyd']['panel']['input_matrix_title']}}</h4>
                 <div class="matrix-container">
                     <table class="matrix-table" id="adjacencyMatrix">
-                        <!-- Matrix will be generated here -->
+                        <!-- Матрица будет сгенерирована здесь -->
                     </table>
                 </div>
             </form>
-
             
-            <div class="result-section" id="resultSection">
+            <div id="errorMessage"></div>
+            
+            <div class="result-section" id="resultSection" style="display: none;">
                 <h4>{{request.translations['floyd']['panel']['result_title']}}</h4>
                 <div class="matrix-container">
                     <table class="matrix-table" id="resultMatrix">
-                        <!-- Results will appear here -->
+                        <!-- Результаты будут отображены здесь -->
                     </table>
                 </div>
             </div>
@@ -50,12 +46,10 @@
 
     <div class="theory-section">
         <h3 class="theory-title">{{request.translations['floyd']['theory']['title']}}</h3>
-
         <div class="theory-block">
             <h4 class="theory-subtitle">{{request.translations['floyd']['theory']['core_principle']['title']}}</h4>
             <p>{{request.translations['floyd']['theory']['core_principle']['description']}}</p>
         </div>
-
         <div class="theory-block">
             <h4 class="theory-subtitle">{{request.translations['floyd']['theory']['steps']['title']}}</h4>
             <ol class="theory-steps">
@@ -83,8 +77,7 @@
     </div>
 
     <div class="example-section">
-        <h3 class="example-title"><i class="glyphicon glyphicon-blackboard"></i> {{request.translations['floyd']['example']['title']}}</h3>
-
+        <h3 class="example-title"> {{request.translations['floyd']['example']['title']}}</h3>
         <div class="example-block">
             <h4 class="example-subtitle">{{request.translations['floyd']['example']['initial_graph']['title']}}</h4>
             <div class="graph-representation">
@@ -98,7 +91,6 @@
                 </div>
             </div>
         </div>
-
         <div class="example-block">
             <h4 class="example-subtitle">{{request.translations['floyd']['example']['execution']['title']}}</h4>
             <div class="iteration-container">
@@ -110,7 +102,6 @@
                 % end
             </div>
         </div>
-
         <div class="example-block">
             <h4 class="example-subtitle">{{request.translations['floyd']['example']['path_reconstruction']['title']}}</h4>
             <p>{{request.translations['floyd']['example']['path_reconstruction']['description']}}</p>
@@ -122,3 +113,5 @@
         </div>
     </div>
 </div>
+
+<script src="/static/scripts/floid_method_logic.js"></script>
