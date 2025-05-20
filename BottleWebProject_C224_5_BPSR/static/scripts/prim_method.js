@@ -65,20 +65,20 @@ document.addEventListener('DOMContentLoaded', () => {
                         edges.push({ from: i, to: j, weight });
                     }
                 }
-                await renderGraph(vertexCount, edges);
+                await renderGraph(vertexCount, edges, weightMode);
             };
         } else {
             try {
                 const response = await fetch('/generate_graph', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ vertexCount })
+                    body: JSON.stringify({ vertexCount, weightMode })
                 });
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const { edges } = await response.json();
-                await renderGraph(vertexCount, edges);
+                await renderGraph(vertexCount, edges, weightMode);
             } catch (error) {
                 console.error('Ошибка при генерации графа:', error);
                 alert('Не удалось сгенерировать граф. Проверьте консоль для деталей.');
@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    async function renderGraph(vertexCount, edges) {
+    async function renderGraph(vertexCount, edges, weightMode) {
         const nodes = Array.from({ length: vertexCount }, (_, i) => ({ id: i, label: `${i + 1}` }));
         const visEdges = edges.map(e => ({ from: e.from, to: e.to, label: `${e.weight}` }));
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const response = await fetch('/prim', {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ vertexCount, edges, startVertex })
+                        body: JSON.stringify({ vertexCount, edges, startVertex, weightMode })
                     });
                     if (!response.ok) {
                         throw new Error(`HTTP error! Status: ${response.status}`);

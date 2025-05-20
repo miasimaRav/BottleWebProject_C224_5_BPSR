@@ -1,8 +1,32 @@
-from bottle import route, post, view, request, response
-from datetime import datetime
-from prim_method import generate_graph, prim_algorithm
+import sys
+import random
 import json
+from bottle import Bottle, route, post, view, request, response
+from datetime import datetime
+import os
 
+# Инициализация приложения Bottle
+app = Bottle()
+
+# Инициализация файла лога с корректным путём
+LOG_FILE = r"C:\Users\Artem\Source\Repos\BottleWebProject_C224_5_BPSR\BottleWebProject_C224_5_BPSR\resources\log.json"
+log_data = []
+
+# Проверка и создание файла лога
+if not os.path.exists(LOG_FILE):
+    print(f"Файл {LOG_FILE} не найден. Создаю новый...")
+    with open(LOG_FILE, 'w') as f:
+        json.dump(log_data, f, indent=4)
+
+try:
+    with open(LOG_FILE, 'r') as f:
+        log_data = json.load(f)
+    print(f"Успешно загружено {len(log_data)} записей из {LOG_FILE}")
+except (FileNotFoundError, json.JSONDecodeError) as e:
+    print(f"Ошибка при загрузке лога: {e}. Использую пустой список.")
+    log_data = []
+
+# Основные страницы
 @route('/')
 @route('/home')
 @view('index')
@@ -77,23 +101,91 @@ def FAQ():
         request=request
     )
 
-@post('/generate_graph')
-def handle_generate_graph():
-    data = request.json
-    vertex_count = data['vertexCount']
-    result = generate_graph(vertex_count)
-    response.content_type = 'application/json'
-    return json.dumps(result)
+# Логика генерации графа
+def generate_graph(vertex_count):
+    edges = []
+    for i in range(vertex_count):
+        for j in range(i + 1, vertex_count):
+            weight = random.randint(1, 100)  # Случайные веса
+            edges.append({'from': i, 'to': j, 'weight': weight})
+    return {'edges': edges}
 
-@post('/prim')
-def handle_prim():
+# Логика алгоритма Прима
+def prim_algorithm(vertex_count, edges, start_vertex):
+    # Создание матрицы смежности
+    adj_matrix = [[float('inf')] * vertex_count for _ in range(vertex_count)]
+    for edge in edges:
+        i, j, w = edge['from'], edge['to'], edge['weight']
+        adj_matrix[i][j] = w
+        adj_matrix[j][i] = w
+
+    # Алгоритм Прима
+    visited = [False] * vertex_count
+    visited[start_vertex] = True
+    mst_edges = []
+    total_weight = 0
+
+    for _ in range(vertex_count - 1):
+        min_weight = float('inf')
+        min_edge = None
+        for u in range(vertex_count):
+            if visited[u]:
+                for v in range(vertex_count):
+                    if not visited[v] and adj_matrix[u][v] < min_weight:
+                        min_weight = adj_matrix[u][v]
+                        min_edge = (u, v)
+
+        if min_edge:
+            u, v = min_edge
+            mst_edges.append({'from': u, 'to': v, 'weight': min_weight})
+            total_weight += min_weight
+            visited[v] = True
+
+    return {'mstEdges': mst_edges, 'totalWeight': total_weight}
+
+# API-эндпоинты
+@app.route('/generate_graph', method='POST')
+def generate_graph_endpoint():
     data = request.json
-    vertex_count = data['vertexCount']
-    edges = data['edges']
-    start_vertex = data['startVertex']
+    vertex_count = data.get('vertexCount')
+    if not vertex_count or vertex_count < 1 or vertex_count > 12:
+        response.status = 400
+        return {'error': 'Number of vertices must be between 1 and 12'}
+    graph = generate_graph(vertex_count)
+    return graph
+
+@app.route('/prim', method='POST')
+def prim_endpoint():
+    data = request.json
+    vertex_count = data.get('vertexCount')
+    edges = data.get('edges')
+    start_vertex = data.get('startVertex')
+    weight_mode = data.get('weightMode')  # Получаем weightMode из запроса
+    if not all([vertex_count, edges, start_vertex is not None]) or vertex_count < 1 or vertex_count > 12 or start_vertex >= vertex_count:
+        response.status = 400
+        return {'error': 'Invalid input data'}
+    
     result = prim_algorithm(vertex_count, edges, start_vertex)
-    response.content_type = 'application/json'
-    return json.dumps(result)
+    
+    # Логирование после построения MST
+    log_entry = {
+        'timestamp': datetime.now().isoformat(),
+        'vertex_count': vertex_count,
+        'weight_mode': weight_mode if weight_mode else ('manual' if any(edge.get('manual') for edge in edges) else 'auto'),
+        'initial_edges': edges,
+        'start_vertex': start_vertex,
+        'mst_edges': result['mstEdges'],
+        'total_weight': result['totalWeight']
+    }
+    log_data.append(log_entry)
+    try:
+        with open(LOG_FILE, 'w') as f:
+            json.dump(log_data, f, indent=4)
+        print(f"Лог успешно записан в {LOG_FILE}")
+    except Exception as e:
+        print(f"Ошибка при записи лога: {e}")
+
+    return result
 
 def setup_routes(app):
     app.route('/', method='GET', callback=home)
@@ -104,7 +196,6 @@ def setup_routes(app):
     app.route('/prim_method', method='GET', callback=prim_method)
     app.route('/crascal_method', method='GET', callback=crascal_method)
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
-    app.route('/generate_graph', method='POST', callback=handle_generate_graph)
-    app.route('/prim', method='POST', callback=handle_prim)
+    app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
+    app.route('/prim', method='POST', callback=prim_endpoint)
     app.route('/FAQ', method='GET', callback=FAQ)
-    

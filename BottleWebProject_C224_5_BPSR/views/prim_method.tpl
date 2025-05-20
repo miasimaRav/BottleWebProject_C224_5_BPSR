@@ -98,7 +98,7 @@
             </form>
             <div id="edge-input">
                 <h4>{{request.translations['prim']['calculator_input_weights_title']}}</h4>
-            <form id="edge-form">
+                <form id="edge-form">
                     <div class="edge-weight-list"></div>
                     <button type="submit" class="confirm-btn">{{request.translations['prim']['calculator_input_confirm']}}</button>
                 </form>
