@@ -14,22 +14,26 @@
             <h3 class="panel-title">Matrix Configuration</h3>
         </div>
         <div class="panel-body text-center">
-            <div class="control-panel">
-                <div class="input-group">
-                    <span class="input-group-addon">Vertices:</span>
-                    <input type="number" class="form-control" id="matrixSize" min="2" max="10" value="2">
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">Start Vertex:</span>
-                    <select class="form-control" id="startNode"></select>
-                </div>
-                <div class="input-group">
-                    <span class="input-group-addon">End Vertex:</span>
-                    <select class="form-control" id="endNode"></select>
-                </div>
-                <button class="btn btn-calculate" id="generateMatrix">Generate Random</button>
-                <button class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
-            </div>
+           <div class="control-panel">
+    <div class="input-group">
+        <span class="input-group-addon">Vertices:</span>
+        <input type="number" class="form-control" id="matrixSize" min="2" max="13" value="2">
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">Start Vertex:</span>
+        <select class="form-control" id="startNode"></select>
+    </div>
+    <div class="input-group">
+        <span class="input-group-addon">End Vertex:</span>
+        <select class="form-control" id="endNode"></select>
+    </div>
+    <button class="btn btn-calculate" id="generateMatrix">Generate Random</button>
+    <button class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
+
+    <!-- Блок для сообщений об ошибках/успехе -->
+    <div id="messageBox" style="margin-top:10px; min-height:20px; font-weight: 600;"></div>
+</div>
+
 
             <h4>Adjacency Matrix</h4>
             <div class="matrix-container">
