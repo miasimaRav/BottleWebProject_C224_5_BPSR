@@ -4,12 +4,16 @@ import json
 from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
 import os
+import floyd_logic
 
 # Инициализация приложения Bottle
 app = Bottle()
 
+# Подключаем маршруты из floyd_logic
+app.merge(floyd_logic.app)
+
 # Инициализация файла лога с корректным путём
-LOG_FILE = r"C:\Users\Artem\Source\Repos\BottleWebProject_C224_5_BPSR\BottleWebProject_C224_5_BPSR\resources\log.json"
+LOG_FILE = r"resources\log.json"
 log_data = []
 
 # Проверка и создание файла лога
@@ -171,9 +175,13 @@ def setup_routes(app):
     app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
     app.route('/prim', method='POST', callback=prim_endpoint)
     app.route('/FAQ', method='GET', callback=FAQ)
+     # Регистрация маршрутов для метода Флойда
+    app.route('/floyd', method='GET', callback=floyd_logic.floyd_page)
+    app.route('/floyd_calculate', method='POST', callback=floyd_logic.calculate_floyd)
 
 # Привязываем маршруты к приложению
 setup_routes(app)
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=8080)
+
