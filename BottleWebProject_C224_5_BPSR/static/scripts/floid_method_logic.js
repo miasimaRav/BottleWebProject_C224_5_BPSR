@@ -1,14 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
-    const matrixForm = document.getElementById('matrixForm');
-    const matrixSizeInput = document.getElementById('matrixSize');
-    const generateMatrixBtn = document.getElementById('generateMatrix');
-    const adjacencyMatrix = document.getElementById('adjacencyMatrix');
-    const resultMatrix = document.getElementById('resultMatrix');
-    const errorMessage = document.getElementById('errorMessage');
-    const resultSection = document.getElementById('resultSection');
+    // Инициализация элементов DOM после загрузки страницы
+    const matrixForm = document.getElementById('matrixForm');        // Форма для отправки данных
+    const matrixSizeInput = document.getElementById('matrixSize');  // Поле ввода размера матрицы
+    const generateMatrixBtn = document.getElementById('generateMatrix'); // Кнопка генерации матрицы
+    const adjacencyMatrix = document.getElementById('adjacencyMatrix');  // Таблица для входной матрицы
+    const resultMatrix = document.getElementById('resultMatrix');   // Таблица для результата
+    const errorMessage = document.getElementById('errorMessage');   // Контейнер для сообщений об ошибках
+    const resultSection = document.getElementById('resultSection'); // Секция для отображения результата
 
+    // Проверка наличия всех необходимых элементов DOM
     if (!matrixForm || !matrixSizeInput || !generateMatrixBtn || !adjacencyMatrix || !resultMatrix || !errorMessage || !resultSection) {
+        // Вывод ошибки в консоль с указанием отсутствующих элементов
         console.error('Один или несколько элементов не найдены:', {
             matrixForm: !!matrixForm,
             matrixSizeInput: !!matrixSizeInput,
@@ -18,38 +20,43 @@ document.addEventListener('DOMContentLoaded', () => {
             errorMessage: !!errorMessage,
             resultSection: !!resultSection
         });
+        // Оповещение пользователя об ошибке
         alert('Ошибка: Не удалось загрузить элементы страницы. Проверьте консоль.');
         return;
     }
 
-    // Инициализация матрицы при загрузке страницы
+    // Генерация начальной матрицы при загрузке страницы
     generateMatrix();
 
-    // Event Listeners
-    matrixSizeInput.addEventListener('change', generateMatrix);
-    generateMatrixBtn.addEventListener('click', generateMatrix);
-    matrixForm.addEventListener('submit', calculatePaths);
+    // Назначение обработчиков событий для изменения размера, генерации и отправки формы
+    matrixSizeInput.addEventListener('change', generateMatrix);  // Реакция на изменение размера матрицы
+    generateMatrixBtn.addEventListener('click', generateMatrix); // Реакция на нажатие кнопки генерации
+    matrixForm.addEventListener('submit', calculatePaths);       // Реакция на отправку формы
 
-    // Matrix Generation
+    // Функция для генерации таблицы матрицы с случайными значениями
     function generateMatrix() {
+        // Ограничение размера матрицы (от 2 до 10, по умолчанию 4)
         const size = Math.min(10, Math.max(2, parseInt(matrixSizeInput.value) || 4));
         matrixSizeInput.value = size;
 
         let html = '<tr><th>#</th>';
-        // Создаем заголовки с буквами (A, B, C, ...)
+        // Создание заголовков таблицы с буквами (A, B, C, ...)
         for (let i = 0; i < size; i++) {
             html += `<th>${String.fromCharCode(65 + i)}</th>`;
         }
         html += '</tr>';
 
-        // Создаем строки матрицы
+        // Создание строк матрицы
         for (let i = 0; i < size; i++) {
             html += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
+            // Создание ячеек строки
             for (let j = 0; j < size; j++) {
-                const cellClass = i === j ? 'class="diagonal"' : '';
+                const cellClass = i === j ? 'class="diagonal"' : '';  // Выделение диагональных ячеек
                 if (i === j) {
+                    // Установка значения 0 для диагональных элементов (нельзя редактировать)
                     html += `<td ${cellClass}><input type="text" id="matrix-${i}-${j}" value="0" readonly></td>`;
                 } else {
+                    // Генерация случайного значения (число от 1 до 9 или 'INF')
                     const value = Math.random() > 0.3 ? Math.floor(Math.random() * 9) + 1 : 'INF';
                     html += `<td ${cellClass}><input type="text" id="matrix-${i}-${j}" value="${value}"></td>`;
                 }
@@ -57,33 +64,39 @@ document.addEventListener('DOMContentLoaded', () => {
             html += '</tr>';
         }
 
+        // Отображение сгенерированной таблицы на странице
         adjacencyMatrix.innerHTML = html;
+        // Очистка предыдущего результата и сообщений об ошибках
         resultMatrix.innerHTML = '';
         errorMessage.innerHTML = '';
         resultSection.style.display = 'none';
     }
 
-    // Calculate Paths using Server
+    // Функция для отправки данных на сервер и расчета кратчайших путей
     async function calculatePaths(e) {
-        e.preventDefault();
-        const size = parseInt(matrixSizeInput.value);
+        e.preventDefault();  // Отмена стандартного поведения формы
+        const size = parseInt(matrixSizeInput.value);  // Получение размера матрицы
 
+        // Проверка допустимого размера матрицы
         if (size < 2 || size > 10) {
             alert('Размер матрицы должен быть от 2 до 10');
             return;
         }
 
+        // Сбор данных из таблицы в массив
         const matrix = [];
         for (let i = 0; i < size; i++) {
             const row = [];
             for (let j = 0; j < size; j++) {
-                const input = document.getElementById(`matrix-${i}-${j}`);
-                const value = input.value === 'INF' ? 'INF' : parseInt(input.value);
+                const input = document.getElementById(`matrix-${i}-${j}`);  // Получение значения ячейки
+                const value = input.value === 'INF' ? 'INF' : parseInt(input.value);  // Парсинг значения
 
+                // Проверка корректности значений: только неотрицательные числа или 'INF'
                 if (value !== 'INF' && (isNaN(value) || value < 0)) {
                     alert('Все значения должны быть неотрицательными числами или "INF"');
                     return;
                 }
+                // Проверка, что диагональные элементы равны 0
                 if (i === j && value !== 0) {
                     alert('Элементы на диагонали должны быть равны 0');
                     return;
@@ -93,71 +106,83 @@ document.addEventListener('DOMContentLoaded', () => {
             matrix.push(row);
         }
 
+        // Очистка предыдущего результата и сообщений
         resultMatrix.innerHTML = '';
         errorMessage.innerHTML = '';
         resultSection.style.display = 'none';
 
         try {
-            console.log('Отправка запроса на /floyd_calculate');
+            // Логирование отправки запроса
+            console.log('Отправка запроса на сервер');
             console.log('Отправляемая матрица:', matrix);
+            // Отправка POST-запроса на сервер
             const response = await fetch('/floyd_calculate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ matrixSize: size, matrix })
             });
+            // Проверка успешности ответа
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
+            // Получение результата от сервера
             const result = await response.json();
-            console.log('Полученный результат:', result);
+            console.log('Полученный результат от сервера:', result);
+            // Отображение результата на странице
             displayResult(result);
         } catch (error) {
-            console.error('Ошибка при вычислении кратчайших путей:', error);
+            // Обработка ошибок при выполнении запроса
+            console.error('Ошибка при вычислении путей:', error);
             alert('Не удалось выполнить вычисление. Проверьте консоль для деталей.');
         }
     }
 
-    // Display Result Matrix
+    // Функция для отображения результата расчета на странице
     function displayResult(data) {
-        console.log('Вызов displayResult с данными:', data);
+        console.log('Обработка данных для отображения:', data);
+        // Проверка, если сервер вернул ошибку
         if (data.status === 'error') {
             const errorDiv = document.createElement('div');
             errorDiv.classList.add('alert', 'alert-danger');
             errorDiv.textContent = data.message;
             errorMessage.appendChild(errorDiv);
             resultSection.style.display = 'block';
-            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
         }
 
+        // Проверка корректности данных результата
         if (!data.data || !Array.isArray(data.data) || data.data.length === 0) {
             console.error('Некорректные данные результата:', data);
             errorMessage.innerHTML = '<div class="alert alert-danger">Ошибка: Некорректный результат от сервера.</div>';
             resultSection.style.display = 'block';
-            resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
             return;
         }
 
         const size = data.data.length;
         let html = '<tr><th>#</th>';
-        // Создаем заголовки с буквами (A, B, C, ...)
+        // Создание заголовков таблицы с буквами (A, B, C, ...)
         for (let i = 0; i < size; i++) {
             html += `<th>${String.fromCharCode(65 + i)}</th>`;
         }
         html += '</tr>';
 
-        // Создаем строки результата
+        // Создание строк таблицы с результатами
         for (let i = 0; i < size; i++) {
             html += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
             for (let j = 0; j < size; j++) {
-                const cellClass = i === j ? 'class="diagonal"' : '';
+                const cellClass = i === j ? 'class="diagonal"' : '';  // Выделение диагональных ячеек
+                // Округление чисел или сохранение 'INF'
                 const value = data.data[i][j] === 'INF' ? 'INF' : Math.round(data.data[i][j]);
                 html += `<td ${cellClass}>${value}</td>`;
             }
             html += '</tr>';
         }
 
+        // Отображение таблицы результата
         resultMatrix.innerHTML = html;
+        // Показ секции результата и прокрутка к ней
         resultSection.style.display = 'block';
         resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
