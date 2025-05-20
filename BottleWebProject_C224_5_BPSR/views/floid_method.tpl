@@ -14,21 +14,28 @@
             <h3 class="panel-title">{{request.translations['floyd']['panel']['title']}}</h3>
         </div>
         <div class="panel-body text-center">
-            <div class="control-panel">
-                <div class="input-group">
-                    <span class="input-group-addon">{{request.translations['floyd']['panel']['vertices_label']}}</span>
-                    <input type="number" class="form-control" id="matrixSize" min="2" max="10" value="2">
+            <form action="/floyd_result" method="POST" id="matrix_form">
+                <div class="control-panel">
+                    <div class="input-group">
+                        <span class="input-group-addon">{{request.translations['floyd']['panel']['vertices_label']}}</span>
+                        <input type="number" class="form-control" id="matrixSize" name="matrix_size" min="3" max="10" value="3" required>
+                    </div>
+                    <button type="button" class="btn btn-calculate" id="generateMatrix">
+                        {{request.translations['floyd']['panel']['generate_button']}}
+                    </button>
+                    <button type="submit" class="btn btn-calculate" id="calculatePaths">
+                        {{request.translations['floyd']['panel']['calculate_button']}}
+                    </button>
                 </div>
-                <button class="btn btn-calculate" id="generateMatrix">{{request.translations['floyd']['panel']['generate_button']}}</button>
-                <button class="btn btn-calculate" id="calculatePaths">{{request.translations['floyd']['panel']['calculate_button']}}</button>
-            </div>
 
-            <h4>{{request.translations['floyd']['panel']['input_matrix_title']}}</h4>
-            <div class="matrix-container">
-                <table class="matrix-table" id="adjacencyMatrix">
-                    <!-- Matrix will be generated here -->
-                </table>
-            </div>
+                <h4>{{request.translations['floyd']['panel']['input_matrix_title']}}</h4>
+                <div class="matrix-container">
+                    <table class="matrix-table" id="adjacencyMatrix">
+                        <!-- Matrix will be generated here -->
+                    </table>
+                </div>
+            </form>
+
             
             <div class="result-section" id="resultSection">
                 <h4>{{request.translations['floyd']['panel']['result_title']}}</h4>

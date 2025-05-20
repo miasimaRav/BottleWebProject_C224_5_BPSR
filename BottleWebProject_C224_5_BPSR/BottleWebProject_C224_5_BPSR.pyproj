@@ -31,6 +31,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="app.py" />
+    <Compile Include="calculate_floyd.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="prim_method.py">
       <SubType>Code</SubType>
     </Compile>
@@ -129,15 +132,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="env3\">
-      <Id>env3</Id>
-      <Version>3.9</Version>
-      <Description>env3 (Python 3.9 (64-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
-    </Interpreter>
     <Interpreter Include="env5\">
       <Id>env5</Id>
       <Version>3.9</Version>

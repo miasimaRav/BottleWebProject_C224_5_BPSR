@@ -44,39 +44,60 @@ document.addEventListener('DOMContentLoaded', function () {
         resultSection.style.display = 'none';
     }
 
-    function calculatePaths() {
-        const size = parseInt(sizeInput.value);
-        const inputMatrix = [];
+    async function calculatePaths() {
+        try {
+            const size = parseInt(document.getElementById('matrixSize').value);
+            const inputMatrix = [];
 
-        // Read input matrix
-        const rows = adjMatrix.querySelectorAll('tr:not(:first-child)');
-        rows.forEach(row => {
-            const cells = row.querySelectorAll('td input');
-            const rowData = [];
-            cells.forEach(cell => {
-                rowData.push(cell.value === 'INF' ? Infinity : parseInt(cell.value));
+            // Сбор данных матрицы
+            const rows = document.querySelectorAll('#adjacencyMatrix tr:not(:first-child)');
+            rows.forEach(row => {
+                const rowData = [];
+                row.querySelectorAll('td input').forEach(cell => {
+                    rowData.push(cell.value === 'INF' ? Infinity : Number(cell.value));
+                });
+                inputMatrix.push(rowData);
             });
-            inputMatrix.push(rowData);
-        });
+            const baseUrl = 'http://localhost:5000'; // url на бэкэкнд
+            // Отправка на сервер
+            const response = await fetch(`${baseUrl}/calculate_floyd`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ matrix: inputMatrix })
+            });
 
-        // Initialize result matrix (copy of input)
-        const dist = [];
-        for (let i = 0; i < size; i++) {
-            dist[i] = [...inputMatrix[i]];
-        }
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
-        // Floyd-Warshall algorithm
-        for (let k = 0; k < size; k++) {
+            const result = await response.json();
+
+            // Отображение результатов
+            let html = '<tr><th>#</th>';
             for (let i = 0; i < size; i++) {
-                for (let j = 0; j < size; j++) {
-                    if (dist[i][k] + dist[k][j] < dist[i][j]) {
-                        dist[i][j] = dist[i][k] + dist[k][j];
-                    }
-                }
+                html += `<th>${String.fromCharCode(65 + i)}</th>`;
             }
-        }
+            html += '</tr>';
 
-        // Display results
+            result.matrix.forEach((row, i) => {
+                html += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
+                row.forEach((val, j) => {
+                    const cellClass = i === j ? 'class="diagonal"' : '';
+                    html += `<td ${cellClass}>${val}</td>`;
+                });
+                html += '</tr>';
+            });
+
+            document.getElementById('resultMatrix').innerHTML = html;
+            document.getElementById('resultSection').style.display = 'block';
+
+        } catch (error) {
+            console.error('Error:', error);
+            alert(`Calculation failed: ${error.message}`);
+        }
+    }
+
+    // Отображение результатов
+    function displayResultMatrix(matrix) {
+        const size = matrix.length;
         let html = '<tr><th>#</th>';
         for (let i = 0; i < size; i++) {
             html += `<th>${String.fromCharCode(65 + i)}</th>`;
@@ -87,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
             html += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
             for (let j = 0; j < size; j++) {
                 const cellClass = i === j ? 'class="diagonal"' : '';
-                const value = dist[i][j] === Infinity ? 'INF' : dist[i][j];
+                const value = matrix[i][j] === null ? 'INF' : matrix[i][j];
                 html += `<td ${cellClass}>${value}</td>`;
             }
             html += '</tr>';
