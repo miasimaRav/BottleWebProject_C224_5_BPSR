@@ -1,6 +1,5 @@
 import sys
 import random
-from kruscal import handle_graph_data
 import json
 from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
@@ -69,13 +68,15 @@ def dijkstra_method():
 def FAQ():
     return dict(title='Frequently Asked Questions', year=datetime.now().year, request=request)
 
-# Логика генерации графа
+# Логика генерации графа для Прима
 def generate_graph(vertex_count):
     edges = []
     for i in range(vertex_count):
         for j in range(i + 1, vertex_count):
-            weight = random.randint(1, 100)  # Случайные веса
-            edges.append({'from': i, 'to': j, 'weight': weight})
+            # Случайная вероятность создания ребра (70% шанс)
+            if random.random() > 0.3:  # 30% шанса, что ребра не будет
+                weight = random.randint(1, 100)  # Случайный вес
+                edges.append({'from': i, 'to': j, 'weight': weight})
     return {'edges': edges}
 
 # Логика алгоритма Прима
@@ -108,10 +109,12 @@ def prim_algorithm(vertex_count, edges, start_vertex):
             mst_edges.append({'from': u, 'to': v, 'weight': min_weight})
             total_weight += min_weight
             visited[v] = True
+        else:
+            break  # Прерываем, если больше нет соединений
 
     return {'mstEdges': mst_edges, 'totalWeight': total_weight}
 
-# API-эндпоинты
+# API-эндпоинты для Прима
 @app.route('/generate_graph', method='POST')
 def generate_graph_endpoint():
     data = request.json
@@ -128,7 +131,7 @@ def prim_endpoint():
     vertex_count = data.get('vertexCount')
     edges = data.get('edges')
     start_vertex = data.get('startVertex')
-    weight_mode = data.get('weightMode')  # Получаем weightMode из запроса
+    weight_mode = data.get('weightMode')
     if not all([vertex_count, edges, start_vertex is not None]) or vertex_count < 1 or vertex_count > 12 or start_vertex >= vertex_count:
         response.status = 400
         return {'error': 'Invalid input data'}
@@ -143,7 +146,8 @@ def prim_endpoint():
         'initial_edges': edges,
         'start_vertex': start_vertex,
         'mst_edges': result['mstEdges'],
-        'total_weight': result['totalWeight']
+        'total_weight': result['totalWeight'],
+        'algorithm': 'Prim'
     }
     log_data.append(log_entry)
     try:
@@ -167,3 +171,9 @@ def setup_routes(app):
     app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
     app.route('/prim', method='POST', callback=prim_endpoint)
     app.route('/FAQ', method='GET', callback=FAQ)
+
+# Привязываем маршруты к приложению
+setup_routes(app)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='localhost', port=8080)
