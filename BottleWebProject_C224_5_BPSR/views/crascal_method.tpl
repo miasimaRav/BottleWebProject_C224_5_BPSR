@@ -9,7 +9,7 @@
                     Kruskal's algorithm is a greedy method for finding a minimum spanning tree by sorting edges and choosing the lowest-weight ones that don't form cycles.
                     It is efficient for sparse graphs and uses the Union-Find data structure to detect cycles.
                 </p>
-                <a href="#calculator" class="btn btn-primary mt-3">Go to Calculator</a>
+                <a href="#calculator" class="btn btn-calculator">Go to Calculator</a>
             </div>
 
             <div class="panel">
@@ -54,8 +54,9 @@
                     <h4 class="panel-title">Example Illustration</h4>
                 </div>
                 <div class="panel-body image-panel">
-                    <img src="/static/resources/Images/im.png">
-                    <p>Example graph used to demonstrate Kruskal's algorithm step by step.</p>
+                    <img id="illustration-image" src="/static/resources/Images/graph1.png">
+                    <p id="illustration-caption"></p>
+                    <button id="next-image-button" class="illustration-button">Next Step</button>
                 </div>
             </div>
 
@@ -68,7 +69,7 @@
                     <div class="calculator">
                         <div class="input-section">
                             <h3>Input Data</h3>
-                            <form id="vertex-form" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
+                            <form id="vertex-form">
                                 <label for="vertex-count">Vertices (1-20):</label>
                                 <input type="number" id="vertex-count" min="1" max="20" required>
 
@@ -81,7 +82,7 @@
                                 <button type="submit">Create Graph</button>
                             </form>
 
-                            <div id="edge-input" style="display: none;">
+                            <div id="edge-input">
                                 <h4>Enter Edge Weights</h4>
                                 <form id="edge-form"></form>
                             </div>
@@ -89,12 +90,12 @@
 
                         <div class="graph-section">
                             <h3>Original Graph</h3>
-                            <div id="graph" style="height: 400px; border: 1px solid #ccc;"></div>
+                            <div id="graph" class="graph-box"></div>
                         </div>
 
                         <div class="mst-section">
                             <h3>Minimum Spanning Tree (MST)</h3>
-                            <div id="mst" style="height: 400px; border: 1px solid #ccc;"></div>
+                            <div id="mst" class="graph-box"></div>
                             <p id="mst-weight">Total Weight: </p>
                         </div>
                     </div>

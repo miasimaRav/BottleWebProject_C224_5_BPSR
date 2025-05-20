@@ -1,4 +1,9 @@
-﻿def find(parent, x):
+﻿import random
+import json
+import os
+import matplotlib.pyplot as plt
+import networkx as nx 
+def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
     return parent[x]
@@ -17,13 +22,13 @@ def union(parent, rank, x, y):
 
 def kruskal(vertex_count, edges):
     if vertex_count <= 0:
-        raise ValueError("Количество вершин должно быть положительным")
+        raise ValueError("Number of vertices must be positive")
     for u, v, w in edges:
-        if u < 0 or u >= vertex_count or v < 0 or v >= vertex_count:
-            raise ValueError("Вершины должны быть в диапазоне [0, vertex_count)")
+        if u < 1 or u > vertex_count or v < 1 or v > vertex_count:
+            raise ValueError("Vertices must be in the range [1, vertex_count]")
 
-    parent = list(range(vertex_count))
-    rank = [0] * vertex_count
+    parent = list(range(vertex_count + 1))
+    rank = [0] * (vertex_count + 1)
     edges = sorted(edges, key=lambda x: x[2])
     mst = []
     total_weight = 0
@@ -34,40 +39,71 @@ def kruskal(vertex_count, edges):
             total_weight += weight
 
     if len(mst) != vertex_count - 1:
-        raise ValueError("Граф не связный, MST не существует")
+        raise ValueError("Graph is not connected, MST does not exist")
 
     return mst, total_weight
 
 def generate_random_edges(vertex_count):
-    import random
     edges = []
-    for i in range(vertex_count):
-        for j in range(i + 1, vertex_count):
+    for i in range(1, vertex_count + 1):
+        for j in range(i + 1, vertex_count + 1):
             if random.random() > 0.5:
                 weight = random.randint(1, 100)
                 edges.append((i, j, weight))
     for i in range(1, vertex_count):
         weight = random.randint(1, 100)
-        edges.append((i - 1, i, weight))
+        edges.append((i, i + 1, weight))
     return edges
+
+def save_graph_and_mst_to_files(vertex_count, edges, mst, total_weight, directory='static/generated'):
+    os.makedirs(directory, exist_ok=True)
+
+    # Сохраняем JSON
+    graph_data = {
+        'vertex_count': vertex_count,
+        'edges': edges,
+        'mst': mst,
+        'total_weight': total_weight
+    }
+    json_path = os.path.join(directory, 'kruskal_result.json')
+    with open(json_path, 'w', encoding='utf-8') as f:
+        json.dump(graph_data, f, indent=4)
+
+    # Построение и сохранение графа с MST
+    G = nx.Graph()
+    for u, v, w in edges:
+        G.add_edge(u, v, weight=w)
+
+    mst_edges = [(u, v) for u, v, _ in mst]
+    pos = nx.spring_layout(G, seed=42)
+    plt.figure(figsize=(10, 7))
+    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, edge_color='gray')
+    nx.draw_networkx_edges(G, pos, edgelist=mst_edges, edge_color='red', width=2)
+    labels = nx.get_edge_attributes(G, 'weight')
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
+    plt.title(f"Kruskal MST (Total Weight: {total_weight})")
+    image_path = os.path.join(directory, 'kruskal_graph.png')
+    plt.savefig(image_path)
+    plt.close()
 
 def handle_graph_data(vertex_count, edges=None, weight_mode='manual'):
     if vertex_count < 1 or vertex_count > 20:
-        raise ValueError("Количество вершин должно быть от 1 до 20")
+        raise ValueError("Number of vertices must be between 1 and 20")
 
     if weight_mode == 'auto' or not edges:
         edges = generate_random_edges(vertex_count)
     else:
         edges = [(u, v, w) for u, v, w in edges if w > 0]
         if not edges:
-            raise ValueError("Нет рёбер с положительным весом")
+            raise ValueError("No edges with positive weight")
 
     try:
         mst, total_weight = kruskal(vertex_count, edges)
+        save_graph_and_mst_to_files(vertex_count, edges, mst, total_weight)
         return {
             'edges': edges,
             'mst': mst,
             'total_weight': total_weight
         }
     except ValueError as e:
-        raise ValueError(f"Ошибка обработки графа: {str(e)}")
+        raise ValueError(f"Graph processing error: {str(e)}")

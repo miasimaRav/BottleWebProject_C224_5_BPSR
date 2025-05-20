@@ -87,6 +87,10 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="static\resources\Images\back.png" />
+    <Content Include="static\resources\Images\graph1.png" />
+    <Content Include="static\resources\Images\graph2.png" />
+    <Content Include="static\resources\Images\graph3.png" />
+    <Content Include="static\resources\Images\graph4.png" />
     <Content Include="static\resources\Images\im.png" />
     <Content Include="static\resources\Images\log.png" />
     <Content Include="static\resources\Images\artem.jpg" />
