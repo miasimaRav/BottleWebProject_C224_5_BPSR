@@ -1,7 +1,7 @@
 % rebase('layout.tpl', title='Dijkstra Algorithm', year=year)
 
 <link rel="stylesheet" href="/static/content/methods_pages_styles.css">
-<script src="/static/scripts/dijkstra_method_logic.js"></script>
+<script src="/static/scripts/dijkstra_client.js"></script>
 
 <div class="floyd-header">
     <h1>Dijkstra's Algorithm</h1>
@@ -170,7 +170,3 @@ Distances: A=0, B=50, C=140, D=160, E=90
         </pre>
     </div>
 </div>
-
-
-
-

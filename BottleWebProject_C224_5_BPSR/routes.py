@@ -1,6 +1,7 @@
 from bottle import route, post, view, request, response
 from datetime import datetime
 from prim_method import generate_graph, prim_algorithm
+
 import json
 
 @route('/')
@@ -83,6 +84,7 @@ def handle_generate_graph():
     vertex_count = data['vertexCount']
     result = generate_graph(vertex_count)
     response.content_type = 'application/json'
+    response.headers['Access-Control-Allow-Origin'] = '*'
     return json.dumps(result)
 
 @post('/prim')
@@ -93,6 +95,42 @@ def handle_prim():
     start_vertex = data['startVertex']
     result = prim_algorithm(vertex_count, edges, start_vertex)
     response.content_type = 'application/json'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return json.dumps(result)
+
+@post('/dijkstra_generate')
+def handle_dijkstra_generate():
+    data = request.json
+    vertex_count = data['vertexCount']
+    if not isinstance(vertex_count, int) or vertex_count < 2 or vertex_count > 13:
+        response.status = 400
+        response.content_type = 'application/json'
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return json.dumps({'error': 'invalid_node_count'})
+    result = generate_dijkstra_graph(vertex_count)
+    response.content_type = 'application/json'
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    return json.dumps(result)
+
+@post('/dijkstra_calculate')
+def handle_dijkstra_calculate():
+    data = request.json
+    graph = data['graph']
+    start_vertex = data['startVertex']
+    end_vertex = data['endVertex']
+    if not graph or start_vertex not in graph or end_vertex not in graph:
+        response.status = 400
+        response.content_type = 'application/json'
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return json.dumps({'error': 'invalid_graph_or_nodes'})
+    if start_vertex == end_vertex:
+        response.status = 400
+        response.content_type = 'application/json'
+        response.headers['Access-Control-Allow-Origin'] = '*'
+        return json.dumps({'error': 'same_start_end'})
+    result = dijkstra_algorithm(graph, start_vertex, end_vertex)
+    response.content_type = 'application/json'
+    response.headers['Access-Control-Allow-Origin'] = '*'
     return json.dumps(result)
 
 def setup_routes(app):
@@ -104,7 +142,8 @@ def setup_routes(app):
     app.route('/prim_method', method='GET', callback=prim_method)
     app.route('/crascal_method', method='GET', callback=crascal_method)
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
+    app.route('/FAQ', method='GET', callback=FAQ)
     app.route('/generate_graph', method='POST', callback=handle_generate_graph)
     app.route('/prim', method='POST', callback=handle_prim)
-    app.route('/FAQ', method='GET', callback=FAQ)
-    
+    app.route('/dijkstra_generate', method='POST', callback=handle_dijkstra_generate)
+    app.route('/dijkstra_calculate', method='POST', callback=handle_dijkstra_calculate)

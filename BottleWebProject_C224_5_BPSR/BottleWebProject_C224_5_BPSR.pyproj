@@ -91,7 +91,7 @@
     <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
-    <Content Include="static\scripts\dijkstra_method_logic.js" />
+    <Content Include="static\scripts\dijkstra_client.js" />
     <Content Include="static\scripts\floid_method_logic.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="static\scripts\jquery-1.10.2.js" />
