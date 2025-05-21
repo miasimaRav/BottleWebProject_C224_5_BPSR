@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|envas|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <WebBrowserPort>
     </WebBrowserPort>
@@ -72,6 +72,9 @@
   <ItemGroup>
     <Content Include="requirements.txt" />
     <Content Include="resources\log.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="resources\log_floyd.json">
       <SubType>Code</SubType>
     </Content>
     <Content Include="static\content\about_styles.css">
@@ -173,15 +176,6 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Interpreter Include="envas\">
-      <Id>envas</Id>
-      <Version>3.13</Version>
-      <Description>envas (Python 3.13 (32-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X86</Architecture>
-    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.9</Version>
