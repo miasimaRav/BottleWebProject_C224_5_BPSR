@@ -4,40 +4,21 @@ import json
 from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
 import os
-from kruscal import handle_graph_data
+from prim_method import generate_graph_endpoint, prim_endpoint, log_prim_endpoint
+from kruscal import handle_graph_data  # Предполагается, что этот импорт уже есть
 
 app = Bottle()
 
-# Определение директории для логов
-LOG_DIR = os.path.join(os.path.dirname(__file__), 'resources')
-os.makedirs(LOG_DIR, exist_ok=True)
+# Добавляем поддержку CORS
+@app.hook('after_request')
+def enable_cors():
+    response.headers['Access-Control-Allow-Origin'] = '*'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type'
 
-# Файлы логов для разных алгоритмов
-PRIM_LOG_FILE = os.path.join(LOG_DIR, 'prim_log.json')
-KRUSKAL_LOG_FILE = os.path.join(LOG_DIR, 'kruskal_log.json')
-
-# Инициализация логов
-def initialize_log(log_file):
-    log_data = []
-    try:
-        with open(log_file, 'r') as f:
-            log_data = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
-        with open(log_file, 'w') as f:
-            json.dump(log_data, f, indent=4)
-    return log_data
-
-prim_log_data = initialize_log(PRIM_LOG_FILE)
-kruskal_log_data = initialize_log(KRUSKAL_LOG_FILE)
-
-# Функция для записи в лог
-def log_operation(log_data, log_file, entry):
-    log_data.append(entry)
-    try:
-        with open(log_file, 'w') as f:
-            json.dump(log_data, f, indent=4)
-    except Exception as e:
-        print(f"Ошибка записи лога в {log_file}: {e}")
+@app.route('/<:path>', method='OPTIONS')
+def handle_options(path):
+    return {}
 
 # Основные страницы
 @route('/')
@@ -81,89 +62,18 @@ def dijkstra_method():
 def FAQ():
     return dict(title='Frequently Asked Questions', year=datetime.now().year, request=request)
 
-def generate_graph(vertex_count):
-    edges = []
-    for i in range(1, vertex_count + 1):
-        for j in range(i + 1, vertex_count + 1):
-            weight = random.randint(1, 100)
-            edges.append({'from': i, 'to': j, 'weight': weight})
-    return {'edges': edges}
-
-def prim_algorithm(vertex_count, edges, start_vertex):
-    adj_matrix = [[float('inf')] * vertex_count for _ in range(vertex_count)]
-    for edge in edges:
-        i, j, w = edge['from'] - 1, edge['to'] - 1, edge['weight']
-        adj_matrix[i][j] = w
-        adj_matrix[j][i] = w
-
-    visited = [False] * vertex_count
-    visited[start_vertex - 1] = True
-    mst_edges = []
-    total_weight = 0
-
-    for _ in range(vertex_count - 1):
-        min_weight = float('inf')
-        min_edge = None
-        for u in range(vertex_count):
-            if visited[u]:
-                for v in range(vertex_count):
-                    if not visited[v] and adj_matrix[u][v] < min_weight:
-                        min_weight = adj_matrix[u][v]
-                        min_edge = (u, v)
-
-        if min_edge:
-            u, v = min_edge
-            mst_edges.append({'from': u + 1, 'to': v + 1, 'weight': min_weight})
-            total_weight += min_weight
-            visited[v] = True
-
-    return {'mstEdges': mst_edges, 'totalWeight': total_weight}
-
+# API маршруты
 @app.route('/generate_graph', method='POST')
-def generate_graph_endpoint():
-    data = request.json
-    vertex_count = data.get('vertexCount')
-    if not vertex_count or vertex_count < 1 or vertex_count > 12:
-        response.status = 400
-        return {'error': 'Number of vertices must be between 1 and 12'}
-    graph = generate_graph(vertex_count)
-    
-    log_entry = {
-        'timestamp': datetime.now().isoformat(),
-        'operation': 'generate_graph',
-        'vertex_count': vertex_count,
-        'generated_edges': graph['edges']
-    }
-    log_operation(prim_log_data, PRIM_LOG_FILE, log_entry)
-    
-    return graph
+def generate_graph_route():
+    return generate_graph_endpoint()
 
 @app.route('/prim', method='POST')
-def prim_endpoint():
-    data = request.json
-    vertex_count = data.get('vertexCount')
-    edges = data.get('edges')
-    start_vertex = data.get('startVertex')
-    weight_mode = data.get('weightMode')
-    if not all([vertex_count, edges, start_vertex is not None]) or vertex_count < 1 or vertex_count > 12 or start_vertex < 1 or start_vertex > vertex_count:
-        response.status = 400
-        return {'error': 'Invalid input data'}
-    
-    result = prim_algorithm(vertex_count, edges, start_vertex)
-    
-    log_entry = {
-        'timestamp': datetime.now().isoformat(),
-        'algorithm': 'prim',
-        'vertex_count': vertex_count,
-        'weight_mode': weight_mode,
-        'initial_edges': edges,
-        'start_vertex': start_vertex,
-        'mst_edges': result['mstEdges'],
-        'total_weight': result['totalWeight']
-    }
-    log_operation(prim_log_data, PRIM_LOG_FILE, log_entry)
+def prim_route():
+    return prim_endpoint()
 
-    return result
+@app.route('/log_prim', method='POST')
+def log_prim_route():
+    return log_prim_endpoint()
 
 @app.route('/kruskal', method='POST')
 def kruskal_endpoint():
@@ -188,7 +98,10 @@ def kruskal_endpoint():
             'mst_edges': [{'from': u, 'to': v, 'weight': w} for u, v, w in result['mst']],
             'total_weight': result['total_weight']
         }
-        log_operation(kruskal_log_data, KRUSKAL_LOG_FILE, log_entry)
+        LOG_DIR = os.path.join(os.path.dirname(__file__), 'resources')
+        os.makedirs(LOG_DIR, exist_ok=True)
+        with open(os.path.join(LOG_DIR, 'kruskal_log.json'), 'w') as f:
+            json.dump([log_entry], f, indent=4)
         
         return result
     except ValueError as e:
@@ -205,8 +118,9 @@ def setup_routes(app):
     app.route('/crascal_method', method='GET', callback=crascal_method)
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
     app.route('/FAQ', method='GET', callback=FAQ)
-    app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
-    app.route('/prim', method='POST', callback=prim_endpoint)
+    app.route('/generate_graph', method='POST', callback=generate_graph_route)
+    app.route('/prim', method='POST', callback=prim_route)
+    app.route('/log_prim', method='POST', callback=log_prim_route)
     app.route('/kruskal', method='POST', callback=kruskal_endpoint)
 
 # Привязываем маршруты к приложению
