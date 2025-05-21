@@ -9,19 +9,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const illustrations = [
         {
             src: '/static/resources/Images/graph1.png',
-            caption: `How does this algorithm work visually?...`
+            caption: `How does this algorithm work visually? Let's consider a weighted, connected, undirected graph with 6 vertices. We list its edges in sorted order:\n\n1 ↔ 3 weight 1\n 3 ↔ 4 weight 1\n3 ↔ 6 weight 2\n1 ↔ 2 weight 3\n5 ↔ 6 weight 4\n1 ↔ 6 weight 5\n2 ↔ 3 weight 5\n4 ↔ 5 weight 8\n4 ↔ 6 weight 9\n\nNow, we add edges to our tree in order, avoiding cycles.`
         },
         {
             src: '/static/resources/Images/graph2.png',
-            caption: `Continuing to add edges...`
+            caption: `Continuing to add edges, we notice that, for example, we cannot add the edge between vertices 1 and 6, as it would form a cycle. After the second pass, we get the following result:`
         },
         {
             src: '/static/resources/Images/graph3.png',
-            caption: `As a result, we form the following subgraph...`
+            caption: `As a result, we form the following subgraph. We have connected all vertices with edges of the minimum possible weights, meaning our minimum spanning tree is complete! :)`
         },
         {
             src: '/static/resources/Images/graph4.png',
-            caption: `The total weight of the resulting MST is...`
+            caption: `The total weight of the resulting MST is the sum of the weights of all highlighted edges, which is 11.`
         }
     ];
 
