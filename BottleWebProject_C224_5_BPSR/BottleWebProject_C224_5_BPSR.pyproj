@@ -40,7 +40,7 @@
     <Compile Include="kruscal.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="dijkstra.py" />
+    <Compile Include="dijkstra_logic.py" />
     <Compile Include="floyd_logic.py">
       <SubType>Code</SubType>
     </Compile>

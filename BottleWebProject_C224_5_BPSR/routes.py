@@ -5,12 +5,14 @@ from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
 import os
 import floyd_logic
+import dijkstra_logic
 
 # Инициализация приложения Bottle
 app = Bottle()
 
-# Подключаем маршруты из floyd_logic
+# Подключаем маршруты из floyd_logic и dijkstra_logic
 app.merge(floyd_logic.app)
+app.merge(dijkstra_logic.app)
 
 # Инициализация файла лога с корректным путём
 LOG_FILE = r"resources\log.json"
@@ -57,10 +59,10 @@ def floid_method():
 def prim_method():
     return dict(title='Prim algorithm', year=datetime.now().year, request=request)
 
-@route('/crascal_method')
-@view('crascal_method')
-def crascal_method():
-    return dict(title='Crascal algorithm', year=datetime.now().year, request=request)
+@route('/kruskal_method')
+@view('kruskal_method')
+def kruskal_method():
+    return dict(title='Kruskal algorithm', year=datetime.now().year, request=request)
 
 @route('/dijkstra_method')
 @view('dijkstra_method')
@@ -170,18 +172,20 @@ def setup_routes(app):
     app.route('/about', method='GET', callback=about)
     app.route('/floid_method', method='GET', callback=floid_method)
     app.route('/prim_method', method='GET', callback=prim_method)
-    app.route('/crascal_method', method='GET', callback=crascal_method)
+    app.route('/kruskal_method', method='GET', callback=kruskal_method)
     app.route('/dijkstra_method', method='GET', callback=dijkstra_method)
     app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
     app.route('/prim', method='POST', callback=prim_endpoint)
     app.route('/FAQ', method='GET', callback=FAQ)
-     # Регистрация маршрутов для метода Флойда
+    # Регистрация маршрутов для метода Флойда
     app.route('/floyd', method='GET', callback=floyd_logic.floyd_page)
     app.route('/floyd_calculate', method='POST', callback=floyd_logic.calculate_floyd)
+    # Регистрация маршрутов для метода Дейкстры
+    app.route('/dijkstra', method='GET', callback=dijkstra_logic.dijkstra_page)
+    app.route('/dijkstra_calculate', method='POST', callback=dijkstra_logic.calculate_dijkstra)
 
 # Привязываем маршруты к приложению
 setup_routes(app)
 
 if __name__ == '__main__':
     app.run(debug=True, host='localhost', port=8080)
-

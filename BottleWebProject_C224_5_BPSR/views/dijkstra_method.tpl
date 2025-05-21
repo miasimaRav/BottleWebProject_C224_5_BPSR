@@ -14,25 +14,27 @@
             <h3 class="panel-title">{{request.translations['dijkstra']['panel']['title']}}</h3>
         </div>
         <div class="panel-body text-center">
-           <div class="control-panel">
-    <div class="input-group">
-        <span class="input-group-addon">Vertices:</span>
-        <input type="number" class="form-control" id="matrixSize" min="2" max="13" value="2">
-    </div>
-    <div class="input-group">
-        <span class="input-group-addon">Start Vertex:</span>
-        <select class="form-control" id="startNode"></select>
-    </div>
-    <div class="input-group">
-        <span class="input-group-addon">End Vertex:</span>
-        <select class="form-control" id="endNode"></select>
-    </div>
-    <button class="btn btn-calculate" id="generateMatrix">Generate Random</button>
-    <button class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
+            <form id="matrixForm">
+                <div class="control-panel">
+                    <div class="input-group">
+                        <span class="input-group-addon">Vertices:</span>
+                        <input type="number" class="form-control" id="matrixSize" name="matrixSize" min="2" max="13" value="2" required>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">Start Vertex:</span>
+                        <select class="form-control" id="startNode" name="startNode"></select>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon">End Vertex:</span>
+                        <select class="form-control" id="endNode" name="endNode"></select>
+                    </div>
+                    <button type="button" class="btn btn-calculate" id="generateMatrix">Generate Random</button>
+                    <button type="submit" class="btn btn-calculate" id="calculateDijkstra">Find Shortest Path</button>
+                </div>
+            </form>
 
-    <!-- Блок для сообщений об ошибках/успехе -->
-    <div id="messageBox" style="margin-top:10px; min-height:20px; font-weight: 600;"></div>
-</div>
+            <!-- Блок для сообщений об ошибках/успехе -->
+            <div id="messageBox" style="margin-top:10px; min-height:20px; font-weight: 600;"></div>
 
             <h4>{{request.translations['dijkstra']['panel']['adjacency_matrix_title']}}</h4>
             <div class="matrix-container">
@@ -102,7 +104,6 @@
                 <div class="graph-visual">
                     <h5>{{request.translations['dijkstra']['example']['initial_graph']['graph_visualization_title']}}</h5>
                     <img src="/static/resources/Images/DijkstraTheory.jpg" class="graph-image">
-                    <!-- Замени путь на актуальный, если нужно -->
                 </div>
             </div>
         </div>
@@ -121,17 +122,15 @@
             <h4 class="example-subtitle">{{request.translations['dijkstra']['example']['final_result']['title']}}</h4>
             <pre>{{request.translations['dijkstra']['example']['final_result']['content']}}</pre>
         </div>
-    </div>
 
-    <div class="example-block">
-        <h4 class="example-subtitle">Final Shortest Distances from A</h4>
-        <pre>
-
- A → B → C → D (50 + 90 + 80 = 220)</li>
- A → E → D (90 + 70 = 160)</li>
- A → B → C → E → D (50 + 90 + 60 + 70 = 270)</li>
-        
-        <p><strong>Shortest Path from A to D:</strong> A → E → D with total weight = 160</p>
-        </pre>
+        <div class="example-block">
+            <h4 class="example-subtitle">Final Shortest Distances from A</h4>
+            <pre>
+A → B → C → D (50 + 90 + 80 = 220)
+A → E → D (90 + 70 = 160)
+A → B → C → E → D (50 + 90 + 60 + 70 = 270)
+<p><strong>Shortest Path from A to D:</strong> A → E → D with total weight = 160</p>
+            </pre>
+        </div>
     </div>
 </div>
