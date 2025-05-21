@@ -20,6 +20,12 @@
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
     <InterpreterId>MSBuild|envas|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <WebBrowserPort>
+    </WebBrowserPort>
+    <PythonRunWebServerCommandType>код</PythonRunWebServerCommandType>
+    <PythonDebugWebServerCommandType>код</PythonDebugWebServerCommandType>
+    <TestFramework>unittest</TestFramework>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,10 +40,23 @@
     <Compile Include="kruscal.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dijkstra_logic.py" />
+    <Compile Include="floyd_logic.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test_ui_dijkstra.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="prim_method.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="test_dijkstra.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test_floyd_method.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="translations\" />
@@ -52,6 +71,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
+    <Content Include="resources\log.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="static\content\about_styles.css">
       <SubType>Code</SubType>
     </Content>
@@ -86,7 +108,10 @@
     <Content Include="static\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="static\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="static\resources\Images\apple-touch-icon.png" />
     <Content Include="static\resources\Images\back.png" />
+    <Content Include="static\resources\Images\favicon-96x96.png" />
+    <Content Include="static\resources\Images\favicon.ico" />
     <Content Include="static\resources\Images\graph1.png" />
     <Content Include="static\resources\Images\graph2.png" />
     <Content Include="static\resources\Images\graph3.png" />
@@ -105,7 +130,7 @@
     <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
-    <Content Include="static\scripts\dijkstra_method_logic.js" />
+    <Content Include="static\scripts\dijkstra_client.js" />
     <Content Include="static\scripts\floid_method_logic.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="static\scripts\jquery-1.10.2.js" />
@@ -164,7 +189,7 @@
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
+      <Architecture>X86</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
