@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|envas|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env7|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <WebBrowserPort>
     </WebBrowserPort>
@@ -47,6 +47,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\test_Kruscul.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="tests\test_prim_method.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="tests\test_ui_dijkstra.py">

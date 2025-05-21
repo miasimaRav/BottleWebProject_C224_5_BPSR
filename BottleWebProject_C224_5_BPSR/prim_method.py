@@ -53,9 +53,23 @@ def generate_graph(vertex_count):
 
 def prim_algorithm(vertex_count, edges, start_vertex):
     print(f"Running prim_algorithm with vertex_count={vertex_count}, start_vertex={start_vertex}, edges={edges}")
+    
+    # Проверка корректности входных данных
+    if vertex_count <= 0:
+        raise ValueError("Number of vertices must be positive")
+    if start_vertex < 0 or start_vertex >= vertex_count:
+        raise ValueError("Start vertex must be within the range of vertices")
+    
+    # Проверка индексов вершин в рёбрах
+    for edge in edges:
+        if edge['from'] < 0 or edge['from'] >= vertex_count or edge['to'] < 0 or edge['to'] >= vertex_count:
+            raise IndexError("Edge vertex index out of range")
+
     adj_matrix = [[float('inf')] * vertex_count for _ in range(vertex_count)]
     for edge in edges:
         i, j, w = edge['from'], edge['to'], edge['weight']
+        if w == 0:  # Игнорируем рёбра с весом 0
+            continue
         adj_matrix[i][j] = w
         adj_matrix[j][i] = w
 

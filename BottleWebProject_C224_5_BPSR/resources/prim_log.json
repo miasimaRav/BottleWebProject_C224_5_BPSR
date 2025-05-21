@@ -2809,5 +2809,399 @@
             }
         ],
         "total_weight": 146
+    },
+    {
+        "timestamp": "2025-05-21T14:00:21.723185",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 69
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 32
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:22.561985",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 64
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 83
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 26
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 36
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:23.013722",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 42
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 69
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 45
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 95
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:23.785292",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 8
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 57
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 94
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 43
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:24.181701",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:26.138340",
+        "algorithm": "prim",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-21T11:00:26.198Z",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-21T14:17:54.561992",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:17:56.654409",
+        "algorithm": "prim",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "total_weight": 105
+    },
+    {
+        "timestamp": "2025-05-21T11:17:56.724Z",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "total_weight": 105
     }
 ]
