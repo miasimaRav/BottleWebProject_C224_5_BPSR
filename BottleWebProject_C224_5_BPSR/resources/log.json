@@ -412,5 +412,71 @@
             "C"
         ],
         "distance": 12.0
+    },
+    {
+        "method": "dijkstra",
+        "timestamp": "2025-05-21T05:51:14.587253",
+        "matrix_size": 2,
+        "input_matrix": [
+            [
+                "INF",
+                4.0
+            ],
+            [
+                4.0,
+                "INF"
+            ]
+        ],
+        "start_node": "A",
+        "end_node": "B",
+        "path": [
+            "A",
+            "B"
+        ],
+        "distance": 4.0
+    },
+    {
+        "method": "dijkstra",
+        "timestamp": "2025-05-21T05:51:25.053184",
+        "matrix_size": 2,
+        "input_matrix": [
+            [
+                "INF",
+                6.0
+            ],
+            [
+                6.0,
+                "INF"
+            ]
+        ],
+        "start_node": "A",
+        "end_node": "B",
+        "path": [
+            "A",
+            "B"
+        ],
+        "distance": 6.0
+    },
+    {
+        "method": "dijkstra",
+        "timestamp": "2025-05-21T06:01:03.032992",
+        "matrix_size": 2,
+        "input_matrix": [
+            [
+                "INF",
+                5.0
+            ],
+            [
+                5.0,
+                "INF"
+            ]
+        ],
+        "start_node": "A",
+        "end_node": "B",
+        "path": [
+            "A",
+            "B"
+        ],
+        "distance": 5.0
     }
 ]
