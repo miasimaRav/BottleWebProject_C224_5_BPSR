@@ -6,8 +6,14 @@ from datetime import datetime
 import os
 from prim_method import generate_graph_endpoint, prim_endpoint, log_prim_endpoint
 from kruscal import handle_graph_data  # Предполагается, что этот импорт уже есть
+import floyd_logic
+import dijkstra_logic
 
 app = Bottle()
+
+# Подключаем маршруты из floyd_logic и dijkstra_logic
+app.merge(floyd_logic.app)
+app.merge(dijkstra_logic.app)
 
 # Добавляем поддержку CORS
 @app.hook('after_request')
@@ -122,6 +128,12 @@ def setup_routes(app):
     app.route('/prim', method='POST', callback=prim_route)
     app.route('/log_prim', method='POST', callback=log_prim_route)
     app.route('/kruskal', method='POST', callback=kruskal_endpoint)
+    # Регистрация маршрутов для метода Флойда
+    app.route('/floyd', method='GET', callback=floyd_logic.floyd_page)
+    app.route('/floyd_calculate', method='POST', callback=floyd_logic.calculate_floyd)
+    # Регистрация маршрутов для метода Дейкстры
+    app.route('/dijkstra', method='GET', callback=dijkstra_logic.dijkstra_page)
+    app.route('/dijkstra_calculate', method='POST', callback=dijkstra_logic.calculate_dijkstra)
 
 # Привязываем маршруты к приложению
 setup_routes(app)

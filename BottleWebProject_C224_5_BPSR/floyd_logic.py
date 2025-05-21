@@ -108,7 +108,7 @@ def floyd_warshall(matrix):
 
 def log_to_file(data):
     # Запись данных вычислений в JSON-файл лога
-    log_file = "resources/log.json"
+    log_file = "resources/log_floyd.json"
     history = []
     # Проверка наличия файла лога
     if os.path.exists(log_file):
