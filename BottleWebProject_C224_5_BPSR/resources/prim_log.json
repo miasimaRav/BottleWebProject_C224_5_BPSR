@@ -1,0 +1,3626 @@
+[
+    {
+        "timestamp": "2025-05-21T12:48:44.946311",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:46.660696",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 76
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:47.318116",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:50.014696",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 78
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 14
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 58
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 61
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:54.125202",
+        "algorithm": "prim",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 78
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 14
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 58
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 61
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 46
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 14
+            }
+        ],
+        "total_weight": 146
+    },
+    {
+        "timestamp": "2025-05-21T13:10:03.693688",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 75
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 85
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 92
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 89
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 22
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:10:04.822243",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 80
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 40
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:10:05.717706",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 62
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 1
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 87
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 59
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 52
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:10:06.261913",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 50
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 44
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 50
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 10
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 58
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:10:07.157086",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 91
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 64
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 79
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 8
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:10:07.581895",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 41
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 64
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 96
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:21:15.401562",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 82
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 17
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 83
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 43
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:21:21.012658",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 19
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 30
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 56
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 92
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:43.004819",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 52
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 41
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 62
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:48.584308",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 19
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 88
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 32
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 72
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 50
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:49.110515",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 78
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 35
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 22
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:50.021153",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 79
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 6
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 14
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 38
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 60
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:50.358508",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 46
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 92
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 84
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 100
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 84
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 51
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:52.505857",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 73
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 55
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 5
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 92
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 43
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 72
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 75
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 94
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 23
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 70
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 86
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 94
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:53.037711",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 75
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 37
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 34
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 65
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 18
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 63
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 71
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 98
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 82
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 49
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 42
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:53.839813",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 30
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 74
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 73
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 72
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 17
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 49
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 77
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 17
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 60
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 51
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 47
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:54.198972",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 42
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 46
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 49
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 75
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 34
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 13
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 38
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 86
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 27
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 53
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:54.990773",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 37
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 27
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 36
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 19
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 14
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 84
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 66
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 20
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 77
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 71
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 62
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 99
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:55.350946",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 99
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 80
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 73
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 53
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 15
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 100
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 33
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 76
+            },
+            {
+                "from": 0,
+                "to": 5,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 28
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 28
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 17
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:57.537347",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 63
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 32
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:57.878278",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 89
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 50
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:58.649509",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 24
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 60
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 69
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:58.905015",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 61
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 67
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:45:59.639946",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 92
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 5
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 19
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:46:00.053126",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 27
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 9
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:46:01.123151",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 66
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:46:20.607577",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 66
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 66
+            }
+        ],
+        "total_weight": 106
+    },
+    {
+        "timestamp": "2025-05-21T10:46:20.632Z",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 66
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 40
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 66
+            }
+        ],
+        "total_weight": 106
+    },
+    {
+        "timestamp": "2025-05-21T13:46:25.405800",
+        "operation": "generate_graph",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 46
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 52
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 93
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 24
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:46:27.277989",
+        "algorithm": "prim",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 46
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 52
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 93
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 24
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 11
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 24
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            }
+        ],
+        "total_weight": 90
+    },
+    {
+        "timestamp": "2025-05-21T10:46:27.321Z",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 46
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 52
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 93
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 24
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 11
+            },
+            {
+                "from": 4,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 24
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 34
+            }
+        ],
+        "total_weight": 90
+    },
+    {
+        "timestamp": "2025-05-21T13:52:10.996523",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 55
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 79
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 67
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:14.583110",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 80
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 59
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 70
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 88
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:15.071538",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 100
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 97
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 72
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 66
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:15.893814",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 77
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 8
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 67
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 24
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 57
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 38
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:16.310028",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 92
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 75
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:17.121671",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 34
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 10
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 14
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 43
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 28
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:17.580958",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 17
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 92
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 48
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 33
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 80
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:18.432790",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 95
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 27
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 66
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 60
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 67
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 4
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:18.937211",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 39
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 89
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 53
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:19.842551",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 39
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 43
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 53
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 63
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 42
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 11
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:20.310390",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 95
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 8
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 70
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 51
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:21.149578",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 81
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 59
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 70
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 65
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 57
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:21.607226",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 92
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 73
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 44
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 30
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:24.589066",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 16
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 39
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 32
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 37
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 21
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 47
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 12
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 99
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:25.006412",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 6
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 21
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 55
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 32
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 50
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 88
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 66
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:25.831066",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 17
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 44
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 89
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 97
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 28
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 58
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 81
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 99
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:26.407031",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 86
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 23
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 97
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 30
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 98
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 93
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 66
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:27.364457",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 98
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 70
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 35
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 53
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 60
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 41
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 54
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:27.977402",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 88
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 14
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 16
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 95
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 23
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 7
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 81
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 12
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:28.969528",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 75
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 64
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 88
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 50
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 29
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 69
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 55
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 61
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 95
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:29.518212",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 12
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 66
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 57
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 81
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 37
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 60
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 83
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:30.378980",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 94
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 53
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 100
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 10
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 80
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 41
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:30.915159",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 54
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 76
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 64
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 55
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 77
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 23
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 3
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:34.745554",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 18
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 44
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 28
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 58
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 28
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 59
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 21
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 87
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:35.479730",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 81
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 81
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 98
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 76
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 88
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:41.965050",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 98
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 78
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 73
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 30
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 62
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 71
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 50
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 10
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 40
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:43.045136",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 40
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 40
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 64
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 66
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 15
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 63
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 16
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:44.685495",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 53
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 60
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 66
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 19
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 5
+            },
+            {
+                "from": 0,
+                "to": 4,
+                "weight": 34
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 99
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 91
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 31
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:45.454147",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 89
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T13:52:51.927782",
+        "algorithm": "prim",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 89
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            }
+        ],
+        "total_weight": 146
+    },
+    {
+        "timestamp": "2025-05-21T10:52:51.976Z",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 89
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 27
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 16
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 65
+            }
+        ],
+        "total_weight": 146
+    },
+    {
+        "timestamp": "2025-05-21T14:00:21.723185",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 69
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 32
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 1
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:22.561985",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 64
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 83
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 26
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 36
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:23.013722",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 42
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 69
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 45
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 95
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:23.785292",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 8
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 57
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 94
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 43
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:24.181701",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:00:26.138340",
+        "algorithm": "prim",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-21T11:00:26.198Z",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 86
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 42
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 51
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 1,
+                "weight": 5
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 13
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-21T14:17:54.561992",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T14:17:56.654409",
+        "algorithm": "prim",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "total_weight": 105
+    },
+    {
+        "timestamp": "2025-05-21T11:17:56.724Z",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 15
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 80
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 38
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 52
+            }
+        ],
+        "total_weight": 105
+    },
+    {
+        "timestamp": "2025-05-21T15:37:29.037534",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 76
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 53
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 23
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 91
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 35
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 21
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:37:33.580254",
+        "algorithm": "prim",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 76
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 53
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 23
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 91
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 35
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 21
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 23
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 21
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 35
+            }
+        ],
+        "total_weight": 87
+    },
+    {
+        "timestamp": "2025-05-21T12:37:33.712Z",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 76
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 53
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 23
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 91
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 35
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 21
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 8
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 23
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 21
+            },
+            {
+                "from": 3,
+                "to": 0,
+                "weight": 35
+            }
+        ],
+        "total_weight": 87
+    },
+    {
+        "timestamp": "2025-05-21T15:45:32.471277",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 96
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 75
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 13
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 36
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 91
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 20
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:45:33.513334",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 17
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 83
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 41
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 69
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:45:36.620663",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 11
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 58
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 77
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 29
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 78
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:45:37.572631",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 89
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 6
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 9
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 29
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 87
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:45:38.683886",
+        "operation": "generate_graph",
+        "vertex_count": 4,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 43
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 45
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 19
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T15:46:08.987786",
+        "algorithm": "prim",
+        "vertex_count": 4,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 12
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 12
+            }
+        ],
+        "total_weight": 17
+    },
+    {
+        "timestamp": "2025-05-21T12:46:09.101Z",
+        "vertex_count": 4,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 12
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 3
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 12
+            }
+        ],
+        "total_weight": 17
+    }
+]
