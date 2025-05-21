@@ -10,7 +10,7 @@ import os
 app = Bottle()
 
 # Инициализация файла лога с корректным путём
-LOG_FILE = r"C:\Users\Artem\Source\Repos\BottleWebProject_C224_5_BPSR\BottleWebProject_C224_5_BPSR\resources\log.json"
+LOG_FILE = r"resources\log.json"
 log_data = []
 
 # Проверка и создание файла лога

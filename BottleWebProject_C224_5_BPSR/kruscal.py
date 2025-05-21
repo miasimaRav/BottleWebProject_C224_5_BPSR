@@ -1,8 +1,7 @@
 ﻿import random
 import json
 import os
-import matplotlib.pyplot as plt
-import networkx as nx 
+
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
