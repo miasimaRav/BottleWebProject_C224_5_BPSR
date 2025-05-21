@@ -1,8 +1,5 @@
 ﻿import random
-import json
-import os
-import matplotlib.pyplot as plt
-import networkx as nx 
+
 def find(parent, x):
     if parent[x] != x:
         parent[x] = find(parent, parent[x])
@@ -23,9 +20,15 @@ def union(parent, rank, x, y):
 def kruskal(vertex_count, edges):
     if vertex_count <= 0:
         raise ValueError("Number of vertices must be positive")
+
+    if not edges:
+        raise ValueError("No edges provided")
+
     for u, v, w in edges:
         if u < 1 or u > vertex_count or v < 1 or v > vertex_count:
             raise ValueError("Vertices must be in the range [1, vertex_count]")
+        if w <= 0:
+            raise ValueError("Edge weights must be positive")
 
     parent = list(range(vertex_count + 1))
     rank = [0] * (vertex_count + 1)
@@ -39,9 +42,9 @@ def kruskal(vertex_count, edges):
             total_weight += weight
 
     if len(mst) != vertex_count - 1:
-        raise ValueError("Graph is not connected, MST does not exist")
+        return [], 0, True  # граф не связный
 
-    return mst, total_weight
+    return mst, total_weight, False
 
 def generate_random_edges(vertex_count):
     edges = []
@@ -52,58 +55,44 @@ def generate_random_edges(vertex_count):
                 edges.append((i, j, weight))
     for i in range(1, vertex_count):
         weight = random.randint(1, 100)
-        edges.append((i, i + 1, weight))
+        edges.append((i, i + 1, weight))  # гарантирует связность
     return edges
 
-def save_graph_and_mst_to_files(vertex_count, edges, mst, total_weight, directory='static/generated'):
-    os.makedirs(directory, exist_ok=True)
-
-    # Сохраняем JSON
-    graph_data = {
-        'vertex_count': vertex_count,
-        'edges': edges,
-        'mst': mst,
-        'total_weight': total_weight
-    }
-    json_path = os.path.join(directory, 'kruskal_result.json')
-    with open(json_path, 'w', encoding='utf-8') as f:
-        json.dump(graph_data, f, indent=4)
-
-    # Построение и сохранение графа с MST
-    G = nx.Graph()
-    for u, v, w in edges:
-        G.add_edge(u, v, weight=w)
-
-    mst_edges = [(u, v) for u, v, _ in mst]
-    pos = nx.spring_layout(G, seed=42)
-    plt.figure(figsize=(10, 7))
-    nx.draw(G, pos, with_labels=True, node_color='skyblue', node_size=500, edge_color='gray')
-    nx.draw_networkx_edges(G, pos, edgelist=mst_edges, edge_color='red', width=2)
-    labels = nx.get_edge_attributes(G, 'weight')
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=labels)
-    plt.title(f"Kruskal MST (Total Weight: {total_weight})")
-    image_path = os.path.join(directory, 'kruskal_graph.png')
-    plt.savefig(image_path)
-    plt.close()
-
-def handle_graph_data(vertex_count, edges=None, weight_mode='manual'):
-    if vertex_count < 1 or vertex_count > 20:
-        raise ValueError("Number of vertices must be between 1 and 20")
-
-    if weight_mode == 'auto' or not edges:
+def handle_graph_data(vertex_count, edges, weight_mode):
+    if weight_mode == 'auto':
         edges = generate_random_edges(vertex_count)
+    elif edges:
+        # Убираем только рёбра с отрицательным весом, но оставляем нули — они не будут переданы в Kruskal
+        valid_edges = [(u, v, w) for u, v, w in edges if w > 0]
+        if not valid_edges:
+            return {
+                'edges': [],
+                'mst': [],
+                'total_weight': 0,
+                'disconnected': True
+            }
+        edges = valid_edges
     else:
-        edges = [(u, v, w) for u, v, w in edges if w > 0]
-        if not edges:
-            raise ValueError("No edges with positive weight")
+        return {
+            'edges': [],
+            'mst': [],
+            'total_weight': 0,
+            'disconnected': True
+        }
 
     try:
-        mst, total_weight = kruskal(vertex_count, edges)
-        save_graph_and_mst_to_files(vertex_count, edges, mst, total_weight)
+        mst, total_weight, disconnected = kruskal(vertex_count, edges)
+    except ValueError:
         return {
             'edges': edges,
-            'mst': mst,
-            'total_weight': total_weight
+            'mst': [],
+            'total_weight': 0,
+            'disconnected': True
         }
-    except ValueError as e:
-        raise ValueError(f"Graph processing error: {str(e)}")
+
+    return {
+        'edges': edges,
+        'mst': mst,
+        'total_weight': total_weight,
+        'disconnected': disconnected
+    }
