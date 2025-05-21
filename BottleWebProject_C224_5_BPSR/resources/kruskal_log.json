@@ -54,5 +54,327 @@
             }
         ],
         "total_weight": 33
+    },
+    {
+        "timestamp": "2025-05-21T13:08:19.498120",
+        "algorithm": "kruskal",
+        "vertex_count": 5,
+        "weight_mode": "manual",
+        "initial_edges": [],
+        "mst_edges": [],
+        "total_weight": 0
+    },
+    {
+        "timestamp": "2025-05-21T13:08:28.103474",
+        "algorithm": "kruskal",
+        "vertex_count": 5,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            }
+        ],
+        "mst_edges": [],
+        "total_weight": 0
+    },
+    {
+        "timestamp": "2025-05-21T13:08:36.663340",
+        "algorithm": "kruskal",
+        "vertex_count": 5,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 5
+            }
+        ],
+        "total_weight": 15
+    },
+    {
+        "timestamp": "2025-05-21T13:13:51.853081",
+        "algorithm": "kruskal",
+        "vertex_count": 7,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 57
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 21
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 77
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 97
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 47
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 73
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 65
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 15
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 66
+            },
+            {
+                "from": 5,
+                "to": 7,
+                "weight": 96
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 48
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 78
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 47
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 53
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 8
+            },
+            {
+                "from": 6,
+                "to": 7,
+                "weight": 52
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 3
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 8
+            },
+            {
+                "from": 4,
+                "to": 7,
+                "weight": 15
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 21
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 47
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 47
+            }
+        ],
+        "total_weight": 141
+    },
+    {
+        "timestamp": "2025-05-21T13:18:26.388921",
+        "algorithm": "kruskal",
+        "vertex_count": 6,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 81
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 64
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 64
+            },
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 38
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 60
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 45
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 77
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 37
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 18
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 95
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 22
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 94
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 19
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 7
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 6,
+                "weight": 7
+            },
+            {
+                "from": 5,
+                "to": 6,
+                "weight": 7
+            },
+            {
+                "from": 3,
+                "to": 6,
+                "weight": 18
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 19
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 22
+            }
+        ],
+        "total_weight": 73
     }
 ]
