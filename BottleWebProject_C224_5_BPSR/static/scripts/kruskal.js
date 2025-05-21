@@ -34,13 +34,13 @@ document.addEventListener('DOMContentLoaded', () => {
             illustrationCaption.textContent = illustrations[currentIllustrationIndex].caption;
         });
 
-        // Initialize with the first image and caption
         illustrationImage.src = illustrations[0].src;
         illustrationCaption.textContent = illustrations[0].caption;
     }
 
     vertexForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
         const vertexCount = parseInt(document.getElementById('vertex-count').value);
         const weightMode = document.getElementById('weight-mode').value;
 
@@ -50,8 +50,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         edgeForm.innerHTML = '';
+
         if (weightMode === 'manual') {
             edgeInput.classList.add('visible');
+
             const outerWrapper = document.createElement('div');
             outerWrapper.classList.add('edge-form-outer-wrapper');
 
@@ -70,6 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const input = document.createElement('input');
                     input.type = 'number';
                     input.name = `edge-${i + 1}-${j + 1}`;
+                    input.id = `edge-${i + 1}-${j + 1}`;  // <-- ключевая строка
                     input.min = '0';
                     input.placeholder = 'Weight';
                     input.classList.add('edge-input');
@@ -96,16 +99,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     edgeForm.addEventListener('submit', (e) => {
         e.preventDefault();
+
         const vertexCount = parseInt(document.getElementById('vertex-count').value);
         const weightMode = document.getElementById('weight-mode').value;
         const edges = [];
 
-        for (let i = 0; i < vertexCount; i++) {
-            for (let j = i + 1; j < vertexCount; j++) {
-                const input = document.querySelector(`input[name="edge-${i + 1}-${j + 1}"]`);
-                const weight = parseInt(input?.value || '0');
-                if (weight > 0) {
-                    edges.push([i + 1, j + 1, weight]);
+        for (let i = 1; i <= vertexCount; i++) {
+            for (let j = i + 1; j <= vertexCount; j++) {
+                const input = document.getElementById(`edge-${i}-${j}`);
+                if (input) {
+                    const raw = input.value.trim();
+                    const weight = parseInt(raw);
+                    if (!isNaN(weight) && weight > 0) {
+                        edges.push([i, j, weight]);
+                    }
                 }
             }
         }
@@ -127,18 +134,28 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error('Network response was not ok');
+                    return response.json().then(errData => {
+                        throw new Error(errData.detail || 'Server error');
+                    });
                 }
                 return response.json();
             })
             .then(data => {
                 renderGraph('graph', data.edges, vertexCount, false);
-                renderGraph('mst', data.mst, vertexCount, true);
-                document.getElementById('mst-weight').textContent = `Total weight: ${data.total_weight}`;
+
+                if (data.disconnected) {
+                    renderGraph('mst', [], vertexCount, true);
+                    document.getElementById('mst-weight').textContent =
+                        'Минимальный путь не может быть построен, так как граф не соединён. Общий вес: 0';
+                } else {
+                    renderGraph('mst', data.mst, vertexCount, true);
+                    document.getElementById('mst-weight').textContent =
+                        `Общий вес: ${data.total_weight}`;
+                }
             })
             .catch(error => {
                 console.error('Error:', error);
-                alert('An error occurred while processing the data');
+                alert(error.message || 'An error occurred while processing the data');
             });
     }
 

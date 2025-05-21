@@ -1,0 +1,129 @@
+[
+    {
+        "timestamp": "2025-05-21T12:23:13.770738",
+        "algorithm": "kruskal",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [],
+        "mst_edges": [],
+        "total_weight": 0
+    },
+    {
+        "timestamp": "2025-05-21T12:23:28.192850",
+        "algorithm": "kruskal",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 2
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            }
+        ],
+        "total_weight": 6
+    },
+    {
+        "timestamp": "2025-05-21T12:23:33.652954",
+        "algorithm": "kruskal",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 28
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 75
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 43
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 55
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 28
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 43
+            }
+        ],
+        "total_weight": 71
+    },
+    {
+        "timestamp": "2025-05-21T12:23:36.844848",
+        "algorithm": "kruskal",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 72
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 59
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 91
+            }
+        ],
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 59
+            }
+        ],
+        "total_weight": 63
+    }
+]

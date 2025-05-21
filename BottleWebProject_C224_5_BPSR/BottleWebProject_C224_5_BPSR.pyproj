@@ -18,8 +18,14 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|env6|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|envas|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
+    <WebBrowserPort>
+    </WebBrowserPort>
+    <PythonRunWebServerCommandType>код</PythonRunWebServerCommandType>
+    <PythonDebugWebServerCommandType>код</PythonDebugWebServerCommandType>
+    <TestFramework>unittest</TestFramework>
+    <SuppressPackageInstallationPrompt>True</SuppressPackageInstallationPrompt>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -34,10 +40,23 @@
     <Compile Include="kruscal.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="dijkstra_logic.py" />
+    <Compile Include="floyd_logic.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test_ui_dijkstra.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="prim_method.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="routes.py" />
+    <Compile Include="test_dijkstra.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="test_floyd_method.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="translations\" />
@@ -111,7 +130,7 @@
     <Content Include="static\resources\Images\vasilisa.jpg" />
     <Content Include="static\scripts\bootstrap.js" />
     <Content Include="static\scripts\bootstrap.min.js" />
-    <Content Include="static\scripts\dijkstra_method_logic.js" />
+    <Content Include="static\scripts\dijkstra_client.js" />
     <Content Include="static\scripts\floid_method_logic.js" />
     <Content Include="static\scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="static\scripts\jquery-1.10.2.js" />
@@ -154,6 +173,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="envas\">
+      <Id>envas</Id>
+      <Version>3.13</Version>
+      <Description>envas (Python 3.13 (32-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
     <Interpreter Include="env\">
       <Id>env</Id>
       <Version>3.9</Version>
@@ -161,16 +189,7 @@
       <InterpreterPath>Scripts\python.exe</InterpreterPath>
       <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
       <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
-    </Interpreter>
-    <Interpreter Include="env6\">
-      <Id>env6</Id>
-      <Version>3.9</Version>
-      <Description>env6 (Python 3.9 (64-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
+      <Architecture>X86</Architecture>
     </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
