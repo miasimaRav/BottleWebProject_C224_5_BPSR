@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/static/content/drop.css"> 
     <link rel="stylesheet" href="/static/content/text_style.css"> 
     <link rel="stylesheet" href="/static/content/cont.css"> 
-    <link rel="stylesheet" href="/static/content/kruskal.css">
+    <link rel="stylesheet" href="/static/content/kruscal.css">
 </head>
 
 <body>

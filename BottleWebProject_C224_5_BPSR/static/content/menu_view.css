@@ -36,8 +36,6 @@ body {
 
 .panel-body {
     padding: 20px;
- 
-
 }
 
 .panel-collapse {
@@ -202,3 +200,94 @@ footer {
     line-height: 1.5;
     color: #333;
 }
+
+.visible {
+    display: block !important;
+}
+/* Стили для контейнера edge-input */
+.edge-input {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрируем содержимое */
+    padding: 20px; /* Внутренний отступ для контейнера */
+}
+
+    /* Стили для заголовка "Enter Edge Weights" */
+    .edge-input h4 {
+        font-size: 24px; /* Размер шрифта как на скриншоте */
+        font-weight: bold; /* Жирный шрифт */
+        margin-bottom: 20px; /* Отступ снизу */
+        color: #333; /* Цвет текста */
+    }
+
+/* Стили для контейнера с группами рёбер */
+.edge-form-container {
+    display: flex;
+    flex-direction: column; /* Располагаем группы в столбец */
+    align-items: center; /* Центрируем группы */
+    width: 100%; /* Для контроля ширины */
+}
+
+/* Стили для каждой группы (label + input) */
+.edge-group {
+    display: flex;
+    align-items: center; /* Выравниваем по вертикали */
+    justify-content: center; /* Центрируем по горизонтали */
+    margin: 10px 0; /* Отступ сверху и снизу */
+    width: 100%; /* Ширина на весь контейнер */
+    max-width: 600px; /* Ограничиваем ширину для аккуратного вида */
+}
+
+/* Стили для меток */
+.edge-label {
+    font-size: 16px; /* Размер шрифта метки */
+    margin-right: 15px; /* Отступ справа */
+    width: 120px; /* Фиксированная ширина для выравнивания */
+    text-align: right; /* Выравниваем текст метки по правому краю */
+    color: #333; /* Цвет текста */
+}
+
+/* Стили для полей ввода */
+.edge-input input[type="number"] {
+    width: 80px; /* Ширина поля ввода */
+    padding: 8px; /* Внутренний отступ */
+    font-size: 16px; /* Размер шрифта */
+    border: 1px solid #ccc; /* Граница как на скриншоте */
+    border-radius: 4px; /* Закруглённые углы */
+    text-align: center; /* Центрируем текст внутри поля */
+    box-sizing: border-box; /* Учитываем padding и border в ширине */
+}
+
+/* Стили для кнопки "Отправить рёбра" */
+.submit-edges {
+    margin-top: 20px; /* Отступ сверху */
+    padding: 10px 20px; /* Внутренние отступы */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: bold; /* Жирный шрифт */
+    color: #fff; /* Белый цвет текста */
+    background-color: #2e7d32; /* Зелёный фон как на скриншоте */
+    border: none; /* Убираем границу */
+    border-radius: 4px; /* Закруглённые углы */
+    cursor: pointer; /* Курсор указателя при наведении */
+    text-transform: uppercase; /* Текст в верхнем регистре */
+}
+
+    /* Эффект при наведении на кнопку */
+    .submit-edges:hover {
+        background-color: #27692a; /* Чуть темнее зелёный при наведении */
+    }
+
+.btn-calculator {
+    background-color: #1b5e20; /* Темно-зеленый фон */
+    border: none;
+    padding: 10px 20px;
+    color: white; /* Белый текст для контраста */
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+    .btn-calculator:hover {
+        background-color: #2e7d32; /* Чуть светлее темно-зеленый при наведении */
+    }
