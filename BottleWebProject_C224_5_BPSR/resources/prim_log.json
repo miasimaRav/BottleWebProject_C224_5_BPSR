@@ -1,0 +1,177 @@
+[
+    {
+        "timestamp": "2025-05-21T12:48:44.946311",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:46.660696",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 76
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:47.318116",
+        "operation": "generate_graph",
+        "vertex_count": 2,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:50.014696",
+        "operation": "generate_graph",
+        "vertex_count": 5,
+        "generated_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 78
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 14
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 58
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 61
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-21T12:48:54.125202",
+        "algorithm": "prim",
+        "vertex_count": 5,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 87
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 74
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 78
+            },
+            {
+                "from": 1,
+                "to": 5,
+                "weight": 14
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 46
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 85
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 58
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 5,
+                "weight": 61
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            }
+        ],
+        "start_vertex": 3,
+        "mst_edges": [
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 38
+            },
+            {
+                "from": 3,
+                "to": 2,
+                "weight": 46
+            },
+            {
+                "from": 4,
+                "to": 5,
+                "weight": 48
+            },
+            {
+                "from": 5,
+                "to": 1,
+                "weight": 14
+            }
+        ],
+        "total_weight": 146
+    }
+]

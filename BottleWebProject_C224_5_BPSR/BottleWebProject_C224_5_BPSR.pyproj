@@ -18,7 +18,7 @@
     <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
     <Name>BottleWebProject_C224_5_BPSR</Name>
     <RootNamespace>BottleWebProject_C224_5_BPSR</RootNamespace>
-    <InterpreterId>MSBuild|envas|$(MSBuildProjectFullPath)</InterpreterId>
+    <InterpreterId>MSBuild|env7|$(MSBuildProjectFullPath)</InterpreterId>
     <SuppressEnvironmentCreationPrompt>True</SuppressEnvironmentCreationPrompt>
     <WebBrowserPort>
     </WebBrowserPort>
@@ -59,6 +59,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="static\tests\" />
     <Folder Include="translations\" />
     <Folder Include="resources\" />
     <Folder Include="static\" />
@@ -71,9 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="requirements.txt" />
-    <Content Include="resources\log.json">
-      <SubType>Code</SubType>
-    </Content>
+    <Content Include="resources\kruskal_log.json" />
+    <Content Include="resources\prim_log.json" />
     <Content Include="static\content\about_styles.css">
       <SubType>Code</SubType>
     </Content>
@@ -173,6 +173,15 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Interpreter Include="env7\">
+      <Id>env7</Id>
+      <Version>3.9</Version>
+      <Description>env7 (Python 3.9 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
     <Interpreter Include="envas\">
       <Id>envas</Id>
       <Version>3.13</Version>

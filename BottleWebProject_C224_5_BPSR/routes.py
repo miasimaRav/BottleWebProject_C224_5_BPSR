@@ -1,24 +1,45 @@
-from bottle import Bottle, route, view, request, response
+import sys
+import random
+import json
+from bottle import Bottle, route, post, view, request, response
 from datetime import datetime
 import os
-import json
-import random
 from kruscal import handle_graph_data
 
 app = Bottle()
 
+# Определение директории для логов
 LOG_DIR = os.path.join(os.path.dirname(__file__), 'resources')
 os.makedirs(LOG_DIR, exist_ok=True)
-LOG_FILE = os.path.join(LOG_DIR, 'log2.json')
 
-log_data = []
-try:
-    with open(LOG_FILE, 'r') as f:
-        log_data = json.load(f)
-except (FileNotFoundError, json.JSONDecodeError):
-    with open(LOG_FILE, 'w') as f:
-        json.dump(log_data, f, indent=4)
+# Файлы логов для разных алгоритмов
+PRIM_LOG_FILE = os.path.join(LOG_DIR, 'prim_log.json')
+KRUSKAL_LOG_FILE = os.path.join(LOG_DIR, 'kruskal_log.json')
 
+# Инициализация логов
+def initialize_log(log_file):
+    log_data = []
+    try:
+        with open(log_file, 'r') as f:
+            log_data = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        with open(log_file, 'w') as f:
+            json.dump(log_data, f, indent=4)
+    return log_data
+
+prim_log_data = initialize_log(PRIM_LOG_FILE)
+kruskal_log_data = initialize_log(KRUSKAL_LOG_FILE)
+
+# Функция для записи в лог
+def log_operation(log_data, log_file, entry):
+    log_data.append(entry)
+    try:
+        with open(log_file, 'w') as f:
+            json.dump(log_data, f, indent=4)
+    except Exception as e:
+        print(f"Ошибка записи лога в {log_file}: {e}")
+
+# Основные страницы
 @route('/')
 @route('/home')
 @view('index')
@@ -113,12 +134,7 @@ def generate_graph_endpoint():
         'vertex_count': vertex_count,
         'generated_edges': graph['edges']
     }
-    log_data.append(log_entry)
-    try:
-        with open(LOG_FILE, 'w') as f:
-            json.dump(log_data, f, indent=4)
-    except Exception as e:
-        print(f"Ошибка записи лога: {e}")
+    log_operation(prim_log_data, PRIM_LOG_FILE, log_entry)
     
     return graph
 
@@ -145,12 +161,7 @@ def prim_endpoint():
         'mst_edges': result['mstEdges'],
         'total_weight': result['totalWeight']
     }
-    log_data.append(log_entry)
-    try:
-        with open(LOG_FILE, 'w') as f:
-            json.dump(log_data, f, indent=4)
-    except Exception as e:
-        print(f"Ошибка записи лога: {e}")
+    log_operation(prim_log_data, PRIM_LOG_FILE, log_entry)
 
     return result
 
@@ -177,13 +188,8 @@ def kruskal_endpoint():
             'mst_edges': [{'from': u, 'to': v, 'weight': w} for u, v, w in result['mst']],
             'total_weight': result['total_weight']
         }
-        log_data.append(log_entry)
-        try:
-            with open(LOG_FILE, 'w') as f:
-                json.dump(log_data, f, indent=4)
-        except Exception as e:
-            print(f"Ошибка записи лога: {e}")
-            
+        log_operation(kruskal_log_data, KRUSKAL_LOG_FILE, log_entry)
+        
         return result
     except ValueError as e:
         response.status = 400
@@ -202,3 +208,9 @@ def setup_routes(app):
     app.route('/generate_graph', method='POST', callback=generate_graph_endpoint)
     app.route('/prim', method='POST', callback=prim_endpoint)
     app.route('/kruskal', method='POST', callback=kruskal_endpoint)
+
+# Привязываем маршруты к приложению
+setup_routes(app)
+
+if __name__ == '__main__':
+    app.run(debug=True, host='localhost', port=8080)
