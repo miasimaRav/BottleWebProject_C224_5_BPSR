@@ -9,7 +9,7 @@
                     Kruskal's algorithm is a greedy method for finding a minimum spanning tree by sorting edges and choosing the lowest-weight ones that don't form cycles.
                     It is efficient for sparse graphs and uses the Union-Find data structure to detect cycles.
                 </p>
-                <a href="#calculator" class="btn btn-calculator">Go to Calculator</a>
+                <a href="#calculator" class="btn-calculator">Go to Calculator</a>
             </div>
 
             <div class="panel">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <!-- Interactive Section -->
+           <!-- Interactive Section -->
             <div class="panel" id="calculator">
                 <div class="panel-heading">
                     <h4 class="panel-title">Interactive Calculator</h4>
@@ -69,7 +69,7 @@
                     <div class="calculator">
                         <div class="input-section">
                             <h3>Input Data</h3>
-                            <form id="vertex-form">
+                            <form id="vertex-form" style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
                                 <label for="vertex-count">Vertices (1-20):</label>
                                 <input type="number" id="vertex-count" min="1" max="20" required>
 
@@ -82,7 +82,7 @@
                                 <button type="submit">Create Graph</button>
                             </form>
 
-                            <div id="edge-input">
+                            <div id="edge-input" style="display: none;">
                                 <h4>Enter Edge Weights</h4>
                                 <form id="edge-form"></form>
                             </div>
@@ -90,12 +90,12 @@
 
                         <div class="graph-section">
                             <h3>Original Graph</h3>
-                            <div id="graph" class="graph-box"></div>
+                            <div id="graph" style="height: 400px; border: 1px solid #ccc;"></div>
                         </div>
 
                         <div class="mst-section">
                             <h3>Minimum Spanning Tree (MST)</h3>
-                            <div id="mst" class="graph-box"></div>
+                            <div id="mst" style="height: 400px; border: 1px solid #ccc;"></div>
                             <p id="mst-weight">Total Weight: </p>
                         </div>
                     </div>
