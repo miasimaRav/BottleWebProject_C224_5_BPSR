@@ -117,5 +117,10 @@
     </div>
 </div>
 
+<script>
+    console.log('Checking script paths:');
+    console.log('vis.min.js:', document.querySelector('script[src="/static/scripts/vis.min.js"]') ? 'Found' : 'Not found');
+    console.log('prim_method.js:', document.querySelector('script[src="/static/scripts/prim_method.js"]') ? 'Found' : 'Not found');
+</script>
 <script src="/static/scripts/vis.min.js"></script>
 <script src="/static/scripts/prim_method.js"></script>
