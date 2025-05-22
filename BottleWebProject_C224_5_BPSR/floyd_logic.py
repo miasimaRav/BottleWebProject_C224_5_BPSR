@@ -116,12 +116,14 @@ def floyd_warshall(matrix, size):
             for j in range(size):
                 # Проверка, что пути через вершину k конечны
                 if dist[i][k] != math.inf and dist[k][j] != math.inf:
+                    new_dist = dist[i][k] + dist[k][j]
                     # Обновление расстояния, если путь через k короче
-                    if dist[i][j] > dist[i][k] + dist[k][j]:
-                        dist[i][j] = dist[i][k] + dist[k][j]
+                    if dist[i][j] > new_dist:
+                        dist[i][j] = new_dist
                         path[i][j] = k  # Запись промежуточной вершины k
 
     return dist, path
+
 
 def log_to_file(data):
     # Запись данных вычислений в JSON-файл лога
