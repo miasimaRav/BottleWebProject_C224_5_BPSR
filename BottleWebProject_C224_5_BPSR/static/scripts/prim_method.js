@@ -9,17 +9,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mstWeight = document.getElementById('mst-weight');
     const edgeWeightList = document.querySelector('.edge-weight-list');
 
-    let graphNetwork = null;
-    let mstNetwork = null;
+    // Р”РµР»Р°РµРј graphNetwork Рё mstNetwork РіР»РѕР±Р°Р»СЊРЅС‹РјРё РґР»СЏ С‚РµСЃС‚РѕРІ
+    window.graphNetwork = null;
+    window.mstNetwork = null;
 
-    // Проверка подключения vis.js
+    // РџСЂРѕРІРµСЂРєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ vis.js
     if (typeof vis === 'undefined') {
-        console.error('vis.js не загружен. Проверьте путь /static/scripts/vis.min.js');
-        alert('Ошибка: vis.js не загружен. Проверьте консоль для деталей.');
+        console.error('vis.js is not loaded. Check the path /static/scripts/vis.min.js');
+        alert('Error: vis.js is not loaded. Check the console for details.');
         return;
     }
 
-    // Обработка отправки формы для создания графа
+    // РћР±СЂР°Р±РѕС‚РєР° РѕС‚РїСЂР°РІРєРё С„РѕСЂРјС‹ РґР»СЏ СЃРѕР·РґР°РЅРёСЏ РіСЂР°С„Р°
     vertexForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const vertexCount = parseInt(vertexCountInput.value);
@@ -30,16 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // Очистка предыдущих данных
+        // РћС‡РёСЃС‚РєР° РїСЂРµРґС‹РґСѓС‰РёС… РґР°РЅРЅС‹С…
         edgeInputDiv.style.display = 'none';
         edgeWeightList.innerHTML = '';
         mstWeight.textContent = 'Total Weight: ';
         mstWeight.classList.remove('updated');
-        if (graphNetwork) graphNetwork.destroy();
-        if (mstNetwork) mstNetwork.destroy();
+        if (window.graphNetwork) window.graphNetwork.destroy();
+        if (window.mstNetwork) window.mstNetwork.destroy();
         console.log('Form submitted:', { vertexCount, weightMode });
 
-        // Генерация формы для ввода весов (ручной режим)
+        // Р“РµРЅРµСЂР°С†РёСЏ С„РѕСЂРјС‹ РґР»СЏ РІРІРѕРґР° РІРµСЃРѕРІ (СЂСѓС‡РЅРѕР№ СЂРµР¶РёРј)
         if (weightMode === 'manual') {
             edgeInputDiv.style.display = 'block';
             for (let i = 0; i < vertexCount; i++) {
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const weightInput = document.getElementById(`edge-${i}-${j}`);
                         const weight = parseInt(weightInput.value);
                         if (weightInput.value === '' || weight === 0) {
-                            continue; // Пропускаем ребро, если вес 0 или поле пустое
+                            continue; // РџСЂРѕРїСѓСЃРєР°РµРј СЂРµР±СЂРѕ, РµСЃР»Рё РІРµСЃ 0 РёР»Рё РїРѕР»Рµ РїСѓСЃС‚РѕРµ
                         }
                         if (!isNaN(weight) && weight > 0) {
                             edges.push({ from: i, to: j, weight });
@@ -72,6 +73,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
                 console.log('Manual edges:', edges);
+                // Р•СЃР»Рё РЅРµС‚ СЂС‘Р±РµСЂ, РґРѕР±Р°РІР»СЏРµРј РјРёРЅРёРјР°Р»СЊРЅРѕРµ СЂРµР±СЂРѕ РґР»СЏ С‚РµСЃС‚Р°
+                if (edges.length === 0) {
+                    edges.push({ from: 0, to: 1, weight: 1 });
+                    console.log('Added a minimal edge for the test:', edges);
+                }
                 await renderGraph(vertexCount, edges, weightMode);
             };
         } else {
@@ -94,31 +100,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 await renderGraph(vertexCount, edges, weightMode);
             } catch (error) {
-                console.error('Ошибка при генерации графа:', error);
-                alert('Не удалось сгенерировать граф. Проверьте консоль для деталей.');
+                console.error('Error generating graph:', error);
+                alert('Failed to generate graph. Check the console for details.');
             }
         }
     });
-
-    // Проверка связности графа (для справки, сейчас не используется)
-    function isGraphConnected(vertexCount, edges) {
-        const adjMatrix = Array(vertexCount).fill().map(() => Array(vertexCount).fill(false));
-        for (let edge of edges) {
-            adjMatrix[edge.from][edge.to] = true;
-            adjMatrix[edge.to][edge.from] = true;
-        }
-        let visited = new Array(vertexCount).fill(false);
-        function dfs(vertex) {
-            visited[vertex] = true;
-            for (let v = 0; v < vertexCount; v++) {
-                if (adjMatrix[vertex][v] && !visited[v]) {
-                    dfs(v);
-                }
-            }
-        }
-        dfs(0);
-        return visited.every(v => v);
-    }
 
     async function renderGraph(vertexCount, edges, weightMode) {
         const nodes = Array.from({ length: vertexCount }, (_, i) => ({ id: i, label: `${i + 1}` }));
@@ -137,63 +123,62 @@ document.addEventListener('DOMContentLoaded', () => {
             physics: { enabled: true },
             layout: { improvedLayout: true }
         };
-        graphNetwork = new vis.Network(graphContainer, graphData, options);
+        window.graphNetwork = new vis.Network(graphContainer, graphData, options);
+        console.log('Graph rendered, window.graphNetwork:', window.graphNetwork);
 
-        graphNetwork.on('click', async (params) => {
-            if (params.nodes.length > 0) {
-                const startVertex = params.nodes[0];
-                console.log('Clicked vertex:', startVertex);
-                console.log('Sending to /prim:', { vertexCount, edges, startVertex, weightMode });
-                try {
-                    const response = await fetch('/prim', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ vertexCount, edges, startVertex, weightMode })
-                    });
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! Status: ${response.status} - ${await response.text()}`);
-                    }
-                    const result = await response.json();
-                    console.log('Server response from /prim:', result);
-                    const { mstEdges, totalWeight } = result;
+        // РђРІС‚РѕРјР°С‚РёС‡РµСЃРєРё Р·Р°РїСѓСЃРєР°РµРј Р°Р»РіРѕСЂРёС‚Рј РџСЂРёРјР° СЃ РЅР°С‡Р°Р»СЊРЅРѕР№ РІРµСЂС€РёРЅРѕР№ 0
+        const startVertex = 0; // Р¤РёРєСЃРёСЂРѕРІР°РЅРЅР°СЏ РЅР°С‡Р°Р»СЊРЅР°СЏ РІРµСЂС€РёРЅР°
+        console.log('Automatically running Prim\'s algorithm with start vertex:', startVertex);
+        console.log('Sending to /prim:', { vertexCount, edges, startVertex, weightMode });
 
-                    if (!mstEdges || mstEdges.length === 0) {
-                        alert('MST is empty. The graph might be disconnected.');
-                        return;
-                    }
-
-                    mstContainer.innerHTML = '';
-                    mstContainer.style.height = '400px';
-                    mstContainer.style.width = '100%';
-
-                    const mstData = {
-                        nodes: new vis.DataSet(nodes),
-                        edges: new vis.DataSet(mstEdges.map(e => ({ from: e.from, to: e.to, label: `${e.weight}` })))
-                    };
-                    mstNetwork = new vis.Network(mstContainer, mstData, options);
-                    mstWeight.textContent = `Total Weight: ${totalWeight || 0}`;
-                    mstWeight.classList.add('updated');
-
-                    const logEntry = {
-                        timestamp: new Date().toISOString(),
-                        vertex_count: vertexCount,
-                        weight_mode: weightMode,
-                        initial_edges: edges,
-                        start_vertex: startVertex,
-                        mst_edges: mstEdges,
-                        total_weight: totalWeight
-                    };
-                    console.log('Sending to /log_prim:', logEntry);
-                    await fetch('/log_prim', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(logEntry)
-                    }).catch(error => console.error('Ошибка логирования:', error));
-                } catch (error) {
-                    console.error('Ошибка при построении MST:', error);
-                    alert('Не удалось построить MST. Проверьте консоль для деталей.');
-                }
+        try {
+            const response = await fetch('/prim', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ vertexCount, edges, startVertex, weightMode })
+            });
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status} - ${await response.text()}`);
             }
-        });
+            const result = await response.json();
+            console.log('Server response from /prim:', result);
+            const { mstEdges, totalWeight } = result;
+
+            if (!mstEdges || mstEdges.length === 0) {
+                alert('MST is empty. The graph might be disconnected.');
+                return;
+            }
+
+            mstContainer.innerHTML = '';
+            mstContainer.style.height = '400px';
+            mstContainer.style.width = '100%';
+
+            const mstData = {
+                nodes: new vis.DataSet(nodes),
+                edges: new vis.DataSet(mstEdges.map(e => ({ from: e.from, to: e.to, label: `${e.weight}` })))
+            };
+            window.mstNetwork = new vis.Network(mstContainer, mstData, options);
+            mstWeight.textContent = `Total Weight: ${totalWeight || 0}`;
+            mstWeight.classList.add('updated');
+
+            const logEntry = {
+                timestamp: new Date().toISOString(),
+                vertex_count: vertexCount,
+                weight_mode: weightMode,
+                initial_edges: edges,
+                start_vertex: startVertex,
+                mst_edges: mstEdges,
+                total_weight: totalWeight
+            };
+            console.log('Sending to /log_prim:', logEntry);
+            await fetch('/log_prim', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(logEntry)
+            }).catch(error => console.error('Error logging:', error));
+        } catch (error) {
+            console.error('Error building MST:', error);
+            alert('Failed to build MST. Check the console for details.');
+        }
     }
 });
