@@ -192,7 +192,8 @@
       "generate_button": "Generate Random",
       "calculate_button": "Calculate Paths",
       "input_matrix_title": "Input Matrix",
-      "result_title": "Result Matrix (Shortest Paths)"
+      "result_title": "Result Matrix (Shortest Paths)",
+      "path_title": "Path Matrix"
     },
     "theory": {
       "title": "Algorithm Theory",

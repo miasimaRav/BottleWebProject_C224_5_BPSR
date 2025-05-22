@@ -4,12 +4,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const matrixSizeInput = document.getElementById('matrixSize');  // Поле ввода размера матрицы
     const generateMatrixBtn = document.getElementById('generateMatrix'); // Кнопка генерации матрицы
     const adjacencyMatrix = document.getElementById('adjacencyMatrix');  // Таблица для входной матрицы
-    const resultMatrix = document.getElementById('resultMatrix');   // Таблица для результата
+    const resultMatrix = document.getElementById('resultMatrix');   // Таблица для результата расстояний
+    const pathMatrix = document.getElementById('pathMatrix');       // Таблица для матрицы путей (новая)
     const errorMessage = document.getElementById('errorMessage');   // Контейнер для сообщений об ошибках
     const resultSection = document.getElementById('resultSection'); // Секция для отображения результата
 
     // Проверка наличия всех необходимых элементов DOM
-    if (!matrixForm || !matrixSizeInput || !generateMatrixBtn || !adjacencyMatrix || !resultMatrix || !errorMessage || !resultSection) {
+    if (!matrixForm || !matrixSizeInput || !generateMatrixBtn || !adjacencyMatrix || !resultMatrix || !pathMatrix || !errorMessage || !resultSection) {
         // Вывод ошибки в консоль с указанием отсутствующих элементов
         console.error('Один или несколько элементов не найдены:', {
             matrixForm: !!matrixForm,
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             generateMatrixBtn: !!generateMatrixBtn,
             adjacencyMatrix: !!adjacencyMatrix,
             resultMatrix: !!resultMatrix,
+            pathMatrix: !!pathMatrix,  // Проверка нового элемента
             errorMessage: !!errorMessage,
             resultSection: !!resultSection
         });
@@ -68,6 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         adjacencyMatrix.innerHTML = html;
         // Очистка предыдущего результата и сообщений об ошибках
         resultMatrix.innerHTML = '';
+        pathMatrix.innerHTML = '';  // Очистка матрицы путей
         errorMessage.innerHTML = '';
         resultSection.style.display = 'none';
     }
@@ -108,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Очистка предыдущего результата и сообщений
         resultMatrix.innerHTML = '';
+        pathMatrix.innerHTML = '';  // Очистка матрицы путей
         errorMessage.innerHTML = '';
         resultSection.style.display = 'none';
 
@@ -152,7 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Проверка корректности данных результата
-        if (!data.data || !Array.isArray(data.data) || data.data.length === 0) {
+        if (!data.data || !Array.isArray(data.data) || data.data.length === 0 || !data.path || !Array.isArray(data.path)) {
+            // Проверка наличия как матрицы расстояний, так и матрицы путей
             console.error('Некорректные данные результата:', data);
             errorMessage.innerHTML = '<div class="alert alert-danger">Ошибка: Некорректный результат от сервера.</div>';
             resultSection.style.display = 'block';
@@ -161,27 +166,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const size = data.data.length;
-        let html = '<tr><th>#</th>';
-        // Создание заголовков таблицы с буквами (A, B, C, ...)
+        let htmlDist = '<tr><th>#</th>';  // HTML для матрицы расстояний
+        let htmlPath = '<tr><th>#</th>';  // HTML для матрицы путей
+        // Создание заголовков таблиц с буквами (A, B, C, ...)
         for (let i = 0; i < size; i++) {
-            html += `<th>${String.fromCharCode(65 + i)}</th>`;
+            htmlDist += `<th>${String.fromCharCode(65 + i)}</th>`;
+            htmlPath += `<th>${String.fromCharCode(65 + i)}</th>`;
         }
-        html += '</tr>';
+        htmlDist += '</tr>';
+        htmlPath += '</tr>';
 
-        // Создание строк таблицы с результатами
+        // Создание строк таблиц с результатами
         for (let i = 0; i < size; i++) {
-            html += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
+            htmlDist += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
+            htmlPath += `<tr><th>${String.fromCharCode(65 + i)}</th>`;
             for (let j = 0; j < size; j++) {
                 const cellClass = i === j ? 'class="diagonal"' : '';  // Выделение диагональных ячеек
-                // Округление чисел или сохранение 'INF'
-                const value = data.data[i][j] === 'INF' ? 'INF' : Math.round(data.data[i][j]);
-                html += `<td ${cellClass}>${value}</td>`;
+                // Округление чисел или сохранение 'INF' для расстояний
+                const valueDist = data.data[i][j] === 'INF' ? 'INF' : Math.round(data.data[i][j]);
+                // Использование значений из матрицы путей
+                const valuePath = data.path[i][j];
+                htmlDist += `<td ${cellClass}>${valueDist}</td>`;
+                htmlPath += `<td ${cellClass}>${valuePath}</td>`;
             }
-            html += '</tr>';
+            htmlDist += '</tr>';
+            htmlPath += '</tr>';
         }
 
-        // Отображение таблицы результата
-        resultMatrix.innerHTML = html;
+        // Отображение таблиц результата
+        resultMatrix.innerHTML = htmlDist;  // Отображение матрицы расстояний
+        pathMatrix.innerHTML = htmlPath;    // Отображение матрицы путей
         // Показ секции результата и прокрутка к ней
         resultSection.style.display = 'block';
         resultSection.scrollIntoView({ behavior: 'smooth', block: 'center' });

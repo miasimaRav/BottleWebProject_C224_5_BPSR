@@ -129,7 +129,6 @@ def setup_routes(app):
     app.route('/log_prim', method='POST', callback=log_prim_route)
     app.route('/kruskal', method='POST', callback=kruskal_endpoint)
     # Регистрация маршрутов для метода Флойда
-    app.route('/floyd', method='GET', callback=floyd_logic.floyd_page)
     app.route('/floyd_calculate', method='POST', callback=floyd_logic.calculate_floyd)
     # Регистрация маршрутов для метода Дейкстры
     app.route('/dijkstra', method='GET', callback=dijkstra_logic.dijkstra_page)

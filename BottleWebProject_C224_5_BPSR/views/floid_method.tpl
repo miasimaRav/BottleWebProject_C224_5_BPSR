@@ -1,4 +1,4 @@
-% rebase('layout.tpl', title=request.translations['floyd']['title'], year=year, lang=request.lang, translations=request.translations)
+% rebase('layout.tpl', title='Floyd Warshall Algorithm', year=year, lang=request.lang, translations=request.translations)
 
 <link rel="stylesheet" href="/static/content/methods_pages_styles.css">
 
@@ -37,7 +37,13 @@
                 <h4>{{request.translations['floyd']['panel']['result_title']}}</h4>
                 <div class="matrix-container">
                     <table class="matrix-table" id="resultMatrix">
-                        <!-- Результаты будут отображены здесь -->
+                        <!-- Результаты расстояний будут отображены здесь -->
+                    </table>
+                </div>
+                <h4>{{request.translations['floyd']['panel']['path_title']}}</h4> <!-- Новый заголовок для матрицы путей -->
+                <div class="matrix-container">
+                    <table class="matrix-table" id="pathMatrix">
+                        <!-- Матрица путей будет отображена здесь -->
                     </table>
                 </div>
             </div>
@@ -77,7 +83,7 @@
     </div>
 
     <div class="example-section">
-        <h3 class="example-title"> {{request.translations['floyd']['example']['title']}}</h3>
+        <h3 class="example-title">{{request.translations['floyd']['example']['title']}}</h3>
         <div class="example-block">
             <h4 class="example-subtitle">{{request.translations['floyd']['example']['initial_graph']['title']}}</h4>
             <div class="graph-representation">
@@ -87,7 +93,7 @@
                 </div>
                 <div class="graph-visual">
                     <h5>{{request.translations['floyd']['example']['initial_graph']['graph_visualization_title']}}</h5>
-                    <img src="/static/resources/Images/floid_graph.png" class="graph-image">
+                    <img src="/static/resources/Images/floid_graph.png" class="graph-image" alt="Floyd-Warshall Algorithm Graph Visualization">
                 </div>
             </div>
         </div>
