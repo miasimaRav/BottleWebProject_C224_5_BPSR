@@ -54,8 +54,8 @@ def calculate_floyd():
         response.status = 400
         return {'status': 'error', 'message': 'Invalid matrix format'}
 
-    # Вычисление кратчайших путей с помощью алгоритма Флойда-Уоршелла
-    result_matrix = floyd_warshall(matrix)
+    # Вычисление кратчайших путей с помощью алгоритма Флойда-Уоршелла, включая матрицу путей
+    result_matrix, path_matrix = floyd_warshall(matrix, size)
 
     # Проверка наличия отрицательных циклов в графе
     for i in range(size):
@@ -67,9 +67,19 @@ def calculate_floyd():
             }
 
     # Преобразование результирующей матрицы: замена math.inf на 'INF' для вывода
-    result_matrix_converted = [[ 'INF' if val == math.inf else val for val in row] for row in result_matrix.tolist()]
+    result_matrix_converted = [['INF' if val == math.inf else val for val in row] for row in result_matrix.tolist()]
+    # Преобразование матрицы путей: индексы в буквы (A, B, C...) для промежуточных вершин
+    # Для прямых путей (где нет промежуточных вершин) указываем конечную вершину (j)
+    # Для диагональных элементов (i == j) устанавливаем '-'
+    path_matrix_converted = [
+        [
+            '-' if i == j else chr(65 + j) if path_matrix[i][j] == -1 else chr(65 + path_matrix[i][j])
+            for j in range(size)
+        ]
+        for i in range(size)
+    ]
     # Преобразование входной матрицы: замена math.inf на 'INF' для логирования
-    matrix_converted = [[ 'INF' if val == math.inf else val for val in row] for row in matrix.tolist()]
+    matrix_converted = [['INF' if val == math.inf else val for val in row] for row in matrix.tolist()]
 
     # Формирование записи для лога: метод, время, размер матрицы, входные и выходные данные
     log_entry = {
@@ -77,34 +87,41 @@ def calculate_floyd():
         'timestamp': datetime.now().isoformat(),
         'matrix_size': size,
         'input_matrix': matrix_converted,
-        'result_matrix': result_matrix_converted
+        'result_matrix': result_matrix_converted,
+        'path_matrix': path_matrix_converted  # Добавление матрицы путей в лог
     }
     # Сохранение данных в лог-файл
     log_to_file(log_entry)
 
-    # Формирование успешного ответа с результатами
+    # Формирование успешного ответа с результатами, включая матрицу путей
     return {
         'status': 'success',
         'message': 'Shortest paths successfully calculated.',
-        'data': result_matrix_converted
+        'data': result_matrix_converted,
+        'path': path_matrix_converted  # Добавление матрицы путей в ответ
     }
 
-def floyd_warshall(matrix):
-    # Реализация алгоритма Флойда-Уоршелла для нахождения кратчайших путей
-    n = len(matrix)
-    # Создание копии матрицы для работы
+def floyd_warshall(matrix, size):
+    # Реализация алгоритма Флойда-Уоршелла для нахождения кратчайших путей и матрицы путей
+    # Создание копии матрицы расстояний
     dist = np.copy(matrix)
+    # Инициализация матрицы путей: -1 означает отсутствие промежуточной вершины (прямой путь)
+    path = np.full((size, size), -1, dtype=int)
+
     # Внешний цикл: перебор промежуточных вершин k
-    for k in range(n):
-        # перебор начальных вершин i
-        for i in range(n):
-            # перебор конечных вершин j
-            for j in range(n):
+    for k in range(size):
+        # Перебор начальных вершин i
+        for i in range(size):
+            # Перебор конечных вершин j
+            for j in range(size):
                 # Проверка, что пути через вершину k конечны
                 if dist[i][k] != math.inf and dist[k][j] != math.inf:
                     # Обновление расстояния, если путь через k короче
-                    dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
-    return dist
+                    if dist[i][j] > dist[i][k] + dist[k][j]:
+                        dist[i][j] = dist[i][k] + dist[k][j]
+                        path[i][j] = k  # Запись промежуточной вершины k
+
+    return dist, path
 
 def log_to_file(data):
     # Запись данных вычислений в JSON-файл лога
