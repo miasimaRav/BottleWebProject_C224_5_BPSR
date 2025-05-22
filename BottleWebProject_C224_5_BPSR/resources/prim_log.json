@@ -3622,5 +3622,2862 @@
             }
         ],
         "total_weight": 17
+    },
+    {
+        "timestamp": "2025-05-22T11:48:04.253495",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T08:48:04.314Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:07:15.478763",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:07:15.583Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:07:18.627728",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:07:18.725Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:07:20.611367",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:07:20.714Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 2,
+        "mst_edges": [
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:07:22.098540",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:07:22.209Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 0,
+                "weight": 2
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:12:26.443957",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 8
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 57
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-22T12:12:28.189040",
+        "operation": "generate_graph",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "generated_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 91
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            }
+        ]
+    },
+    {
+        "timestamp": "2025-05-22T12:12:29.934571",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 91
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 91
+            }
+        ],
+        "total_weight": 122
+    },
+    {
+        "timestamp": "2025-05-22T09:12:30.017Z",
+        "vertex_count": 3,
+        "weight_mode": "auto",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 91
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            }
+        ],
+        "start_vertex": 1,
+        "mst_edges": [
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 31
+            },
+            {
+                "from": 1,
+                "to": 0,
+                "weight": 91
+            }
+        ],
+        "total_weight": 122
+    },
+    {
+        "timestamp": "2025-05-22T12:26:46.779295",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:26:46.829Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:34:05.176770",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:34:05.303Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:38:55.593423",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:38:55.743Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:41:45.441235",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:41:45.585Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:46:30.512679",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T09:46:30.658Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:52:26.466599",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T09:52:26.594Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T12:54:48.006406",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T09:54:48.130Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T13:02:07.365481",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T10:02:07.515Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T13:06:12.309191",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            }
+        ],
+        "total_weight": 33
+    },
+    {
+        "timestamp": "2025-05-22T10:06:12.469Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            }
+        ],
+        "total_weight": 33
+    },
+    {
+        "timestamp": "2025-05-22T13:06:42.391211",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            }
+        ],
+        "total_weight": 33
+    },
+    {
+        "timestamp": "2025-05-22T10:06:42.545Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            }
+        ],
+        "total_weight": 33
+    },
+    {
+        "timestamp": "2025-05-22T13:13:41.913058",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T10:13:42.074Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T13:17:26.296527",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T10:17:26.461Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T13:20:41.908249",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T10:20:42.092Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T14:41:57.116471",
+        "algorithm": "prim",
+        "vertex_count": 5,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 12
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 8
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 4
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 2
+            }
+        ],
+        "total_weight": 13
+    },
+    {
+        "timestamp": "2025-05-22T11:41:57.213Z",
+        "vertex_count": 5,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 3,
+                "weight": 12
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 4
+            },
+            {
+                "from": 2,
+                "to": 3,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 4,
+                "weight": 8
+            },
+            {
+                "from": 3,
+                "to": 4,
+                "weight": 2
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 4
+            },
+            {
+                "from": 4,
+                "to": 3,
+                "weight": 2
+            }
+        ],
+        "total_weight": 13
+    },
+    {
+        "timestamp": "2025-05-22T15:19:44.689103",
+        "algorithm": "prim",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T12:19:44.859Z",
+        "vertex_count": 3,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 2,
+                "weight": 3
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 2
+            },
+            {
+                "from": 2,
+                "to": 1,
+                "weight": 3
+            }
+        ],
+        "total_weight": 5
+    },
+    {
+        "timestamp": "2025-05-22T15:21:08.559000",
+        "algorithm": "prim",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
+    },
+    {
+        "timestamp": "2025-05-22T12:21:08.739Z",
+        "vertex_count": 10,
+        "weight_mode": "manual",
+        "initial_edges": [
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 2,
+                "to": 5,
+                "weight": 7
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 3,
+                "to": 7,
+                "weight": 6
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 5,
+                "to": 9,
+                "weight": 3
+            },
+            {
+                "from": 6,
+                "to": 9,
+                "weight": 8
+            },
+            {
+                "from": 7,
+                "to": 8,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            }
+        ],
+        "start_vertex": 0,
+        "mst_edges": [
+            {
+                "from": 0,
+                "to": 2,
+                "weight": 3
+            },
+            {
+                "from": 2,
+                "to": 6,
+                "weight": 1
+            },
+            {
+                "from": 0,
+                "to": 1,
+                "weight": 4
+            },
+            {
+                "from": 1,
+                "to": 3,
+                "weight": 2
+            },
+            {
+                "from": 1,
+                "to": 4,
+                "weight": 5
+            },
+            {
+                "from": 4,
+                "to": 8,
+                "weight": 4
+            },
+            {
+                "from": 8,
+                "to": 7,
+                "weight": 2
+            },
+            {
+                "from": 8,
+                "to": 9,
+                "weight": 5
+            },
+            {
+                "from": 9,
+                "to": 5,
+                "weight": 3
+            }
+        ],
+        "total_weight": 29
     }
 ]

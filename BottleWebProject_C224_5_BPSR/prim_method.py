@@ -52,53 +52,60 @@ def generate_graph(vertex_count):
     return {'edges': edges}
 
 def prim_algorithm(vertex_count, edges, start_vertex):
-    print(f"Running prim_algorithm with vertex_count={vertex_count}, start_vertex={start_vertex}, edges={edges}")
+    print(f"Запуск prim_algorithm с vertex_count={vertex_count}, start_vertex={start_vertex}, edges={edges}")
     
-    # Проверка корректности входных данных
+    # Проверка входных данных
     if vertex_count <= 0:
-        raise ValueError("Number of vertices must be positive")
+        raise ValueError("Количество вершин должно быть положительным")
     if start_vertex < 0 or start_vertex >= vertex_count:
-        raise ValueError("Start vertex must be within the range of vertices")
+        raise ValueError("Начальная вершина должна быть в пределах диапазона вершин")
     
-    # Проверка индексов вершин в рёбрах
     for edge in edges:
         if edge['from'] < 0 or edge['from'] >= vertex_count or edge['to'] < 0 or edge['to'] >= vertex_count:
-            raise IndexError("Edge vertex index out of range")
+            raise IndexError("Индекс вершины ребра вне допустимого диапазона")
 
+    # Создание матрицы смежности
     adj_matrix = [[float('inf')] * vertex_count for _ in range(vertex_count)]
     for edge in edges:
         i, j, w = edge['from'], edge['to'], edge['weight']
-        if w == 0:  # Игнорируем рёбра с весом 0
+        if w == 0:
             continue
         adj_matrix[i][j] = w
         adj_matrix[j][i] = w
 
+    # Инициализация алгоритма Прима
     visited = [False] * vertex_count
     visited[start_vertex] = True
     mst_edges = []
     total_weight = 0
+    edges_used = 0
 
-    for _ in range(vertex_count - 1):
+    # Симуляция очереди с приоритетами через список кандидатских ребер
+    while edges_used < vertex_count - 1:
         min_weight = float('inf')
         min_edge = None
+
+        # Находим ребро с минимальным весом от посещенных к непосещенным вершинам
         for u in range(vertex_count):
             if visited[u]:
                 for v in range(vertex_count):
-                    if not visited[v] and adj_matrix[u][v] < min_weight:
+                    if not visited[v] and adj_matrix[u][v] != float('inf') and adj_matrix[u][v] < min_weight:
                         min_weight = adj_matrix[u][v]
                         min_edge = (u, v)
 
-        if min_edge:
-            u, v = min_edge
-            mst_edges.append({'from': u, 'to': v, 'weight': min_weight})
-            total_weight += min_weight
-            visited[v] = True
-            print(f"Added edge to MST: {u} -> {v}, weight: {min_weight}")
-        else:
-            print("No more edges to add to MST. Graph might be disconnected.")
+        # Если ребро не найдено, граф может быть несвязным
+        if min_edge is None:
+            print("Граф несвязный. MST включает только достижимые вершины.")
             break
 
-    print(f"MST edges: {mst_edges}, Total weight: {total_weight}")
+        u, v = min_edge
+        mst_edges.append({'from': u, 'to': v, 'weight': min_weight})
+        total_weight += min_weight
+        visited[v] = True
+        edges_used += 1
+        print(f"Добавлено ребро в MST: {u} -> {v}, вес: {min_weight}")
+
+    print(f"Рёбра MST: {mst_edges}, Общий вес: {total_weight}")
     return {'mstEdges': mst_edges, 'totalWeight': total_weight}
 
 def generate_graph_endpoint():

@@ -104,11 +104,11 @@
                 </form>
             </div>
         </div>
-        <div class="graph-section">
-            <h3>{{request.translations['prim']['calculator_graph_title']}}</h3>
-            <div id="graph" style="height: 400px; width: 100%; border: 1px solid #ccc;"></div>
-            <p>{{request.translations['prim']['calculator_graph_instruction']}}</p>
-        </div>
+            <div class="graph-section">
+                <h3>{{request.translations['prim']['calculator_graph_title']}}</h3>
+                <div id="graph" style="height: 400px; width: 100%; border: 1px solid #ccc;"></div>
+                <p>{{request.translations['prim']['calculator_graph_instruction']}}</p>
+            </div>
         <div class="mst-section">
             <h3>{{request.translations['prim']['calculator_mst_title']}}</h3>
             <div id="mst" style="height: 400px; width: 100%; border: 1px solid #ccc;"></div>
